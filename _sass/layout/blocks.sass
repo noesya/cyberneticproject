@@ -56,7 +56,7 @@ section.container
         width: max-content
     &__body
         padding: 40px
-        h3
+        .h3
             padding-bottom: 15px
         p
             column-count: 2
@@ -71,9 +71,37 @@ section.container
                 &::after
                     animation: rolling-square 5s #{$i * 0.5}s alternate infinite 
 
+.box--img
+    .box
+        &__body
+            padding: 40px
+        &__content
+            display: flex
+            +mobile
+                display: block
+            .h3
+                padding-bottom: 15px
+            p
+                column-count: 2
+                +mobile
+                    column-count: 1
+        &__text
+            width: 70%
+            +mobile
+                width: auto
 
-    
-                
+        &__image
+            border-left: $border-width solid $light
+            width: 30%
+            +mobile
+                border-right: 0
+                border-top: $border-width solid $light
+                width: auto
+            img
+                display: block
+                object-fit: cover
+                height: 100%
+                width: 100%
 
 .center
     margin: 100px 0
