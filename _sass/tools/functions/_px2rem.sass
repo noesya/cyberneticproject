@@ -1,0 +1,7 @@
+@function px2rem($size)
+    $remSize: $size / $font-size-base
+    @return #{$remSize}rem
+
+@function pxr2rem($size)
+    $remSize: $size / $font-size-base / 2
+    @return #{$remSize}rem

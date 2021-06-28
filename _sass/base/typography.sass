@@ -1,0 +1,63 @@
+html
+    -ms-text-size-adjust: 100%
+    -webkit-tap-highlight-color: transparent
+    -webkit-text-size-adjust: 100%
+    font-size: 18px
+    font-size: px2rem(18)
+
+body
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font-family: $font-primary
+    font-weight: normal
+    text-rendering: geometricPrecision
+
+p
+    letter-spacing: -0.02em
+    line-height: 1.7em
+
+h1, h2, h3,
+.h1, .h2
+    font-family: $font-secondary
+    font-weight: bold
+
+h1, .h1
+    font-size: px2rem(40)
+
+h2, .h2
+    font-size: px2rem(40)
+
+h3, .h3
+    font-size: px2rem(20)
+    line-height: px2rem(25)
+
+
+.link
+    position: relative
+    transition: color .22s $easeInOutCubic
+    z-index: 1
+    &::after
+        background: $light
+        bottom: 0
+        content: ''
+        display: block
+        height: 0
+        left: 0
+        position: absolute
+        transition: height .22s $easeInOutCubic
+        width: 100%
+        z-index: -1
+    &:hover
+        color: $dark
+        &::after
+            height: 100%
+
+.btn
+    @extend .link
+    border: $border-width solid $light
+    color: $light
+    display: table
+    font-family: $font-secondary
+    font-weight: bold
+    padding: 20px
+    text-decoration: none

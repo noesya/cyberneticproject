@@ -1,0 +1,28 @@
+=abs-fill
+    bottom: 0
+    left: 0
+    position: absolute
+    right: 0
+    top: 0
+
+=disable-selection
+    user-select: none
+    *
+        user-select: none
+
+=center-content
+    align-items: center
+    display: flex
+    justify-content: center
+
+=mobile
+    @media(max-width: 768px)
+        @content
+
+=tablet
+    @media(max-width: 1024px)
+        @content
+
+=huge
+    @media(min-width: 1600px)
+        @content

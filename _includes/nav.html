@@ -1,0 +1,29 @@
+<header>
+  <nav class="container">
+    <a class="logo" href="/">CyberNeTic</a>
+    <a href="#menu" class="mobile_button mobile_button__open">Menu</a>
+
+    <div id="menu">
+      <a href="#" class="mobile_button mobile_button__close">Fermer</a>
+      <ul>
+        {% for item in site.data.nav.header %}
+          {% assign class = nil %}
+          {% if page.url == '/' and item.slug == '/' %}
+            {% assign class = ' active' %}
+          {% else %}
+            {% if item.slug != '/' and (page.url == item.slug or page.url contains item.slug) %}
+                {% assign class = ' active' %}
+            {% endif %}
+          {% endif %}
+          <li>
+            {% if item.slug %}
+              <a class="{{ class }}" href="{{ item.slug }}">{{ item.title }}</a>
+            {% else %}
+              <span>{{ item.title }}</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+</header>
