@@ -11,3 +11,4 @@ defaults:
 collections:
   pages:
     output: true
+    permalink: /:name

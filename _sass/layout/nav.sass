@@ -1,6 +1,7 @@
 header
     border-bottom: $border-width solid $light
     font-family: $font-secondary
+    font-weight: bold
     position: sticky
     top: 0
     background: $dark
@@ -9,76 +10,81 @@ header
         align-items: baseline
         display: flex
         justify-content: space-between
-        padding-top: 20px
+        padding-top: 10px
         position: relative
-        
 
-.logo
-    color: $light
-    display: block
-    font-size: px2rem(30)
-    text-transform: uppercase
-    text-decoration: none
-    font-weight: bold
-    z-index: 10
+    .logo
+        color: $light
+        display: block
+        font-size: px2rem(30)
+        font-weight: bold
+        text-decoration: none
+        text-transform: uppercase
+        z-index: 10
+        +mobile
+            font-size: px2rem(20)
 
-.mobile_button
-    display: none
+    .mobile_button
+        display: none
+        color: $light
 
-#menu
-    li
-        display: inline-block
-        &:after
-            content: " / "
-        &:after
-            content: ""
-        span, a
-            padding: 15px
-        a
-            @extend .link
-            color: $light
-            display: block
-            text-decoration: none
+    #menu
+        li
+            display: inline-block
+            &:after
+                content: " / "
+            &:after
+                content: ""
+            span, a
+                padding: 15px
+            a
+                @extend .link
+                color: $light
+                display: block
+                text-decoration: none
+                &.active
+                    color: $dark
+                    &::after
+                        height: 100%
 
-        &.active
-            color: red
     +mobile
         .mobile_button
             display: block
             font-weight: bold
             padding: 15px
-            position: absolute
             text-decoration: none
             text-transform: uppercase
-        &__open
-            right: -15px
-            top: -15px
-        &__close
-            right: 15px
-            top: 15px
+            &__open
+                right: -15px
+                top: -15px
+            &__close
+                position: absolute
+                right: 15px
+                top: 15px
         #menu
-            background: black
+            background: $dark
             bottom: 0
             display: none
             left: 0
+            padding: 100px
             position: fixed
             right: 0
             top: 0
-        &:target
-            display: block
-        ul
-            left: 0
-            right: 15px
-            top: 100px
-            li
+            &:target
                 display: block
-                margin-bottom: 30px
-                text-align: right
-            &::after
-                content: none
-            &:last-child
-                a
-                    padding-right: 15px
+            ul
+                left: 0
+                right: 15px
+                top: 100px
+                li
+                    display: block
+                    margin-bottom: 30px
+                    text-align: center
+                &::after
+                    content: none
+                &:last-child
+                    a
+                        padding-right: 15px
 
 .breadcrumb
     -ms-overflow-style: none
@@ -127,17 +133,19 @@ footer
         &__social
             margin-bottom: 60px
         li
+            +mobile
+                display: block
             display: inline-block
             padding-right: 25px
-            // +mobile
-            //     display: block
+
         &__links
+            +mobile
+                margin-top: -20px
+                text-align: left
             margin: -15px 0
             margin-top: -280px
             text-align: right
-            // +mobile
-            //     margin-top: -20px
-            //     text-align: left
+            
     a
         font-size: 0.9rem
         text-decoration: none
