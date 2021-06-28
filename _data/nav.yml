@@ -1,0 +1,28 @@
+header:
+  - title: Accueil
+    slug: /
+  - title: Actualités
+    slug: /actualites
+  - title: Le projet
+    slug: /projet
+
+footer:
+  - title: Équipe
+    slug: /equipe
+  - title: Espace presse
+    slug: /presse
+  - title: Newsletter
+    slug: /informations
+  - title: Mentions légales
+    slug: /mentions-legales
+  - title: Charte éthique
+    slug: /charte-ethique
+social:
+  - title: Facebook
+    slug: https://www.facebook.com/rebootevent2021
+  - title: Instagram
+    slug: https://www.instagram.com/rebootevent2021
+  - title: Twitter
+    slug: https://twitter.com/Rebootevent2021
+  - title: LinkedIn
+    slug: https://www.linkedin.com/company/reboot-2021
