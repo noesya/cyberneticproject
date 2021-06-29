@@ -4,9 +4,8 @@ url: "http://cyberneticproject.eu/"
 defaults:
   - scope:
       path: ""
-      type: "pages"
     values:
-      layout: "page"
+      layout: "default"
   - scope:
       path: "actualites/"
       type: "news"

@@ -1,26 +1,17 @@
 header
-    border-bottom: $border-width solid $light
-    font-family: $font-secondary
+    font-family: sans-serif
     font-weight: bold
-    position: sticky
-    top: 0
-    background: $dark
     z-index: 100
-    nav
-        align-items: baseline
-        display: flex
-        justify-content: space-between
-        padding-top: 10px
-        position: relative
-
+    text-align: center
+    padding: 170px 0 100px 0
     .logo
-        color: $light
         display: block
-        font-size: px2rem(30)
+        color: white
+        font-size: px2rem(50)
         font-weight: bold
+        letter-spacing: -6px
         text-decoration: none
         text-transform: uppercase
-        z-index: 10
         +mobile
             font-size: px2rem(20)
 
@@ -38,14 +29,10 @@ header
             span, a
                 padding: 15px
             a
-                @extend .link
-                color: $light
+                color: white
+                font-weight: normal
                 display: block
                 text-decoration: none
-                &.active
-                    color: $dark
-                    &::after
-                        height: 100%
 
     +mobile
         .mobile_button
