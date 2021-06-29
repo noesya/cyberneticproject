@@ -28,14 +28,11 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="preload" href="/assets/fonts/lato-regular-webfont.woff2" as="font" crossorigin="anonymous" />
-    <link rel="preload" href="/assets/fonts/poppins-medium-webfont.woff2" as="font" crossorigin="anonymous" />
+    <!-- <link rel="preload" href="/assets/fonts/lato-regular-webfont.woff2" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="/assets/fonts/poppins-medium-webfont.woff2" as="font" crossorigin="anonymous" /> -->
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cutive&family=Lato&family=Poppins:wght@500&display=swap" rel="stylesheet">
   </head>
-  <body class="{{ page.path | remove: '.html' | remove: '_' | replace: '/', '__' }}">
+  <body>
     {{ content }}
   </body>
 </html>

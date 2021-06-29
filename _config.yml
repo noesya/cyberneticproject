@@ -18,5 +18,6 @@ collections:
     output: true
     permalink: /:name
   news:
+    layout: news
     output: true
     permalink: /actualites/:name
