@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+
+{% include nav.html %}
+<main>
+  <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+  {{ content }}
+</main>
+{% include footer.html %}

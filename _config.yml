@@ -7,8 +7,16 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+  - scope:
+      path: "actualites/"
+      type: "news"
+    values:
+      layout: "news"
 
 collections:
   pages:
     output: true
     permalink: /:name
+  news:
+    output: true
+    permalink: /actualites/:name

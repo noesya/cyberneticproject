@@ -1,0 +1,52 @@
+backend:
+  name: git-gateway
+  branch: content
+local_backend: true
+
+media_folder: "assets/images/uploads" # Media files will be stored in the repo under images/uploads
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+meta: &META
+  - {label: "Title", name: "title", widget: "string", required: false}
+  - {label: "Description", name: "description", widget: "text", required: false}
+  - {label: "OG Image (shared image)", name: "image", widget: "image", required: false}
+
+collections:
+  - name: 'pages'
+    label: 'Pages'
+    folder: '_pages'
+    extension: html
+    editor:
+      preview: false
+    fields:
+      - name: title
+        label: Title
+        required: false
+      - name: seo
+        widget: object
+        fields: *META
+
+  - name: 'news'
+    label: 'News'
+    folder: '_news'
+    extension: html
+    create: true
+    editor:
+      preview: false
+    fields: 
+      - name: title
+        label: Title
+        required: false
+      - label: 'Post date'
+        name: 'post_date'
+        widget: 'date'
+        format: 'Do MM YY'
+      - name: seo
+        widget: object
+        fields: *META
+      - name: content
+        label: Content
+        widget: markdown
