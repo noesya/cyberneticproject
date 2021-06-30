@@ -37,7 +37,7 @@ h3, .h3
     transition: color .22s $easeInOutCubic
     z-index: 1
     &::after
-        background: $light
+        background: $dark
         bottom: 0
         content: ''
         display: block
@@ -48,16 +48,24 @@ h3, .h3
         width: 100%
         z-index: -1
     &:hover
-        color: $dark
+        color: $light
         &::after
             height: 100%
+    .is-darken &
+        &::after
+            background: $light
+        &:hover
+            color: $dark
 
 .btn
     @extend .link
-    border: $border-width solid $light
-    color: $light
+    border: $border-width solid $dark
+    color: $dark
     display: table
     font-family: $font-secondary
     font-weight: bold
     padding: 20px
     text-decoration: none
+    .is-darken &
+        border-color: $light
+        color: $light

@@ -5,5 +5,8 @@
     display: none
 
 body, html
-    background: $dark
-    color: $light
+    background: $light
+    color: $dark
+    &.is-darken, .is-darken &
+        background: $dark
+        color: $light

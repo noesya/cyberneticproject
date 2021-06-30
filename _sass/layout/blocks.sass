@@ -3,12 +3,6 @@
         transform: translateY(-50px)
     100%
         transform: translateY(50px)
-    
-.bd
-    border: $border-width solid $light
-
-.bdr
-    border-right: $border-width solid $light
 
 section.container
     margin-top: 100px
@@ -20,7 +14,7 @@ section.container
 .box
     position: relative
     &::before
-        border: $border-width solid $light
+        border: $border-width solid $dark
         content: ''
         position: absolute
         width: 100%
@@ -31,11 +25,17 @@ section.container
         +mobile
             top: 10px
             left: 10px
+        .is-darken &
+            border-color: $light
+
     &__content
-        background: $dark
+        background: $light
         position: relative
-        border: $border-width solid $light
+        border: $border-width solid $dark
         z-index: 2
+        .is-darken &
+            background: $dark
+            border-color: $light
         &::after
             animation: rolling-square 5s alternate infinite 
             content: ''
@@ -44,16 +44,20 @@ section.container
             width: 0px
             height: 50px
             left: -3px
-            border: 5px dashed $dark
+            border: 5px dashed $light
             top: 50%
             z-index: 10
+            .is-darken &
+                border-color: $dark
     &__title
-        border: $border-width solid $light
+        border: $border-width solid $dark
         left: -$border-width
         padding: 30px 40px 20px
         position: relative
         top: -$border-width
         width: max-content
+        .is-darken &
+            border-color: $light
     &__body
         padding: 40px
         .h3
@@ -91,20 +95,21 @@ section.container
                 width: auto
 
         &__image
-            border-left: $border-width solid $light
+            border-left: $border-width solid $dark
             width: 30%
             +mobile
                 border-right: 0
-                border-top: $border-width solid $light
+                border-top: $border-width solid $dark
                 width: auto
             img
                 display: block
                 object-fit: cover
                 height: 100%
                 width: 100%
+            .is-darken &
+                border-color: $light
 
 .center
-    margin: 100px 0
     .btn
         margin: auto
 .news
@@ -140,9 +145,11 @@ section.container
     .partner
         background: white
         position: relative
-        border: $border-width solid $light
+        border: $border-width solid $dark
         width: 18%
         padding: 20px
+        .is-darken &
+            border-color: $light
         img
             margin: auto
             display: block
