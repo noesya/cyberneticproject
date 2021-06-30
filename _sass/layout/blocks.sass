@@ -28,6 +28,7 @@ section.container
         top: 20px
         left: 20px
         animation: back-borders 5s alternate infinite ease-in-out
+
         +mobile
             top: 10px
             left: 10px
@@ -93,6 +94,8 @@ section.container
         border-bottom: $border-width solid $dark
         height: 100%
         top: 0
+        .is-darken &
+            border-color: $light
     .box
         &__body
             padding: 40px
@@ -170,6 +173,9 @@ section.container
                 top: 0
                 background: $light
                 z-index: 2
+                .is-darken &
+                    border-color: $light
+                    background: $dark
     
 .partners
     display: flex
