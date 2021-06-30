@@ -1,5 +1,5 @@
 # CyberNeTic
 
-## Dev 
+## Dev
 
 npx netlify-cms-proxy-server
