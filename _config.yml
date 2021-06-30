@@ -8,16 +8,15 @@ defaults:
     values:
       layout: "page"
   - scope:
-      path: "actualites/"
+      path: ""
       type: "news"
     values:
-      layout: "news"
+      layout: "post"
 
 collections:
   pages:
     output: true
     permalink: /:name
   news:
-    layout: news
     output: true
     permalink: /actualites/:name

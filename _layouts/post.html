@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+
+{% include nav.html %}
+<main class="post">
+  <section class="container">
+    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+    <div class="text">
+      {{ page.content_text | markdownify }}
+    </div>
+  </section>
+
+  <section class="container">
+    <nav class="post-nav">
+      <div>
+        {% if page.previous.url %}
+        <a href="{{page.previous.url}}">&laquo;&nbsp;{{page.previous.title}}</a>
+        {% endif %}
+      </div>
+      <div class="post-nav-next">
+        {% if page.next.url %}
+        <a href="{{page.next.url}}">{{page.next.title}}&nbsp;&raquo;</a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</main>
+{% include footer.html %}
