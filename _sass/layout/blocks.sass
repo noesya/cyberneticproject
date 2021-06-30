@@ -40,7 +40,7 @@ section.container
             background: $dark
             border-color: $light
         &::after
-            animation: rolling-square 5s alternate infinite 
+            animation: rolling-square 5s alternate infinite
             content: ''
             display: block
             position: absolute
@@ -78,7 +78,7 @@ section.container
         &:nth-child(n + #{$i})
             .box__content
                 &::after
-                    animation: rolling-square 5s #{$i * 0.5}s alternate infinite 
+                    animation: rolling-square 5s #{$i * 0.5}s alternate infinite
 
 .box--img
     .box
@@ -162,12 +162,14 @@ section.container
             padding: 20px
             p
                 column-count: 1
-    
+
 .partners
     display: flex
     flex-wrap: wrap
     justify-content: space-between
     .partner
+        filter: grayscale(1)
+        mix-blend-mode: multiply
         background: white
         border: $border-width solid $dark
         padding: 20px
@@ -179,6 +181,9 @@ section.container
             display: block
             margin: auto
             max-width: 90%
+        &:hover
+            filter: grayscale(0)
+            mix-blend-mode: normal
 
 .post
     img, iframe, video

@@ -42,26 +42,12 @@ seo:
 </section>
 
 <section class="container">
-    <h1>Parternaires</h1>
+    <h1>Partenaires</h1>
     <div class="partners">
-        <div class="partner">
-            <img src="/assets/images/ntech.png" alt="">
-        </div>
-
-        <div class="partner">
-            <img src="/assets/images/orange.jpeg" alt="">
-        </div>
-
-        <div class="partner">
-            <img src="/assets/images/gendarmerie.jpeg" alt="">
-        </div>
-
-        <div class="partner">
-            <img src="/assets/images/mmi.jpeg" alt="">
-        </div>
-
-        <div class="partner">
-            <img src="/assets/images/pjgn.png" alt="">
-        </div>
+        {% for partner in site.data.partners %}
+          <div class="partner">
+              <img src="/assets/images/partenaires/{{ partner.logo }}" alt="{{ partner.title }}">
+          </div>
+        {% endfor %}
     </div>
 </section>
