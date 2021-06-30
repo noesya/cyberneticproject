@@ -47,6 +47,6 @@ collections:
       - name: seo
         widget: object
         fields: *META
-      - name: content_text
+      - name: body
         label: Content
         widget: markdown
