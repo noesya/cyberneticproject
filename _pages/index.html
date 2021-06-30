@@ -31,50 +31,10 @@ seo:
 <section class="container">
     <h1><a href="/actualites">Actualités</a></h1>
     <div class="news">
-        <div class="box">
-            <div class="box__content">
-                <h2 class="box__title h3">Libertés numériques et violences en ligne</h2>
-                <div class="box__body">
-                    <time datetime="2020-02-09T19:00">Le 09/02/2020</time>
-                    <p>
-                        Les "immersions digitales " de l'IUT de Tarbes.
-                        
-                        « fdp, c’est pas vraiment une insulte gros! ». Loin d’être anodines, ces paroles sont au contraire offensantes et performatives...
-                    </p>
-                    <a class="btn" href="/projet">En savoir plus</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="box__content">
-                <h2 class="box__title h3">Libertés numériques et violences en ligne</h2>
-                <div class="box__body">
-                    <time datetime="2020-02-09T19:00">Le 09/02/2020</time>
-                    <p>
-                        Les "immersions digitales " de l'IUT de Tarbes.
-                        
-                        « fdp, c’est pas vraiment une insulte gros! ». Loin d’être anodines, ces paroles sont au contraire offensantes et performatives...
-                    </p>
-                    <a class="btn" href="/projet">En savoir plus</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="box__content">
-                <h2 class="box__title h3">Libertés numériques et violences en ligne</h2>
-                <div class="box__body">
-                    <time datetime="2020-02-09T19:00">Le 09/02/2020</time>
-                    <p>
-                        Les "immersions digitales " de l'IUT de Tarbes.
-                        
-                        « fdp, c’est pas vraiment une insulte gros! ». Loin d’être anodines, ces paroles sont au contraire offensantes et performatives...
-                    </p>
-                    <a class="btn" href="/projet">En savoir plus</a>
-                </div>
-            </div>
-        </div>
+        {% assign posts = site.news | posts_passed: 'post_date' %}
+        {% for post in posts limit:3 %}
+            {% include post.html post=post %}
+        {% endfor %}
     </div>
     <section class="center">
         <a href="/actualites" class="btn">Voir toutes les actualités</a>

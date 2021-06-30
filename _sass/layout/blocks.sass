@@ -27,7 +27,10 @@ section.container
             left: 10px
         .is-darken &
             border-color: $light
-
+    time
+        display: block
+        font-size: px2rem(12)
+        padding-bottom: 40px
     &__content
         background: $light
         position: relative
@@ -56,6 +59,8 @@ section.container
         position: relative
         top: -$border-width
         width: max-content
+        small
+            font-size: 70%
         .is-darken &
             border-color: $light
     &__body
@@ -109,6 +114,29 @@ section.container
             .is-darken &
                 border-color: $light
 
+.box--light
+    .box
+        &__title
+            padding: 15px
+        &__body
+            padding: 15px
+
+.siblings
+    .clear
+        clear: both
+    .box
+        max-width: 45%
+        &--left
+            float: left
+        &--right
+            float: right
+            text-align: right
+            .box__title
+                left: auto
+                margin-left: auto
+                right: -2px
+            .btn
+                margin-left: auto
 .center
     .btn
         margin: auto
@@ -118,7 +146,6 @@ section.container
     justify-content: space-between
     +mobile
         display: block
-
     .box
         width: 30%
         margin-bottom: 100px
@@ -127,10 +154,6 @@ section.container
         &::before
             top: 10px
             left: 10px
-        time
-            display: block
-            font-size: px2rem(12)
-            padding-bottom: 40px
         &__title
             max-width: 90%
             padding: 20px
@@ -146,18 +169,22 @@ section.container
     justify-content: space-between
     .partner
         background: white
-        position: relative
         border: $border-width solid $dark
-        width: 18%
         padding: 20px
+        position: relative
+        width: 18%
         .is-darken &
             border-color: $light
         img
-            margin: auto
             display: block
+            margin: auto
             max-width: 90%
 
 .post
     img, iframe, video
         margin: 30px auto
         max-width: 100%
+    &__siblings
+        h1
+            font-size: px2rem(30)
+            text-align: center

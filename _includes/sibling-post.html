@@ -1,0 +1,25 @@
+<div class="box box--light 
+    {% if include.previous %}
+        box--right
+    {% else %}
+        box--left
+    {% endif %}
+    ">
+    <div class="box__content">
+        <h2 class="box__title h3">
+            <small>
+                {% if include.previous %}
+                    Actualité précédente
+                {% else %}
+                    Actualité suivante
+                {% endif %}
+            </small><br>
+            {% if include.post.title %}{{ include.post.title }}{% else %}{{ site.post.title }}{% endif %}
+        </h2>
+        <div class="box__body">
+            <time datetime="{{include.post.post_date | date_to_xmlschema}}">{{ include.post.post_date | localize: "Publié le %-d %B %Y", "fr" }}</time>
+            {{ include.post.content | markdownify | strip_html | newline_to_br | strip_first_br | truncatewords: 20 }}
+            <a class="btn" href="{{ include.post.url }}">En savoir plus</a>
+        </div>
+    </div>
+</div>

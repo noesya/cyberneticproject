@@ -3,6 +3,8 @@ backend:
   branch: main
 local_backend: true
 
+locale: fr
+
 media_folder: "assets/images/uploads" # Media files will be stored in the repo under images/uploads
 
 slug:
@@ -34,6 +36,8 @@ collections:
     folder: '_news'
     extension: html
     create: true
+    sortable_fields: 
+      - post_date
     editor:
       preview: false
     fields: 
@@ -43,10 +47,9 @@ collections:
       - label: 'Post date'
         name: 'post_date'
         widget: 'date'
-        format: 'Do MM YY'
       - name: seo
         widget: object
         fields: *META
       - name: body
-        label: Content
+        label: Body
         widget: markdown

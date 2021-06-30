@@ -20,3 +20,4 @@ collections:
   news:
     output: true
     permalink: /actualites/:name
+    sort_by: post_date
