@@ -13,6 +13,7 @@ header
         align-items: baseline
         display: flex
         justify-content: space-between
+        padding-top: 10px
         position: relative
 
     .logo
@@ -36,6 +37,7 @@ header
     #menu
         li
             display: inline-block
+            vertical-align: middle
             &:after
                 content: " / "
             &:after
@@ -53,6 +55,9 @@ header
                         height: 100%
                     .is-darken &
                         color: $dark
+            #switch-colors
+                cursor: pointer
+
 
     +mobile
         .mobile_button

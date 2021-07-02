@@ -147,13 +147,15 @@ section.container
     +mobile
         display: block
     .box
-        width: 30%
-        margin-bottom: 100px
         +mobile
             width: auto
+        margin-bottom: 100px
+        width: 30%
         &::before
-            top: 10px
             left: 10px
+            top: 10px
+        &__content
+            height: 100%
         &__title
             max-width: 90%
             padding: 20px
