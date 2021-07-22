@@ -33,7 +33,6 @@ image: &IMAGE_FIELDS
 markdown_light_button: &MARKDOWN_LIGHT_BUTTONS
   [heading-three, heading-four, heading-five, heading-six, bulleted-list, bold, italic, link]
 
-
 collections:
   - name: 'pages'
     label: 'Pages'
@@ -112,8 +111,9 @@ collections:
           - name: text
             label: texte
             required: false
+            widget: text
           - name: image
-            label: visuel
+            label: Visuel
             widget: image
             required: false
 

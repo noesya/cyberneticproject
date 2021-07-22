@@ -80,6 +80,10 @@ a
     column-count: 2
 
 .text
+    img
+        max-width: 100%
+        display: block
+        margin: 10px 0
     strong
         font-weight: bold
     em
@@ -120,7 +124,9 @@ a
                     &:before
                         animation: rotate-point-list 5s #{$i / 10}s infinite alternate
 
-
+    &--small
+        p
+            font-size: 95%
 
 @keyframes rotate-point-list
     0%

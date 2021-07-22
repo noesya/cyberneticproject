@@ -32,14 +32,30 @@ layout: default
   </div>
 
   <section class="container">
+    <div class="row quote">
+      <div class="col-5 pl-0">
+        <img src="{{ page.quote.image }}" alt="">
+      </div>
+      <div class="col-7">
+        <p>
+          <q>
+            {{ page.quote.text }}
+          </q>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="container">
     <div class="row">
       <div class="col-8">
         <div class="text">
           {{ page.content | markdownify }}
         </div>
       </div>
-      <div class="col-12">
-        <div class="text">
+      <div class="col-4 side">
+        <div class="text text--small">
           {{ page.side | markdownify }}
         </div>
       </div>

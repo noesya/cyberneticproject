@@ -222,3 +222,36 @@ section.container
         h1
             font-size: px2rem(30)
             text-align: center
+
+.quote
+    align-items: center
+    background: white
+    border-left: 6px solid $violet
+    border-radius: 0 20px 20px 0
+    font-family: Georgia, sans-serif
+    position: relative
+    img
+        display: block
+        height: 100%
+        object-fit: cover
+        width: 100%
+    q
+        display: block
+        font-size: px2rem(30)
+        font-style: italic
+        line-height: 1.3
+        padding: 10px 20px
+        position: relative
+    &::before
+        color: $violet
+        content: '‘‘'
+        font-size: 400px
+        left: 32%
+        letter-spacing: -20px
+        position: absolute
+        top: -100px
+        z-index: 3
+
+.side
+    background: rgba($violet, 0.1)
+    padding: 20px
