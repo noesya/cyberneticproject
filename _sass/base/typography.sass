@@ -7,12 +7,13 @@ body
     -moz-osx-font-smoothing: grayscale
     -webkit-font-smoothing: antialiased
     font-family: $font-primary
-    font-weight: normal
+    font-weight: 500
     text-rendering: geometricPrecision
 
-p
-    font-size: px2rem(16)
-    line-height: px2rem(24)
+p, li
+    font-size: px2rem(17)
+    line-height: 1.6333333333
+
 
 h1, h2, h3,
 .h1, .h2
@@ -21,13 +22,16 @@ h1, h2, h3,
 
 h1, .h1
     font-size: px2rem(40)
+    margin-bottom: px2rem(40)
 
 h2, .h2
-    font-size: px2rem(40)
+    font-size: px2rem(30)
+    margin-bottom: px2rem(20)
 
 h3, .h3
     font-size: px2rem(20)
     line-height: px2rem(25)
+    margin-bottom: px2rem(15)
 
 
 .link
@@ -68,8 +72,58 @@ h3, .h3
         border-color: $light
         color: $light
 
+a
+    color: inherit
+    text-decoration: none
+
+.text-cols-2
+    column-count: 2
+
 .text
     strong
         font-weight: bold
     em
         font-style: italic
+    p
+        padding-bottom: 20px
+    ul
+        padding: 10px
+        li
+            margin-bottom: 10px
+            padding-left: 10px
+            position: relative
+            // &::before
+            //     border-color: transparent transparent $violet transparent
+            //     border-style: solid
+            //     border-width: 0 3px 5px 3px
+            //     content: ''
+            //     display: block
+            //     height: 4px
+            //     left: 0px
+            //     position: absolute
+            //     top: 6px
+            //     transform-origin: 3px 3px
+            //     width: 0
+            //     height: 0
+            &::before
+                background: $violet
+                content: ''
+                display: block
+                height: 4px
+                left: 0px
+                position: absolute
+                top: 13px
+
+                width: 4px
+            @for $i from 1 through 30
+                &:nth-child(#{$i})
+                    &:before
+                        animation: rotate-point-list 5s #{$i / 10}s infinite alternate
+
+
+
+@keyframes rotate-point-list
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(1000deg)

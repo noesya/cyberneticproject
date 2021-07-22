@@ -7,6 +7,34 @@ seo:
   description: This is a meta description
 ---
 
+<section class="introduction">
+    <div class="introduction__top">
+        <h1 class="logo">
+            <img src="/assets/images/cybernetic_logo.png" alt="CyberNeTic Project">
+        </h1>
+    </div>
+    <div class="container">
+        <div class="introduction__post">
+            {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
+            {% for post in posts limit:1 %}
+                {% include sticky-post.html post=post %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="container">
+    <div class="news">
+        {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
+        {% for post in posts limit:3 offset:1 %}
+            {% include post.html post=post %}
+        {% endfor %}
+    </div>
+    <section class="center">
+        <a href="/actualites" class="btn">Voir toutes les actualités</a>
+    </section>
+</section>
+
+
 <section class="container">
     <div class="box box--img">
         <div class="box__content">

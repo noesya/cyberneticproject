@@ -5,12 +5,8 @@
         transform: translateY(50px)
 
 section.container
-    margin-top: 100px
-    & > h1
-        padding-bottom: 50px
-        a
-            text-decoration: none
-            color: inherit
+    margin-bottom: 100px
+
 .box
     position: relative
     &::before
@@ -31,28 +27,34 @@ section.container
         display: block
         font-size: px2rem(12)
         padding-bottom: 40px
+    &__image
+        img
+            height: auto
+            max-width: 100%
     &__content
         background: $light
-        position: relative
         border: $border-width solid $dark
+        height: 100%
+        position: relative
         z-index: 2
         .is-darken &
             background: $dark
             border-color: $light
         &::after
             animation: rolling-square 5s alternate infinite
+            border: 2px dashed $light
             content: ''
             display: block
-            position: absolute
-            width: 0px
             height: 50px
-            left: -3px
-            border: 5px dashed $light
+            left: -4px
+            position: absolute
             top: 50%
+            width: 0px
             z-index: 10
             .is-darken &
                 border-color: $dark
     &__title
+        background: $light
         border: $border-width solid $dark
         left: -$border-width
         padding: 20px 40px 20px
@@ -120,6 +122,31 @@ section.container
             padding: 15px
         &__body
             padding: 15px
+
+.box--sticky
+    &::before
+        display: none
+    .box
+        &__title--sticky
+            position: absolute
+        &__content
+            display: flex
+        &__image
+            width: 70%
+            img
+                height: 100%
+                object-fit: cover
+                width: 100%
+        &__body
+            width: 30%
+            .box__title
+                border: 0
+                padding: 0
+                width: auto
+            p
+                column-count: 1
+
+
 
 .siblings
     .clear

@@ -12,6 +12,11 @@ defaults:
       type: "news"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: "technics"
+    values:
+      layout: "technic"
 
 collections:
   pages:
@@ -21,3 +26,7 @@ collections:
     output: true
     permalink: /actualites/:name
     sort_by: post_date
+  technics:
+    output: true
+    permalink: /fiches-technique/:name
+    sort_by: name

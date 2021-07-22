@@ -1,10 +1,16 @@
 header:
   - title: Accueil
     slug: /
-  - title: Actualités
-    slug: /actualites
   - title: Le projet
     slug: /projet
+  - title: Actualités
+    slug: /actualites
+  - title: Fiches techniques
+    slug: /fiches-techniques
+  - title: Journées d'études
+    slug: /journees-d-etudes
+  - title: Ressources
+    slug: /ressources
 
 footer:
   - title: Équipe
@@ -15,8 +21,7 @@ footer:
     slug: /informations
   - title: Mentions légales
     slug: /mentions-legales
-  - title: Charte éthique
-    slug: /charte-ethique
+
 social:
   - title: Facebook
     slug: https://www.facebook.com/rebootevent2021

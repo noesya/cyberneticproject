@@ -1,0 +1,97 @@
+---
+layout: default
+---
+
+<main class="technic">
+  <div class="page-title">
+    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+    <h2>Etiologie des pratiques de cyberharcèlement</h2>
+    <span class="page-title__bg">/rɪˈvendʒ ˌpɔːn/</span>
+  </div>
+
+  <div class="technic__intro">
+    <section class="container">
+      <div class="row">
+        <div class="col-3">
+          <div class="text">
+            <h2><em>Synonymes</em></h2>
+            <ul>
+              {% for term in page.synonymous %}
+                <li>{{ term }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+  
+        <div class="col-9 text">
+          <h2>Définition</h2>
+          {{ page.definition | markdownify }}
+        </div>
+      </div>
+    </section>  
+  </div>
+
+  <section class="container">
+    <div class="row">
+      <div class="col-8">
+        <div class="text">
+          {{ page.content | markdownify }}
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="text">
+          {{ page.side | markdownify }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h1>Cadre légal</h1>
+    <div class="text">
+      {{ page.legals | markdownify }}
+    </div>
+  </section>
+
+  <section class="container">
+    <h1>Ressources</h1>
+    <div class="text">
+      {{ page.ressources | markdownify }}
+    </div>
+  </section>
+
+  <section class="container post__siblings">
+    <h1>Actualités associées</h1>
+    <nav class="siblings">
+
+      {% if page.collection %}
+        {% assign collection = site.news | posts_passed: 'post_date' %}
+        {% assign prev = false %}
+        {% assign next = false %}
+
+        {% for item in collection %}
+          {% if item.title == page.title %}
+            {% unless forloop.first %}
+              {% assign prev = iterator %}
+            {% endunless %}
+
+            {% unless forloop.last %}
+              {% assign next = collection[forloop.index] %}
+            {% endunless %}
+          {% endif %}
+
+          {% assign iterator = item %}
+        {% endfor %}
+      {% endif %}
+
+
+      {% if next %}
+        {% include sibling-post.html post=next %}
+      {% endif %}
+      {% if prev %}
+        {% include sibling-post.html post=prev previous=true %}
+      {% endif %}
+      <div class="clear"></div>
+    </nav>
+  </section>
+</main>
