@@ -227,7 +227,7 @@ section.container
     align-items: center
     background: white
     border-left: 6px solid $violet
-    border-radius: 0 20px 20px 0
+    // border-radius: 0 20px 20px 0
     font-family: Georgia, sans-serif
     position: relative
     img
@@ -235,13 +235,16 @@ section.container
         height: 100%
         object-fit: cover
         width: 100%
+    p
+        padding: 10px 20px
     q
         display: block
         font-size: px2rem(30)
         font-style: italic
         line-height: 1.3
-        padding: 10px 20px
         position: relative
+        &:after, &:before
+            background: white
     &::before
         color: $violet
         content: '‘‘'

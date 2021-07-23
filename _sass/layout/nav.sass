@@ -28,6 +28,11 @@ header
         z-index: 10
         +mobile
             font-size: px2rem(20)
+        &::after, &::before
+            background: white
+            padding-top: 6px
+        &:hover
+            color: $violet
 
     .mobile_button
         color: inherit
@@ -37,21 +42,22 @@ header
         li
             display: inline-block
             vertical-align: middle
-            &:after
-                content: " / "
-            &:after
-                content: ""
             span, a
                 padding: 18px
             a
-                @extend .link
+                // @extend .link
                 color: inherit
                 display: block
                 text-decoration: none
+                &::after, &::before
+                    background: white
+                    padding: 18px
+                &:hover
+                    color: $violet
                 &.active
-                    color: $light
-                    &::after
-                        height: 100%
+                    color: $violet
+                    // &::after
+                    //     height: 100%
                     .is-darken &
                         color: $dark
             #switch-colors

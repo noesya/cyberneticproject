@@ -1,6 +1,6 @@
 <header>
   <nav class="container">
-    <a class="logo" href="/">CyberNeTic</a>
+    <a class="logo glitch glitch--hovered" data-text="CyberNeTic" href="/">CyberNeTic</a>
     <a href="#menu" class="mobile_button mobile_button__open">Menu</a>
 
     <div id="menu">
@@ -17,7 +17,7 @@
           {% endif %}
           <li>
             {% if item.slug %}
-              <a class="{{ class }}" href="{{ item.slug }}">{{ item.title }}</a>
+              <a class="{{ class }} glitch glitch--hovered" data-text="{{ item.title }}" href="{{ item.slug }}">{{ item.title }}</a>
             {% else %}
               <span>{{ item.title }}</span>
             {% endif %}
