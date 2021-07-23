@@ -147,7 +147,9 @@ var Dots = function (engine) {
     var dy = (this.engine.height - HEIGHT * CELL_SIZE) / 2 | 0;
 
     var size = point_color === COLOR_1 ? 1 : 0.5
+    // ctx.fillStyle = point_color + Math.round(y / HEIGHT * 100);
     ctx.fillStyle = point_color;
+
     ctx.beginPath();
     ctx.arc(x * CELL_SIZE + dx, y * CELL_SIZE + dy, 5, 0, Math.PI * 2, true);
     ctx.fill();

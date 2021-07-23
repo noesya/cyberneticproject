@@ -23,15 +23,21 @@ h1, h2, h3,
 h1, .h1
     font-size: px2rem(40)
     margin-bottom: px2rem(40)
+    +mobile
+        font-size: px2rem(30)
 
 h2, .h2
     font-size: px2rem(30)
     margin-bottom: px2rem(20)
+    +mobile
+        font-size: px2rem(25)
 
 h3, .h3
     font-size: px2rem(20)
     line-height: px2rem(25)
     margin-bottom: px2rem(15)
+    +mobile
+        font-size: px2rem(20)
 
 
 .link
@@ -75,6 +81,7 @@ h3, .h3
 a
     color: inherit
     text-decoration: none
+    word-break: break-all
 
 .text-cols-2
     column-count: 2

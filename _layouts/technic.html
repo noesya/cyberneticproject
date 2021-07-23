@@ -12,7 +12,7 @@ layout: default
   <div class="technic__intro">
     <section class="container">
       <div class="row">
-        <div class="col-3">
+        <div class="col-md-3">
           <div class="text">
             {% if page.synonymous.size > 0 %}
               <h2>
@@ -46,7 +46,7 @@ layout: default
           </div>
         </div>
   
-        <div class="col-9 text pl-5">
+        <div class="col-md-9 text pl-md-5">
           <h2>Définition</h2>
           {{ page.definition | markdownify }}
         </div>
@@ -56,10 +56,10 @@ layout: default
 
   <section class="container">
     <div class="row quote">
-      <div class="col-5 pl-0">
+      <div class="col-md-5 pl-0">
         <img src="{{ page.quote.image }}" alt="">
       </div>
-      <div class="col-7">
+      <div class="col-md-7">
         <p>
           <q data-text="{{ page.quote.text }}" class="glitch">
             {{ page.quote.text }}
@@ -72,12 +72,12 @@ layout: default
 
   <section class="container">
     <div class="row">
-      <div class="col-8">
+      <div class="col-12 col-md-8">
         <div class="text">
           {{ page.content | markdownify }}
         </div>
       </div>
-      <div class="col-4">
+      <div class="col-12 col-md-4">
         <div class="box">
           <div class="box__content p-3">
             <div class="text text--small">
