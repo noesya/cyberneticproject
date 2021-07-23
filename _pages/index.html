@@ -22,7 +22,7 @@ seo:
         </div>
     </div>
 </section>
-<section class="container">
+<section class="container mt-5">
     <div class="news">
         {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
         {% for post in posts limit:3 offset:1 %}
