@@ -92,6 +92,21 @@ collections:
         required: false
         widget: list
 
+      - name: downloads
+        label: Téléchargements
+        required: false
+        widget: list
+        fields: 
+          - name: name
+            label: string
+            required: false
+          - name: file
+            widget: file
+            required: false
+            media_library:
+              - allow_multiple: false
+
+
       - name: definition
         label: Définition
         required: false
