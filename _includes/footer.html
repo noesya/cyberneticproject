@@ -1,5 +1,50 @@
 <footer class="footer">
-    <div class="text-center">
-        Mentions légales
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-7 col-md-2">
+                <img src="/assets/images/cybernetic_logo.png" alt="CyberNeTic Project">
+            </div>
+            <div class="col-md-3 offset-md-4">
+                <h2>Partenaires</h2>
+                <ul>
+                    {% for item in site.data.nav.partners %}
+                    <li>
+                    {% if item.slug %}
+                        <a href="{{ item.slug }}">{{ item.title }}</a>
+                    {% else %}
+                        <span>{{ item.title }}</span>
+                    {% endif %}
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h2>Liens</h2>
+                <ul>
+                {% for item in site.data.nav.header %}
+                    {% assign class = nil %}
+                    {% if page.url == '/' and item.slug == '/' %}
+                    {% assign class = ' active' %}
+                    {% else %}
+                    {% if item.slug != '/' and (page.url == item.slug or page.url contains item.slug) %}
+                        {% assign class = ' active' %}
+                    {% endif %}
+                    {% endif %}
+                    <li>
+                    {% if item.slug %}
+                        <a class="{{ class }}" data-text="{{ item.title }}" href="{{ item.slug }}">{{ item.title }}</a>
+                    {% else %}
+                        <span>{{ item.title }}</span>
+                    {% endif %}
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <p class="copyrights pt-5 pb-1">
+            <small>
+                mentions légales - copyrights - crédits
+            </small>
+        </p>
     </div>
 </footer>

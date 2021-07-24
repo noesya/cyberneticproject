@@ -1,12 +1,13 @@
 .technic
     .page-title
-        background: $light
-        color: $violet
+        color: $title-color
+        text-shadow: 0 0 20px rgba($title-color, 0.5)
         overflow: hidden
         padding: 100px 10px
         position: relative
         text-align: center
         #circuit
+            opacity: 0.3
             position: absolute
             top: 0
             left: 0
@@ -27,20 +28,19 @@
             z-index: 0
         h1
             font-size: px2rem(100)
-            font-weight: 900
+            letter-spacing: 10px
             margin-bottom: 20px
             +mobile
                 font-size: px2rem(50)
-
         h1, h2
             position: relative
             z-index: 5
+        .glitch
+            color: $title-color
+            &:after, &:before
+                color: $title-color
     &__intro
-        background: $light
         padding: 50px 0
     .text
         h2
             position: relative
-            width: max-content
-
-    

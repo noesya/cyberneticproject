@@ -22,6 +22,14 @@ footer:
   - title: Mentions légales
     slug: /mentions-legales
 
+partners:
+  - title: PJGN
+  - title: Orange
+  - title: Nouvelle Aquitaine
+  - title: IUT Bordeaux Montaigne
+  - title: Casden
+  
+
 social:
   - title: Facebook
     slug: https://www.facebook.com/rebootevent2021
