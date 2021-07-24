@@ -96,11 +96,11 @@ var Engine = function (el, Experiment) {
 
 var Dots = function (engine) {
   this.engine = engine;
-  var COLOR_1 = '#ffffff50';
-  var COLOR_2 = '#00000050';
+  var COLOR_1 = '#ffffff';
+  var COLOR_2 = '#000000';
   var COLOR_3 = 'red';
   var COLOR_4 = 'blue';
-  var CELL_SIZE = 30;
+  var CELL_SIZE = 20;
   var point_color = COLOR_1;
   var WORLD = [];
   var WIDTH = this.engine.width / CELL_SIZE | 0;
@@ -108,19 +108,28 @@ var Dots = function (engine) {
   var MAX_QTY = WIDTH * HEIGHT;
   var qty = 0;
   var tick = 0;
-  var tick2 = 0;
   var pass = 0;
   /**
    * This function is called after we created your pobject
    */
   this.init = function () {
-    for (var x = 0; x < WIDTH; ++x) {
+    for (var x = 0; x < WIDTH; x += 1) {
       WORLD[x] = [];
-      for (var y = 0; y < HEIGHT; ++y) {
+      for (var y = 0; y < HEIGHT; y += 1) {
         WORLD[x][y] = -1;
+        this.addPoint(x, y, 'white');
       }
     }
-    this.animate();
+
+    this.next = {
+      x: Math.round(Math.random() * WIDTH),
+      y: Math.round(Math.random() * HEIGHT),
+    }
+
+    // this.next = {
+    //   x: WIDTH),
+    //   y: HEIGHT,
+    // }
   };
 
   var ctx = engine.ctx;
@@ -129,12 +138,9 @@ var Dots = function (engine) {
    * This function is called every frames
    */
   this.run = function () {
-    if (qty > MAX_QTY * 2) {
-      this.empty();
-    }
-    this.animate();
-
+    // this.animate();
     // this.fill();
+    this.propagate();
   };
 
 
@@ -142,8 +148,7 @@ var Dots = function (engine) {
     tick += 1;
     // if (tick % 10 !== 0) return;
 
-    if (tick % 100 === 0) {
-      // this.fill();
+    if (tick % 1000 === 0) {
       // this.engine.ctx.clearRect(0, 0, this.engine.width, this.engine.height);
     }
 
@@ -157,9 +162,9 @@ var Dots = function (engine) {
   }
 
   this.fill = function () {
-    // tick += 1;
+    tick += 1;
 
-    // if (tick % 30 !== 0) return;
+    if (tick % 30 !== 0) return;
 
     this.engine.ctx.clearRect(0, 0, this.engine.width, this.engine.height);
 
@@ -174,6 +179,7 @@ var Dots = function (engine) {
     var dx = (this.engine.width - WIDTH * CELL_SIZE) / 2 | 0;
     var dy = (this.engine.height - HEIGHT * CELL_SIZE) / 2 | 0;
 
+
     var size = point_color === COLOR_1 ? 1 : 0.5
     // ctx.fillStyle = point_color + Math.round(y / HEIGHT * 100);
     ctx.fillStyle = point_color;
@@ -181,50 +187,146 @@ var Dots = function (engine) {
     if (Math.random() > 0.9) {
       ctx.fillStyle = COLOR_3;
     }
-    ctx.shadowBlur = 20;
+    ctx.shadowBlur = 10;
     ctx.shadowColor = ctx.fillStyle;
     
 
     // if (x % 2 == 0 && y % 2 == 0) {
-      this.addLine(x * CELL_SIZE + dx, y * CELL_SIZE + dy, ctx.fillStyle);
 
       ctx.beginPath();
       ctx.arc(x * CELL_SIZE + dx, y * CELL_SIZE + dy, 5, 0, Math.PI * 2, true);
       ctx.fill();
+      // this.addLine(x * CELL_SIZE + dx, y * CELL_SIZE + dy, ctx.fillStyle);
       
     // }
 
     qty += 1;
   }
 
-  this.empty = function () {
-    ctx.clearRect(tick2 * CELL_SIZE, 0, CELL_SIZE, this.engine.height);
+  this.propagate = function () {
+    var x = this.next.x;
+    var y = this.next.y;
+    tick += 1;
+    // switch(tick % 4) {
+    //   case 0: 
+    //     y -= 1;
+    //     break;
+    //   case 1:
+    //     x +=  1;
+    //     break;
+    //   case 2:
+    //     y +=  1;
+    //     break;
+    //   case 3:
+    //     x -=  1;
+    //     this.last.x = x;
+    //     this.last.y = y;
+    //     tick = 0;
+    //     break;
+    // }
 
-    tick2 += 1;
-    
-    if (tick2 > WIDTH * 2) {
-      qty = 0;
-      tick2 = 0;
+    // console.log(x, y);
+
+    if (x < WIDTH && y < HEIGHT && x >= 0 && y >= 0) {
+      this.addPoint(this.next.x, this.next.y, 'red');
+      WORLD[x][y] = 0;
     }
 
-    // ctx.fillStyle = COLOR_2;
-    // ctx.shadowBlur = 0;
-    // ctx.beginPath();
-    // ctx.arc(x * CELL_SIZE + dx, y * CELL_SIZE + dy, 5, 0, Math.PI * 2, true);
-    // ctx.fill();
-
+    this.getNext();
   }
 
+  // this.getNext = function () {
+  //   var x = 0,
+  //       y = 0,
+  //       random = Math.random(),
+  //       founded = false;
 
-  this.empty = function () {
-    ctx.clearRect(0, tick2 * CELL_SIZE, this.engine.width, CELL_SIZE);
+  //   if (random < 0.25) {
+  //     for(x = 0; x < WIDTH; x += 1) {
+  //       for(y = 0; y < HEIGHT; y += 1) {
+  //         if (WORLD[x][y] === 0 && !founded) {
+  //           console.log(founded);
+  //           founded = true;
+  //           this.next.x = x;
+  //           this.next.y = y;
+  //           this.next.x -= 1;
+  //         }
+  //       }
+  //     }
+  //   } else if (random < 0.5) {
+  //     for(x = WIDTH; x > 0; x -= 1) {
+  //       for(y = 0; y < HEIGHT; y += 1) {
+  //         if (WORLD[x][y] === 0 && !founded) {
+  //           founded = true;
+  //           this.next.x = x;
+  //           this.next.y = y;
+  //           this.next.x += 1;
+  //         }
+  //       }
+  //     }
+  //   } else if (random < 0.75) {
+  //     for(x = 0; x < WIDTH; x += 1) {
+  //       for(y = HEIGHT; y > 0; y -= 1) {
+  //         if (WORLD[x][y] === 0 && !founded) {
+  //           founded = true;
+  //           this.next.x = x;
+  //           this.next.y = y;
+  //           this.next.y += 1;
+  //         }
+  //       }
+  //     }
+  //   } else {
+  //     for(x = WIDTH; x > 0; x -= 1) {
+  //       for(y = HEIGHT; y > 0; y -= 1) {
+  //         if (WORLD[x][y] === 0 && !founded) {
+  //           founded = true;
+  //           this.next.x = x;
+  //           this.next.y = y;
+  //           this.next.y -= 1;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
-    tick2 += 1;
-    
-    if (tick2 > HEIGHT) {
-      qty = 0;
-      tick2 = 0;
+
+  this.getNext = function () {
+    var x = this.next.x,
+        y = this.next.y,
+        random = Math.random(),
+        founded = false,
+        possibilities = [];
+
+    if (x < WIDTH - 1) {
+      if(WORLD[x + 1][y] !== 0) possibilities.push([x + 1, y]); 
     }
+    if (x > 0) {
+      if(WORLD[x - 1][y] !== 0) possibilities.push([x - 1, y]); 
+    }
+    if (y < HEIGHT - 1) {
+      if(WORLD[x][y + 1] !== 0) possibilities.push([x, y + 1]); 
+    }
+    if (y > 0) {
+      if(WORLD[x][y - 1] !== 0) possibilities.push([x, y - 1]); 
+    }
+
+    if (possibilities.length > 0) {
+      founded = possibilities[Math.round(Math.random() * (possibilities.length -1))];
+      this.next.x = founded[0];
+      this.next.y = founded[1];
+    } else {
+      this.next.x = Math.round(Math.random() * WIDTH);
+      this.next.y = Math.round(Math.random() * HEIGHT);
+    }
+  }
+
+  this.addPoint = function (x, y, color) {
+    ctx.fillStyle = color;
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = color;
+    ctx.beginPath();
+    ctx.arc(x * CELL_SIZE, y * CELL_SIZE, 5, 0, Math.PI * 2, true);
+    ctx.fill();
   }
 
   this.addLine = function (x, y, color) {

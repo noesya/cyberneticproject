@@ -44,8 +44,8 @@ h3, .h3
         font-size: px2rem(20)
 
 .title-box
-    background: $title-color
-    box-shadow: 0 0 11px 6px rgba($orange, 0.3)
+    background: $front
+    box-shadow: 0 0 20px 6px rgba($front, 0.2)
     color: $back
     padding: 7px 10px 10px
     width: 100%
@@ -78,14 +78,21 @@ h3, .h3
             color: $front
 
 .btn
-    @extend .link
+    background: $front
     border: $border-width solid $front
-    color: $front
+    box-shadow: 0 0 20px 3px rgba($front, 0.4)
+    color: $back
+    +text-shadow($back)
     display: table
     font-family: $font-secondary
-    font-weight: bold
     padding: 20px
     text-decoration: none
+    transition: 0.1s
+    &:hover
+        background: $red
+        border-color: $red
+        box-shadow: 0 0 20px 3px rgba($red, 0.4)
+
     .is-darken &
         border-color: $back
         color: $back
@@ -124,7 +131,7 @@ a
             padding-left: 15px
             position: relative
             &::before
-                background: $title-color
+                background: $front
                 content: ''
                 display: inline-block
                 margin-right: 5px

@@ -19,7 +19,9 @@
         <div class="box__body">
             <time datetime="{{include.post.post_date | date_to_xmlschema}}">{{ include.post.post_date | localize: "Publié le %-d %B %Y", "fr" }}</time>
             {{ include.post.content | markdownify | strip_html | newline_to_br | strip_first_br | truncatewords: 20 }}
-            <a class="btn" href="{{ include.post.url }}">En savoir plus</a>
+            <a data-text="En savoir plus" class="btn" href="{{ include.post.url }}">
+                En savoir plus
+            </a>
         </div>
     </div>
 </div>

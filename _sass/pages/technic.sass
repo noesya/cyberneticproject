@@ -1,13 +1,13 @@
 .technic
     .page-title
-        color: $title-color
-        text-shadow: 0 0 20px rgba($title-color, 0.5)
+        color: $front
+        text-shadow: 0 0 20px rgba($front, 0.5)
         overflow: hidden
         padding: 100px 10px
         position: relative
         text-align: center
         #circuit
-            opacity: 0.3
+            opacity: 0.4
             position: absolute
             top: 0
             left: 0
@@ -36,9 +36,10 @@
             position: relative
             z-index: 5
         .glitch
-            color: $title-color
+            color: $front
             &:after, &:before
-                color: $title-color
+                background: none
+                color: $front
     &__intro
         padding: 50px 0
     .text
