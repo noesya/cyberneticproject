@@ -229,7 +229,6 @@ var Dots = function (engine) {
 
   this.addLine = function (x, y, color) {
     var dir = Math.ceil(Math.random() * 4);
-    console.log(dir);
 
     ctx.beginPath();
     ctx.strokeStyle = color;
