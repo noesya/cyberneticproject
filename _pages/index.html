@@ -57,15 +57,15 @@ seo:
 </section>
 
 <section class="container">
-    <h1><a href="/actualites">Actualités</a></h1>
+    <h1><a href="/fiches-techniques">Fiches Techniques</a></h1>
     <div class="news">
-        {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
+        {% assign posts = site.technics %}
         {% for post in posts limit:3 %}
             {% include post.html post=post %}
         {% endfor %}
     </div>
     <section class="center">
-        <a href="/actualites" class="btn">Voir toutes les actualités</a>
+        <a href="/fiches-techniques" class="btn">Voir toutes les fiches</a>
     </section>
 </section>
 

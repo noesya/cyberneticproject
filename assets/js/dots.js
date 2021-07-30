@@ -170,7 +170,7 @@ var Dots = function (engine) {
     }
   }
 
-  this.point = function (x, y) {
+  this.point = function (x, y, forceColor) {
     var dx = (this.engine.width - WIDTH * CELL_SIZE) / 2 | 0;
     var dy = (this.engine.height - HEIGHT * CELL_SIZE) / 2 | 0;
 
@@ -180,6 +180,10 @@ var Dots = function (engine) {
 
     if (Math.random() > 0.9) {
       ctx.fillStyle = COLOR_3;
+    }
+
+    if (forceColor) {
+      ctx.fillStyle = forceColor;
     }
     ctx.shadowBlur = 20;
     ctx.shadowColor = ctx.fillStyle;
@@ -212,13 +216,15 @@ var Dots = function (engine) {
     // ctx.beginPath();
     // ctx.arc(x * CELL_SIZE + dx, y * CELL_SIZE + dy, 5, 0, Math.PI * 2, true);
     // ctx.fill();
-
   }
 
 
   this.empty = function () {
     ctx.clearRect(0, tick2 * CELL_SIZE, this.engine.width, CELL_SIZE);
 
+    for (var i = 0; i < WIDTH; i += 1) {
+      // this.point(i, tick2, COLOR_2)
+    }
     tick2 += 1;
     
     if (tick2 > HEIGHT) {
@@ -226,6 +232,19 @@ var Dots = function (engine) {
       tick2 = 0;
     }
   }
+  // this.empty = function () {
+  //   ctx.clearRect(tick2 % WIDTH *CELL_SIZE, (tick2 / WIDTH)*CELL_SIZE, CELL_SIZE, CELL_SIZE);
+
+  //   // for (var i = 0; i < WIDTH; i += 1) {
+  //   //   this.point(i, tick2, COLOR_3)
+  //   // }
+  //   tick2 += 1;
+    
+  //   if (tick2 > HEIGHT*WIDTH) {
+  //     qty = 0;
+  //     tick2 = 0;
+  //   }
+  // }
 
   this.addLine = function (x, y, color) {
     var dir = Math.ceil(Math.random() * 4);

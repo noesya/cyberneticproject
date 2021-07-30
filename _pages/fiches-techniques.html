@@ -1,0 +1,12 @@
+---
+title: "Fiches techniques"
+---
+<section class="container">
+    <h1>Les Fiches Techniques</h1>
+    <div class="news">
+        {% assign posts = site.technics  %}
+        {% for post in posts %}
+            {% include post.html post=post %}
+        {% endfor %}
+    </div>
+</section>
