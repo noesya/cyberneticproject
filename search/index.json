@@ -1,0 +1,26 @@
+---
+layout: none
+---
+[
+  {% for post in site.news %}
+    {
+      "title"    : "{{ post.title | escape }}",
+      "type"     : "Actualité",
+      "category" : "{{ post.category }}",
+      "tags"     : "{{ post.tags | join: ', ' }}",
+      "url"      : "{{ site.baseurl }}{{ post.url }}",
+      "date"     : "{{ post.date }}"
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  ,
+  {% for post in site.technics %}
+    {
+      "title"    : "{{ post.title | escape }}",
+      "type"     : "Fiche Technique",
+      "category" : "{{ post.category }}",
+      "tags"     : "{{ post.tags | join: ', ' }}",
+      "url"      : "{{ site.baseurl }}{{ post.url }}",
+      "date"     : "{{ post.date }}"
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

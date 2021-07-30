@@ -286,5 +286,8 @@ var Dots = function (engine) {
   };
 };
 
-var engine = new Engine(document.getElementById('circuit'), Dots);
-engine.start();
+var dom = document.getElementById('circuit');
+if (dom) {
+  var engine = new Engine(document.getElementById('circuit'), Dots);
+  engine.start();
+}

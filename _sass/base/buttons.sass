@@ -1,0 +1,19 @@
+
+.btn
+    background: $front
+    border: $border-width solid $front
+    box-shadow: 0 0 20px 3px rgba($front, 0.4)
+    color: $back
+    display: table
+    font-family: $font-secondary
+    padding: 20px
+    text-decoration: none
+    transition: 0.1s
+    &:hover
+        background: $red
+        border-color: $red
+        box-shadow: 0 0 20px 3px rgba($red, 0.4)
+
+    .is-darken &
+        border-color: $back
+        color: $back

@@ -1,6 +1,6 @@
 header
     background: $back
-    // border-bottom: $border-width solid $front
+    border-bottom: $border-width solid $front
     font-family: $font-secondary
     // font-weight: bold
     position: sticky
@@ -122,3 +122,77 @@ footer
     .copyrights
         font-size: 14px
         text-align: center
+
+.search
+    background: $back
+    border-left: $border-width solid $front
+    border-top: $border-width solid $front
+    height: calc(100% - 75px)
+    max-width: 100%
+    overflow: hidden
+    position: fixed
+    right: -1px
+    top: 75px
+    transition: width 0.33s
+    width: 0
+    &__body
+        max-height: 100%
+        padding: 30px
+    &__results
+        max-height: calc(100vh - 220px)
+        overflow-y: auto
+    .search-opened &
+        width: 50%
+    input
+        -webkit-appearance: none
+        background: $back
+        border: 0
+        border-bottom: 1px solid $front
+        border-radius: 0
+        color: $front
+        display: block
+        font-family: $font-secondary
+        font-size: 40px
+        padding: 15px
+        padding-left: 0
+        width: 100%
+        &:focus-visible
+            outline: 0
+    li
+        font-family: $font-primary
+        font-size: 20px
+        padding: 10px 0
+        small
+            display: inline-block
+            font-size: 70%
+            vertical-align: top
+
+.search-icon
+    background: $back
+    display: block
+    height: 65px
+    line-height: 65px
+    padding: 0px !important
+    text-align: center
+    width: 65px
+    svg
+        display: inline-block
+        height: 20px
+        margin: auto
+        vertical-align: middle
+        width: 20px
+        *
+            fill: $front
+    .close
+        display: none
+    &:hover
+        background: $front
+        svg *
+            fill: $back
+
+.search-opened
+    .search-icon
+        .open
+            display: none
+        .close
+            display: inline-block
