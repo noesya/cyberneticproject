@@ -2,7 +2,6 @@ header
     background: $back
     border-bottom: $border-width solid $front
     font-family: $font-secondary
-    // font-weight: bold
     position: sticky
     top: 0
     z-index: 100
@@ -39,6 +38,11 @@ header
     .mobile_button
         color: inherit
         display: none
+        svg
+            height: 20px
+            width: 20px
+            *
+                fill: $front
 
     #menu
         li
@@ -48,6 +52,8 @@ header
             span, a
                 letter-spacing: 0.03em
                 padding: 18px 10px
+                +media-breakpoint-down(md)
+                    padding: 5px 10px
             a
                 // @extend .link
                 color: inherit
@@ -70,20 +76,27 @@ header
                 display: none
 
 
-    +mobile
+    +media-breakpoint-down(md)
+        #menu
+            align-items: center
+            justify-content: center
         .mobile_button
-            display: block
+            display: inline-block
             font-weight: bold
-            padding: 15px
+            height: 65px
+            line-height: 65px
+            padding: 0
+            text-align: center
             text-decoration: none
             text-transform: uppercase
-            &__open
-                right: -15px
-                top: -15px
+            width: 65px
+            svg
+                display: inline-block
+                vertical-align: middle
             &__close
                 position: absolute
-                right: 15px
-                top: 15px
+                right: 34px
+                top: 10px
         #menu
             background: $back
             bottom: 0
@@ -97,7 +110,7 @@ header
                 color: $front
 
             &:target
-                display: block
+                display: flex
             ul
                 left: 0
                 right: 15px
@@ -143,6 +156,8 @@ footer
         overflow-y: auto
     .search-opened &
         width: 50%
+        +media-breakpoint-down(md)
+            width: 100%
     input
         -webkit-appearance: none
         background: $back
@@ -169,7 +184,7 @@ footer
 
 .search-icon
     background: $back
-    display: block
+    display: inline-block
     height: 65px
     line-height: 65px
     padding: 0px !important

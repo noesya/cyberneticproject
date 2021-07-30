@@ -3,16 +3,18 @@
         <h1 class="box__title box__title--sticky">
             <a href="/actualites">Actualités</a>
         </h1>
-        <div class="box__image">
-            <img src="{{ include.post.image.src }}" alt="{{ include.post.image.alt }}" title="{{ include.post.image.title }}">
-        </div>
-        <div class="box__body">
-            <h2 class="h3">{% if include.post.title %}{{ include.post.title }}{% else %}{{ site.post.title }}{% endif %}</h2>
-            <p>
-                <time datetime="{{include.post.post_date | date_to_xmlschema}}">{{ include.post.post_date | localize: "Publié le %-d %B %Y", "fr" }}</time>
-                {{ include.post.content | markdownify | strip_html | newline_to_br | strip_first_br | truncatewords: 30 }}
-                <a class="btn" href="{{ include.post.url }}">En savoir plus</a>
-            </p>
+        <div class="row">
+            <div class="col-md-6 box__image">
+                <img src="{{ include.post.image.src }}" alt="{{ include.post.image.alt }}" title="{{ include.post.image.title }}">
+            </div>
+            <div class="col-md-6 box__body">
+                <h2 class="h3">{% if include.post.title %}{{ include.post.title }}{% else %}{{ site.post.title }}{% endif %}</h2>
+                <p>
+                    <time datetime="{{include.post.post_date | date_to_xmlschema}}">{{ include.post.post_date | localize: "Publié le %-d %B %Y", "fr" }}</time>
+                    {{ include.post.content | markdownify | strip_html | newline_to_br | strip_first_br | truncatewords: 30 }}
+                    <a class="btn" href="{{ include.post.url }}">En savoir plus</a>
+                </p>
+            </div>
         </div>
     </div>
 </div>
