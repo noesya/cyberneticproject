@@ -252,3 +252,20 @@ section.container
     color: black
     *
         text-shadow: none
+
+.half-box
+    border-left: $border-width solid $front
+    padding-left: 15px
+    position: relative
+    h3
+        font-family: $font-secondary
+        padding-left: 10px
+    &::after
+        content: ''
+        height: $border-width
+        width: 15px
+        display: block
+        background: $front
+        position: absolute
+        left: 0
+        bottom: 0

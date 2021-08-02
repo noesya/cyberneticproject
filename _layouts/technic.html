@@ -13,9 +13,9 @@ layout: default
     <section class="container">
       <div class="row">
         <div class="col-md-3">
-          <div class="text">
+          <div class="text half-box">
             {% if page.synonymous.size > 0 %}
-              <h3 class="title-box">
+              <h3>
                 {% if page.synonymous.size > 1 %}
                   Synonymes
                 {% else %}
@@ -29,9 +29,9 @@ layout: default
               </ul>
             {% endif %}
           </div>
-          <div class="mt-4 text">
+          <div class="mt-4 text half-box">
             {% if page.downloads.size > 0 %}
-              <h3 class="title-box">
+              <h3>
                 {% if page.downloads.size > 1 %}
                   Téléchargements
                 {% else %}
@@ -79,12 +79,8 @@ layout: default
         </div>
       </div>
       <div class="col-12 col-md-4">
-        <div class="box">
-          <div class="box__content p-3">
-            <div class="text text--small">
-              {{ page.side | markdownify }}
-            </div>
-          </div>
+        <div class="text text--small">
+          {{ page.side | markdownify }}
         </div>
       </div>
     </div>
@@ -98,17 +94,11 @@ layout: default
   </section>
 
   <section class="container">
-    <div class="box">
-      <div class="box__content">
-        <h1 class="box__title">
-          Ressources
-        </h1>
-        <div class="box__body">
-          <div class="text text--small">
-            {{ page.ressources | markdownify }}
-          </div>
-        </div>
-      </div>
+    <h1>
+      Ressources
+    </h1>
+    <div class="text text--small">
+      {{ page.ressources | markdownify }}
     </div>
   </section>
 
