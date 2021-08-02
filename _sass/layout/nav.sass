@@ -14,27 +14,6 @@ header
         justify-content: space-between
         padding-top: 10px
         position: relative
-
-    .logo
-        color: inherit
-        display: block
-        margin-left: 0
-        font-size: px2rem(30)
-        font-weight: bold
-        text-decoration: none
-        letter-spacing: 5px
-        line-height: px2rem(30)
-        padding-top: 6px
-        z-index: 10
-        +mobile
-            font-size: px2rem(20)
-        &::after, &::before
-            background: white
-            padding-top: 6px
-        &:hover
-            color: $orange
-            +text-shadow($orange)
-
     .mobile_button
         color: inherit
         display: none
@@ -127,14 +106,16 @@ header
 
 
 footer
-    background: black
+    background: white
     border-top: $border-width solid $front
     box-shadow: 0 0 10px 2px rgba($front, 0.5)
+    color: $back
     img
         max-width: 100%
     .copyrights
         font-size: 14px
         text-align: center
+    
 
 .search
     background: $back

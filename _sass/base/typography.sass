@@ -1,3 +1,6 @@
+
+$font-base-size: 20
+    
 html
     -ms-text-size-adjust: 100%
     -webkit-tap-highlight-color: transparent
@@ -7,18 +10,18 @@ body
     -moz-osx-font-smoothing: grayscale
     -webkit-font-smoothing: antialiased
     font-family: $font-primary
-    font-weight: 500
+    font-weight: 300
     text-rendering: geometricPrecision
-    // letter-spacing: 0.01em
-    +text-shadow
+    letter-spacing: 0.01em
+    // +text-shadow
 
 p, li
-    font-size: px2rem(18)
+    font-size: px2rem($font-base-size)
     line-height: 1.6333333333
 
 h1, h2, h3,
 .h1, .h2
-    font-family: $font-secondary
+    // font-family: $font-secondary
 
 h1, .h1
     font-size: px2rem(40)
@@ -43,12 +46,20 @@ h3, .h3
     +mobile
         font-size: px2rem(20)
 
+h4, .h4
+    font-size: px2rem(22)
+    letter-spacing: 0.02em
+    line-height: px2rem(22)
+    margin-bottom: px2rem(15)
+    +mobile
+        font-size: px2rem(18)
+
 .title-box
-    background: $front
+    border: $border-width solid $front
     box-shadow: 0 0 20px 6px rgba($front, 0.2)
-    color: $back
-    padding: 7px 10px 10px
+    padding: 15px 23px
     width: 100%
+    font-family: $font-secondary
     *
         text-shadow: none
 
@@ -112,11 +123,12 @@ a
             position: relative
             &::before
                 background: $front
+                box-shadow: 0 0 20px 6px rgba($front, 0.3)
                 content: ''
                 display: inline-block
-                margin-right: 5px
+                height: 1px
                 margin-left: -15px
-                height: 2px
+                margin-right: 5px
                 width: 10px
             @for $i from 1 through 30
                 &:nth-child(#{$i})
@@ -125,7 +137,9 @@ a
 
     &--small
         p, li, a
-            font-size: 95%
+            font-size: px2rem($font-base-size*0.9)
+    &--right
+        text-align: right
 
 @keyframes rotate-point-list
     0%
