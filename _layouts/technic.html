@@ -92,6 +92,8 @@ layout: default
         {% if page.main.image %}
           {% include side-image.html image=page.main.image %}
         {% endif %}
+      </div>
+      <div class="row">
         
         <div class="offset-md-1 col-md-6 pb-5 mb-5">
           <div class="text">
@@ -101,7 +103,8 @@ layout: default
         {% if page.side.image %}
           {% include side-image.html image=page.side.image %}
         {% endif %}
-      
+      </div>
+      <div class="row">
         <div class="offset-md-1 col-md-6 pb-5 mb-5">
           <div class="text">
             {{ page.legals.text | markdownify }}
@@ -110,7 +113,8 @@ layout: default
         {% if page.legals.image %}
           {% include side-image.html image=page.legals.image %}
         {% endif %}
-      
+      </div>
+      <div class="row">
         <div class="offset-md-1 col-md-6 pb-5 mb-5 indent-list">
           <div class="text">
             {{ page.ressources.text | markdownify }}
