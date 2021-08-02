@@ -149,6 +149,21 @@ a
 .aside-img
     margin-top: 64px
 
+.indent-list
+    ul
+        li
+            margin-bottom: 20px
+            padding-left: 50px
+            text-indent: -50px
+            a
+                display: inline
+                text-decoration: underline
+                vertical-align: inherit
+                &::after
+                    display: none
+            &::before
+                display: none
+
 @keyframes rotate-point-list
     0%
         transform: rotate(0deg)
