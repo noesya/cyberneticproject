@@ -1,14 +1,32 @@
 .reading-progress
-    height: 6px
-    left: 0
-    position: fixed
+    background: linear-gradient(0deg, rgba($back, 1) 0%, rgba($back,0) 100%)
+    position: sticky
+    font-weight: 500
     right: 0
-    top: -1px
+    top: calc(100% - 30px)
+    bottom: 0
+    left: 0
     z-index: 10
+    height: 30px
     &__bar
         background: $front
         box-shadow: 0 0 20px 3px rgba($front, 0.5)
         height: 100%
         left: 0
+        bottom: 0
+        height: 4px
         max-width: 100%
         position: absolute
+    p
+        bottom: 4px
+        color: $front
+        font-size: px2rem(12)
+        margin-left: 4px
+        position: absolute
+        right: 4px
+        text-align: left
+        text-transform: uppercase
+        white-space: nowrap
+        span
+            display: inline-block
+            min-width: 32px

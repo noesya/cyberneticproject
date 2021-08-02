@@ -15,8 +15,10 @@ document.getElementById('search-button').addEventListener('click', function(){
 
 function onProgress() {
     var progress = window.scrollY / (document.body.offsetHeight - window.innerHeight - document.getElementById('footer').offsetHeight);
-    console.log(progress);
+    progress = Math.min(1, progress);
     document.getElementById('progress').style.width = progress * 100 + '%';
+    document.getElementById('progress-text').innerText = Math.round(progress * 100) + '%';
+
 }
 
 
