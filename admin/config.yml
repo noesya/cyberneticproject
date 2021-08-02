@@ -69,6 +69,10 @@ collections:
         widget: 'date'
       - *SEO
       - *IMAGE_FIELDS
+      - name: preview
+        label: Chapô
+        required: false
+        widget: text
       - name: body
         label: Contenu
         widget: markdown
@@ -85,6 +89,9 @@ collections:
     fields: 
       - name: title
         label: Titre
+      - name: subtitle
+        label: Sous-titre
+        default: "Etiologie des pratiques de cyberharcèlement"
       - *SEO
       - *IMAGE_FIELDS
 

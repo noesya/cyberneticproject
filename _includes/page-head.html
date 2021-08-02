@@ -1,0 +1,15 @@
+<div class="page__header">
+    <div id="circuit"></div>
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-1 col-12">
+                {% if include.title %}
+                    <h1 class="glitch" data-text="{{ include.title }}">{{ include.title }}</h1>
+                {% endif %}
+                {% if include.subtitle %}
+                    <h2>{{ include.subtitle }}</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

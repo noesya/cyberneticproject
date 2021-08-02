@@ -1,15 +1,20 @@
-<article class="box">
-    <div class="box__content">
-        <h2 class="box__title h3">{% if include.post.title %}{{ include.post.title }}{% else %}{{ site.post.title }}{% endif %}</h2>
-        <div class="box__image">
+<article class="mb-5 {% if include.large %}col-md-12 sticky{% else %}col-md-4{% endif %}">
+    <a href="{{ include.post.url }}" class="{% if include.large %}row{% endif %}">
+        <div class="image {% if include.large %} col-md-6{% endif %}">
             <img src="{{ include.post.image.src }}" alt="{{ include.post.image.alt }}" title="{{ include.post.image.title }}">
         </div>
-        <div class="box__body">
+        <div class="content {% if include.large %}col-md-6{% endif %}">
+            <h2 class="h3 mb-1">{% if include.post.title %}{{ include.post.title }}{% else %}{{ site.post.title }}{% endif %}</h2>
+            <time datetime="{{include.post.post_date | date_to_xmlschema}}">{{ include.post.post_date | localize: "Publié le %-d %B %Y", "fr" }}</time>
             <p>
-                <time datetime="{{include.post.post_date | date_to_xmlschema}}">{{ include.post.post_date | localize: "Publié le %-d %B %Y", "fr" }}</time>
-                {{ include.post.content | markdownify | strip_html | newline_to_br | strip_first_br | truncatewords: 30 }}
-                <a class="btn" href="{{ include.post.url }}">En savoir plus</a>
+                {{ include.post.content | markdownify | strip_html | newline_to_br | strip_first_br | truncatewords: 25 }}
             </p>
+            <span class="btn btn--lite mt-3" href="{{ include.post.url }}">Lire la suite</span>
+
+            <!-- {% if include.large %}
+                <span class="btn btn--light mt-3" href="{{ include.post.url }}">Lire la suite</span>
+            {% else %} -->
+            <!-- {% endif %} -->
         </div>
-    </div>
+    </a>
 </article>

@@ -79,5 +79,6 @@ $steps: 15
         background-position: -50% 100%
 
 body
-    animation: noise-bg 1s infinite linear
-    background-image: url(/assets/images/noise_hard.png)
+    &.is-scrolling
+        animation: noise-bg 1s infinite linear
+        background-image: url(/assets/images/noise_hard.png)

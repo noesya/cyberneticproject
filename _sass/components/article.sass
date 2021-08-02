@@ -1,0 +1,54 @@
+article
+    time
+        display: block
+        font-size: px2rem(14)
+        margin-top: 10px
+        padding-bottom: 30px
+    .image
+        img
+            height: 100%
+            object-fit: cover
+            width: 100%
+    &.sticky
+        time
+            padding-bottom: 60px
+        .h3
+            font-size: px2rem(40)
+            line-height: px2rem(50)
+    &:not(.sticky)
+        .image
+            height: 150px
+            margin-bottom: 30px
+
+.post-technic
+    position: relative
+    &__index
+        border-bottom: 1px solid $front
+        font-size: px2rem(14)
+        margin-bottom: 10px
+        padding-bottom: 10px
+    &__title
+        padding: 10px 0 20px
+        h2
+            position: relative
+    &__text
+        background: $back
+        opacity: 0
+        pointer-events: none
+        position: absolute
+        top: 100%
+        z-index: 10
+        p
+            padding-bottom: 15px
+    &:hover
+        .post-technic__text
+            opacity: 1
+
+.technics-list
+    &__btn
+        padding-top: 30px
+        text-align: center
+
+.partner
+    img
+        max-width: 100%

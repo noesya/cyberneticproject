@@ -1,0 +1,29 @@
+.quote
+    align-items: center
+    display: block
+    padding-bottom: 100px
+    padding-top: 100px
+    position: relative
+    text-align: center
+    +text-shadow($front)
+    q
+        color: $front
+        display: block
+        font-family: $font-secondary
+        font-size: px2rem(40)
+        line-height: px2rem(52)
+        position: relative
+        &:after, &:before
+            background: $back
+            color: $front
+    span
+        display: block
+        font-size: px2rem(180)
+        left: 0
+        position: absolute
+        right: 0
+        text-align: center
+        &:first-child
+            top: -150px
+        &:last-child
+            bottom: -250px

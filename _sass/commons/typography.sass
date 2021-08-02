@@ -1,6 +1,6 @@
 
 $font-base-size: 20
-    
+
 html
     -ms-text-size-adjust: 100%
     -webkit-tap-highlight-color: transparent
@@ -13,21 +13,14 @@ body
     font-weight: 300
     letter-spacing: 0.01em
     text-rendering: geometricPrecision
-    // +text-shadow
 
 p, li
     font-size: px2rem($font-base-size)
     line-height: 1.6333333333
 
-h1, h2, h3,
-.h1, .h2
-    // font-family: $font-secondary
-
 h1, .h1
     font-size: px2rem(40)
-    // letter-spacing: 0.04em
     margin-bottom: px2rem(40)
-    // text-transform: uppercase
     +mobile
         font-size: px2rem(30)
 
@@ -54,15 +47,6 @@ h4, .h4
     +mobile
         font-size: px2rem(18)
 
-.title-box
-    border: $border-width solid $front
-    box-shadow: 0 0 20px 6px rgba($front, 0.2)
-    font-family: $font-secondary
-    padding: 15px 23px
-    width: 100%
-    *
-        text-shadow: none
-
 .link
     position: relative
     transition: color .22s $easeInOutCubic
@@ -82,25 +66,16 @@ h4, .h4
         color: $back
         &::after
             height: 100%
-    .is-darken &
-        &::after
-            background: $back
-        &:hover
-            color: $front
-
 a
     color: inherit
     text-decoration: none
-    word-break: break-all
-
-.text-cols-2
-    column-count: 2
 
 .text
     a
-        color: $front
         +link
         +text-shadow($orange)
+        color: $front
+        word-break: break-all
     img
         display: block
         margin: 10px 0
@@ -125,21 +100,6 @@ a
                 display: inline-block
                 margin-left: -10px
                 margin-right: 5px
-            // &::before
-            //     background: $front
-            //     box-shadow: 0 0 20px 6px rgba($front, 0.3)
-            //     content: ''
-            //     display: inline-block
-            //     height: 1px
-            //     margin-left: -15px
-            //     margin-right: 5px
-            //     vertical-align: middle
-            //     width: 5px
-            // @for $i from 1 through 30
-            //     &:nth-child(#{$i})
-            //         &:before
-            //             animation: width-point-list 3s #{$i / 10}s infinite
-
     &--small
         p, li, a
             font-size: px2rem($font-base-size*0.9)
@@ -167,22 +127,20 @@ a
             &::before
                 display: none
 
-@keyframes rotate-point-list
-    0%
-        transform: rotate(0deg)
-    100%
-        transform: rotate(1000deg)
-
-@keyframes width-point-list
-    0%
-        transform: scaleX(0)
-        transform-origin: 0 center
-    10%
-        transform: scaleX(1)
-        transform-origin: 0 center
-    80%
-        transform: scaleX(1)
-        transform-origin: right center
-    90%, 100%
-        transform: scaleX(0)
-        transform-origin: right center
+.door
+    align-items: center
+    display: flex
+    position: relative
+    &::after, &::before
+        background: $front
+        content: ''
+        display: block
+        height: 1px
+        width: 100%
+    .btn
+        font-size: px2rem(20)
+        margin: 30px 15px
+        padding: 14px 20px
+        position: relative
+        white-space: nowrap
+        z-index: 10

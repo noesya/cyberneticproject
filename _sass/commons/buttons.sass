@@ -1,0 +1,47 @@
+.btn
+    &--light
+        background: $front
+        border: $border-width solid $front
+        box-shadow: 0 0 20px 3px rgba($front, 0.4)
+        color: $back
+        display: table
+        font-family: $font-secondary
+        font-size: px2rem(14)
+        padding: 7px 10px
+        text-decoration: none
+        text-transform: uppercase
+        transition: 0.1s
+        &:hover
+            background: rgba($front, 0)
+            color: $front
+    &--lite
+        display: table
+        +link
+
+.logo
+    color: inherit
+    display: block
+    font-size: px2rem(30)
+    letter-spacing: 5px
+    line-height: px2rem(30)
+    margin-left: 0
+    padding-top: 6px
+    text-decoration: none
+    z-index: 10
+    svg
+        display: inline-block
+        height: 45px
+        vertical-align: middle
+    +mobile
+        font-size: px2rem(20)
+
+.search-icon
+    svg
+        display: inline-block
+        height: 20px
+        vertical-align: middle
+        width: 20px
+    .close
+        display: none
+        *
+            fill: white
