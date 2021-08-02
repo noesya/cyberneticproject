@@ -1,19 +1,23 @@
 header
-    background: $back
-    border-bottom: $border-width solid $front
     font-family: $font-secondary
-    position: sticky
+    left: 0
+    position: absolute
+    right: 0
     top: 0
     z-index: 100
     .is-darken &
         background: $front
         border-color: $back
     nav
-        align-items: baseline
+        align-items: center
         display: flex
         justify-content: space-between
         padding-top: 10px
         position: relative
+    .logo
+        svg
+            height: 80px
+            margin-right: 20px
     .mobile_button
         color: inherit
         display: none
@@ -26,15 +30,15 @@ header
     #menu
         li
             display: inline-block
+            font-size: px2rem(16)
+            margin: 0 10px
             text-transform: uppercase
             vertical-align: middle
+            &:last-child
+                margin-right: 0
             span, a
                 letter-spacing: 0.03em
-                padding: 18px 10px
-                +media-breakpoint-down(md)
-                    padding: 5px 10px
             a
-                // @extend .link
                 color: inherit
                 display: block
                 text-decoration: none
@@ -45,9 +49,8 @@ header
                 &:hover
                     color: $orange
                 &.active
-                    color: $orange
-                    // &::after
-                    //     height: 100%
+                    +link
+                    color: $front
                     .is-darken &
                         color: $front
             #switch-colors
@@ -162,29 +165,6 @@ footer
             display: inline-block
             font-size: 70%
             vertical-align: top
-
-.search-icon
-    background: $back
-    display: inline-block
-    height: 65px
-    line-height: 65px
-    padding: 0px !important
-    text-align: center
-    width: 65px
-    svg
-        display: inline-block
-        height: 20px
-        margin: auto
-        vertical-align: middle
-        width: 20px
-        *
-            fill: $front
-    .close
-        display: none
-    &:hover
-        background: $front
-        svg *
-            fill: $back
 
 .search-opened
     .search-icon

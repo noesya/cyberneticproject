@@ -30,7 +30,24 @@
     z-index: 10
     svg
         display: inline-block
-        height: 50px
+        height: 45px
         vertical-align: middle
     +mobile
         font-size: px2rem(20)
+
+.search-icon
+    display: inline-block
+    svg
+        display: inline-block
+        height: 20px
+        margin: auto
+        vertical-align: middle
+        width: 20px
+        *
+            fill: $front
+    .close
+        display: none
+    &:hover
+        background: $front
+        svg *
+            fill: $back

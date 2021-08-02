@@ -1,12 +1,13 @@
 .technic
     .page-title
-        font-family: $font-secondary
         color: $front
+        font-family: $font-secondary
+        font-weight: 700
         text-shadow: 0 0 20px rgba($front, 0.5)
         overflow: hidden
-        padding: 100px 10px
+        padding: 250px 10px 100px
         position: relative
-        text-align: center
+        text-align: left
         #circuit
             opacity: 0.25
             position: absolute
@@ -15,7 +16,6 @@
             width: 100%
             height: 100%
             -webkit-mask-image: -webkit-gradient(linear, left 70%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
-
         &__bg
             color: $orange
             font-size: px2rem(200)
@@ -28,9 +28,10 @@
             white-space: nowrap
             z-index: 0
         h1
-            font-size: px2rem(100)
-            letter-spacing: 10px
+            font-size: px2rem(70)
+            letter-spacing: 4px
             margin-bottom: 20px
+            margin-left: 0
             +mobile
                 font-size: px2rem(50)
         h1, h2

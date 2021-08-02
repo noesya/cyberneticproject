@@ -125,7 +125,6 @@ section.container
                 object-fit: cover
                 width: 100%
         &__body
-
             .box__title
                 border: 0
                 padding: 0
@@ -154,6 +153,7 @@ section.container
 .center
     .btn
         margin: auto
+
 .news
     display: flex
     flex-wrap: wrap
@@ -212,33 +212,37 @@ section.container
 .quote
     align-items: center
     position: relative
+    text-align: center
+    display: block
+    padding-top: 100px
+    padding-bottom: 100px
     +text-shadow($front)
     img
         display: block
         height: 100%
         object-fit: cover
         width: 100%
-    p
-        padding: 10px 20px
     q
         color: $front
         display: block
         font-family: $font-secondary
-        font-size: px2rem(30)
-        line-height: 1.3
+        font-size: px2rem(40)
+        line-height: px2rem(52)
         position: relative
         &:after, &:before
             background: $back
             color: $front
-    &::before
-        color: $front
-        content: '‘‘'
-        font-size: 400px
-        left: 33%
-        letter-spacing: -20px
+    span
+        display: block
+        font-size: px2rem(180)
         position: absolute
-        top: -110px
-        z-index: 3
+        text-align: center
+        left: 0
+        right: 0
+        &:first-child
+            top: -150px
+        &:last-child
+            bottom: -250px
 
 .side
     background: rgba($violet, 0.1)

@@ -5,66 +5,76 @@ layout: default
 <main class="technic">
   <div class="page-title">
     <div id="circuit"></div>
-    <h1 class="glitch" data-text="{{ page.title }}">{{ page.title }}</h1>
-    <h2>Etiologie des pratiques de cyberharcèlement</h2>
-  </div>
-
-  <div class="technic__intro">
-    <section class="container">
+    <div class="container">
       <div class="row">
-        <div class="col-md-3">
-          <div class="text half-box">
-            {% if page.synonymous.size > 0 %}
-              <h3>
-                {% if page.synonymous.size > 1 %}
-                  Synonymes
-                {% else %}
-                  Synonyme
-                {% endif %}
-              </h3>
-              <ul>
-                {% for term in page.synonymous %}
-                  <li>{{ term }}</li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </div>
-          <div class="mt-4 text half-box">
-            {% if page.downloads.size > 0 %}
-              <h3>
-                {% if page.downloads.size > 1 %}
-                  Téléchargements
-                {% else %}
-                  Téléchargement
-                {% endif %}
-              </h3>
-              <ul>
-                {% for download in page.downloads %}
-                  <li><a href="{{ download.file }}" download>{{ download.name }}</a></li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </div>
-        </div>
-  
-        <div class="col-md-9 text pl-md-5">
-          <h2>Définition</h2>
-          {{ page.definition | markdownify }}
+        <div class="offset-md-1 col-12">
+          <h1 class="glitch" data-text="{{ page.title }}">{{ page.title }}</h1>
+          <h2>Etiologie des pratiques de cyberharcèlement</h2>
         </div>
       </div>
-    </section>  
+    </div>
   </div>
+
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-md-11 offset-md-1">
+        {% include breadcrumb.html %}
+      </div>
+    </div>
+  </div>
+  <section class="container">
+    <div class="row">
+      <div class="offset-md-1 col-md-6 text">
+        {{ page.preview | markdownify }}
+        {{ page.definition | markdownify }}
+      </div>
+      <div class="offset-md-1 col-md-3">
+        <div class="text">
+          {% if page.synonymous.size > 0 %}
+            <h3>
+              {% if page.synonymous.size > 1 %}
+                Synonymes
+              {% else %}
+                Synonyme
+              {% endif %}
+            </h3>
+            <ul>
+              {% for term in page.synonymous %}
+                <li>{{ term }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+        <div class="mt-5 text">
+          {% if page.downloads.size > 0 %}
+            <h3>
+              {% if page.downloads.size > 1 %}
+                Téléchargements
+              {% else %}
+                Téléchargement
+              {% endif %}
+            </h3>
+            <ul>
+              {% for download in page.downloads %}
+                <li><a href="{{ download.file }}" download>{{ download.name }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <section class="container">
     <div class="row quote">
-      <div class="col-md-5 pl-0">
-        <img src="{{ page.quote.image }}" alt="">
-      </div>
-      <div class="col-md-7">
+      <div class="col-md-8">
         <p>
+          <span>“</span>
           <q data-text="{{ page.quote.text }}" class="glitch">
             {{ page.quote.text }}
           </q>
+          <span>”</span>
         </p>
       </div>
     </div>
@@ -73,32 +83,30 @@ layout: default
 
   <section class="container">
     <div class="row">
-      <div class="col-12 col-md-8">
+      <div class="offset-md-1 col-md-6 pb-5 mb-5">
         <div class="text">
           {{ page.content | markdownify }}
         </div>
       </div>
-      <div class="col-12 col-md-4">
+      <div class="offset-md-1 col-md-4 p-0 text aside-img">
+        <img src="{{ page.quote.image }}" alt="">
+        <small class="text--small">Un exemple concret</small>
+      </div>
+      <div class="offset-md-1 col-md-6 pb-5 mb-5">
         <div class="text text--small">
           {{ page.side | markdownify }}
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="container">
-    <h1>Cadre légal</h1>
-    <div class="text text--small">
-      {{ page.legals | markdownify }}
-    </div>
-  </section>
-
-  <section class="container">
-    <h1>
-      Ressources
-    </h1>
-    <div class="text text--small">
-      {{ page.ressources | markdownify }}
+      <div class="offset-md-1 col-md-6 pb-5 mb-5">
+        <div class="text text--small">
+          {{ page.legals | markdownify }}
+        </div>
+      </div>
+      <div class="offset-md-1 col-md-6 pb-5 mb-5">
+        <div class="text text--small">
+          {{ page.ressources | markdownify }}
+        </div>
+      </div>
     </div>
   </section>
 
