@@ -26,11 +26,11 @@ layout: default
     <section class="container">
       <div class="row">
         <div class="offset-md-1 col-md-6 text">
-          {{ page.preview | markdownify }}
-          {{ page.definition | markdownify }}
+          <h2>{{ page.preview }}</h2>
+          {{ page.definition.text | markdownify }}
         </div>
         <div class="offset-md-1 col-md-3">
-          <div class="text">
+          <div>
             {% if page.synonymous.size > 0 %}
               <h3>
                 {% if page.synonymous.size > 1 %}
@@ -46,7 +46,7 @@ layout: default
               </ul>
             {% endif %}
           </div>
-          <div class="mt-5 text">
+          <div class="mt-5">
             {% if page.downloads.size > 0 %}
               <h3>
                 {% if page.downloads.size > 1 %}
@@ -72,8 +72,8 @@ layout: default
         <div class="col-md-8">
           <p>
             <span>“</span>
-            <q data-text="{{ page.quote.text }}" class="glitch">
-              {{ page.quote.text }}
+            <q data-text="{{ page.quote }}" class="glitch">
+              {{ page.quote }}
             </q>
             <span>”</span>
           </p>
@@ -86,28 +86,39 @@ layout: default
       <div class="row">
         <div class="offset-md-1 col-md-6 pb-5 mb-5">
           <div class="text">
-            {{ page.content | markdownify }}
+            {{ page.main.text | markdownify }}
           </div>
         </div>
-        <div class="offset-md-1 col-md-4 p-0 text aside-img">
-          <img src="{{ page.quote.image }}" alt="">
-          <small class="text--small">Un exemple concret</small>
-        </div>
+        {% if page.main.image %}
+          {% include side-image.html image=page.main.image %}
+        {% endif %}
+        
         <div class="offset-md-1 col-md-6 pb-5 mb-5">
-          <div class="text text--small">
-            {{ page.side | markdownify }}
+          <div class="text">
+            {{ page.side.text | markdownify }}
           </div>
         </div>
+        {% if page.side.image %}
+          {% include side-image.html image=page.side.image %}
+        {% endif %}
+      
         <div class="offset-md-1 col-md-6 pb-5 mb-5">
-          <div class="text text--small">
-            {{ page.legals | markdownify }}
+          <div class="text">
+            {{ page.legals.text | markdownify }}
           </div>
         </div>
+        {% if page.legals.image %}
+          {% include side-image.html image=page.legals.image %}
+        {% endif %}
+      
         <div class="offset-md-1 col-md-6 pb-5 mb-5">
-          <div class="text text--small">
-            {{ page.ressources | markdownify }}
+          <div class="text">
+            {{ page.ressources.text | markdownify }}
           </div>
         </div>
+        {% if page.ressources.image %}
+          {% include side-image.html image=page.ressources.image %}
+        {% endif %}
       </div>
     </section>
   

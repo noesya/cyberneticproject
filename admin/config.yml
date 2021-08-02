@@ -33,6 +33,12 @@ image: &IMAGE_FIELDS
 markdown_light_button: &MARKDOWN_LIGHT_BUTTONS
   [heading-three, heading-four, heading-five, heading-six, bulleted-list, bold, italic, link]
 
+text_content: &TEXT_CONTENT
+  name: text
+  label: Contenu
+  widget: markdown
+  buttons: *MARKDOWN_LIGHT_BUTTONS
+
 collections:
   - name: 'pages'
     label: 'Pages'
@@ -85,7 +91,7 @@ collections:
       - name: preview
         label: Chapô
         required: false
-        widget: markdown
+        widget: text
 
       - name: synonymous
         label: Synonymes
@@ -106,48 +112,47 @@ collections:
             media_library:
               - allow_multiple: false
 
-
       - name: definition
         label: Définition
         required: false
-        widget: markdown
-        buttons: *MARKDOWN_LIGHT_BUTTONS
+        widget: object
+        fields:
+          - *TEXT_CONTENT
 
-      - name: body
+
+      - name: main
         label: Contenu principal
         required: false
-        widget: markdown
+        widget: object
+        fields:
+          - *TEXT_CONTENT
+          - *IMAGE_FIELDS
 
       - name: quote
         label: Citation 
         required: false
-        widget: object
-        fields:
-          - name: text
-            label: texte
-            required: false
-            widget: text
-          - name: image
-            label: Visuel
-            widget: image
-            required: false
+        widget: text
 
       - name: side
         label: Historique 
         required: false
-        widget: markdown
-        buttons: *MARKDOWN_LIGHT_BUTTONS
-
+        widget: object
+        fields:
+          - *TEXT_CONTENT
+          - *IMAGE_FIELDS
 
       - name: legals
         label: Cadre légal
         required: false
-        widget: markdown
-        buttons: *MARKDOWN_LIGHT_BUTTONS
-
+        widget: object
+        fields:
+          - *TEXT_CONTENT
+          - *IMAGE_FIELDS
 
       - name: ressources
         label: Ressources
         required: false
-        widget: markdown
-        buttons: *MARKDOWN_LIGHT_BUTTONS
+        widget: object
+        fields:
+          - *TEXT_CONTENT
+          - *IMAGE_FIELDS

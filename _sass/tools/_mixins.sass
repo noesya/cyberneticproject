@@ -30,7 +30,33 @@
 =text-shadow($color: $front)
     text-shadow: 0 0 7px rgba($color, 0.5)
     
+
+@keyframes link-underline
+    0%
+        transform: scaleX(0)
+        transform-origin: 0 center
+    10%
+        transform: scaleX(1)
+        transform-origin: 0 center
+    80%
+        transform: scaleX(1)
+        transform-origin: right center
+    90%, 100%
+        transform: scaleX(0)
+        transform-origin: right center
+
 =link
     display: inline-block
     vertical-align: middle
-    border-bottom: 1px solid $front
+    &::after
+        background: $front
+        box-shadow: 0 0 20px 6px rgba($front, 0.3)
+        content: ''
+        display: block
+        height: 1px
+        margin-top: 3px
+        width: 100%
+    @for $i from 1 through 30
+        &:nth-child(#{$i})
+            &:after
+                animation: link-underline 3s #{$i / 3}s infinite ease-in-out
