@@ -212,6 +212,7 @@ section.container
 .quote
     align-items: center
     position: relative
+    +text-shadow($front)
     img
         display: block
         height: 100%
@@ -220,12 +221,12 @@ section.container
     p
         padding: 10px 20px
     q
+        color: $front
         display: block
-        font-size: px2rem(30)
         font-family: $font-secondary
+        font-size: px2rem(30)
         line-height: 1.3
         position: relative
-        color: $front
         &:after, &:before
             background: $back
             color: $front
@@ -233,10 +234,10 @@ section.container
         color: $front
         content: '‘‘'
         font-size: 400px
-        left: 32%
+        left: 33%
         letter-spacing: -20px
         position: absolute
-        top: -100px
+        top: -110px
         z-index: 3
 
 .side

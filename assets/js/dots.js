@@ -96,8 +96,8 @@ var Engine = function (el, Experiment) {
 
 var Dots = function (engine) {
   this.engine = engine;
-  var COLOR_1 = '#ffffff50';
-  var COLOR_2 = '#00000050';
+  var COLOR_1 = '#a0eff4';
+  var COLOR_2 = '#000000';
   var COLOR_3 = 'red';
   var COLOR_4 = 'blue';
   var CELL_SIZE = 30;
@@ -140,7 +140,7 @@ var Dots = function (engine) {
 
   this.animate = function () {
     tick += 1;
-    // if (tick % 10 !== 0) return;
+    if (tick % 3 !== 0) return;
 
     if (tick % 100 === 0) {
       // this.fill();
@@ -250,7 +250,7 @@ var Dots = function (engine) {
     var dir = Math.ceil(Math.random() * 4);
 
     ctx.beginPath();
-    ctx.strokeStyle = color;
+    ctx.strokeStyle = COLOR_1;
     ctx.moveTo(x, y);
     switch(dir) {
       case 0: 
