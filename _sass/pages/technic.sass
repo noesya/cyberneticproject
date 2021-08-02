@@ -1,5 +1,5 @@
 .technic
-    .page-title
+    &__header
         color: $front
         font-family: $font-secondary
         font-weight: 700
@@ -13,20 +13,9 @@
             position: absolute
             top: 0
             left: 0
-            width: 100%
             height: 100%
             -webkit-mask-image: -webkit-gradient(linear, left 70%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
-        &__bg
-            color: $orange
-            font-size: px2rem(200)
-            left: 0
-            opacity: 0.075
-            position: absolute
-            right: 0
-            top: 50%
-            transform: translateY(-50%)
-            white-space: nowrap
-            z-index: 0
+            width: 100%
         h1
             font-size: px2rem(70)
             letter-spacing: 4px
@@ -42,8 +31,9 @@
             &:after, &:before
                 background: none
                 color: $front
-    &__intro
-        padding: 50px 0
+    &__body
+        a
+            // color: $back
     .text
         h2
             position: relative

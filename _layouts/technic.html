@@ -3,7 +3,7 @@ layout: default
 ---
 
 <main class="technic">
-  <div class="page-title">
+  <div class="technic__header">
     <div id="circuit"></div>
     <div class="container">
       <div class="row">
@@ -15,133 +15,135 @@ layout: default
     </div>
   </div>
 
-  <div class="container mb-5">
-    <div class="row">
-      <div class="col-md-11 offset-md-1">
-        {% include breadcrumb.html %}
+  <div class="technic__body">
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-md-11 offset-md-1">
+          {% include breadcrumb.html %}
+        </div>
       </div>
     </div>
+    <section class="container">
+      <div class="row">
+        <div class="offset-md-1 col-md-6 text">
+          {{ page.preview | markdownify }}
+          {{ page.definition | markdownify }}
+        </div>
+        <div class="offset-md-1 col-md-3">
+          <div class="text">
+            {% if page.synonymous.size > 0 %}
+              <h3>
+                {% if page.synonymous.size > 1 %}
+                  Synonymes
+                {% else %}
+                  Synonyme
+                {% endif %}
+              </h3>
+              <ul>
+                {% for term in page.synonymous %}
+                  <li>{{ term }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+          <div class="mt-5 text">
+            {% if page.downloads.size > 0 %}
+              <h3>
+                {% if page.downloads.size > 1 %}
+                  Téléchargements
+                {% else %}
+                  Téléchargement
+                {% endif %}
+              </h3>
+              <ul>
+                {% for download in page.downloads %}
+                  <li><a href="{{ download.file }}" download>{{ download.name }}</a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  
+    <section class="container">
+      <div class="row quote">
+        <div class="col-md-8">
+          <p>
+            <span>“</span>
+            <q data-text="{{ page.quote.text }}" class="glitch">
+              {{ page.quote.text }}
+            </q>
+            <span>”</span>
+          </p>
+        </div>
+      </div>
+    </section>
+  
+  
+    <section class="container">
+      <div class="row">
+        <div class="offset-md-1 col-md-6 pb-5 mb-5">
+          <div class="text">
+            {{ page.content | markdownify }}
+          </div>
+        </div>
+        <div class="offset-md-1 col-md-4 p-0 text aside-img">
+          <img src="{{ page.quote.image }}" alt="">
+          <small class="text--small">Un exemple concret</small>
+        </div>
+        <div class="offset-md-1 col-md-6 pb-5 mb-5">
+          <div class="text text--small">
+            {{ page.side | markdownify }}
+          </div>
+        </div>
+        <div class="offset-md-1 col-md-6 pb-5 mb-5">
+          <div class="text text--small">
+            {{ page.legals | markdownify }}
+          </div>
+        </div>
+        <div class="offset-md-1 col-md-6 pb-5 mb-5">
+          <div class="text text--small">
+            {{ page.ressources | markdownify }}
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="container post__siblings">
+      <h1>Actualités associées</h1>
+      <nav class="siblings">
+  
+        {% if page.collection %}
+          {% assign collection = site.news | posts_passed: 'post_date' %}
+          {% assign prev = false %}
+          {% assign next = false %}
+  
+          {% for item in collection %}
+            {% if item.title == page.title %}
+              {% unless forloop.first %}
+                {% assign prev = iterator %}
+              {% endunless %}
+  
+              {% unless forloop.last %}
+                {% assign next = collection[forloop.index] %}
+              {% endunless %}
+            {% endif %}
+  
+            {% assign iterator = item %}
+          {% endfor %}
+        {% endif %}
+  
+  
+        {% if next %}
+          {% include sibling-post.html post=next %}
+        {% endif %}
+        {% if prev %}
+          {% include sibling-post.html post=prev previous=true %}
+        {% endif %}
+        <div class="clear"></div>
+      </nav>
+    </section>
   </div>
-  <section class="container">
-    <div class="row">
-      <div class="offset-md-1 col-md-6 text">
-        {{ page.preview | markdownify }}
-        {{ page.definition | markdownify }}
-      </div>
-      <div class="offset-md-1 col-md-3">
-        <div class="text">
-          {% if page.synonymous.size > 0 %}
-            <h3>
-              {% if page.synonymous.size > 1 %}
-                Synonymes
-              {% else %}
-                Synonyme
-              {% endif %}
-            </h3>
-            <ul>
-              {% for term in page.synonymous %}
-                <li>{{ term }}</li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </div>
-        <div class="mt-5 text">
-          {% if page.downloads.size > 0 %}
-            <h3>
-              {% if page.downloads.size > 1 %}
-                Téléchargements
-              {% else %}
-                Téléchargement
-              {% endif %}
-            </h3>
-            <ul>
-              {% for download in page.downloads %}
-                <li><a href="{{ download.file }}" download>{{ download.name }}</a></li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="container">
-    <div class="row quote">
-      <div class="col-md-8">
-        <p>
-          <span>“</span>
-          <q data-text="{{ page.quote.text }}" class="glitch">
-            {{ page.quote.text }}
-          </q>
-          <span>”</span>
-        </p>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="container">
-    <div class="row">
-      <div class="offset-md-1 col-md-6 pb-5 mb-5">
-        <div class="text">
-          {{ page.content | markdownify }}
-        </div>
-      </div>
-      <div class="offset-md-1 col-md-4 p-0 text aside-img">
-        <img src="{{ page.quote.image }}" alt="">
-        <small class="text--small">Un exemple concret</small>
-      </div>
-      <div class="offset-md-1 col-md-6 pb-5 mb-5">
-        <div class="text text--small">
-          {{ page.side | markdownify }}
-        </div>
-      </div>
-      <div class="offset-md-1 col-md-6 pb-5 mb-5">
-        <div class="text text--small">
-          {{ page.legals | markdownify }}
-        </div>
-      </div>
-      <div class="offset-md-1 col-md-6 pb-5 mb-5">
-        <div class="text text--small">
-          {{ page.ressources | markdownify }}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container post__siblings">
-    <h1>Actualités associées</h1>
-    <nav class="siblings">
-
-      {% if page.collection %}
-        {% assign collection = site.news | posts_passed: 'post_date' %}
-        {% assign prev = false %}
-        {% assign next = false %}
-
-        {% for item in collection %}
-          {% if item.title == page.title %}
-            {% unless forloop.first %}
-              {% assign prev = iterator %}
-            {% endunless %}
-
-            {% unless forloop.last %}
-              {% assign next = collection[forloop.index] %}
-            {% endunless %}
-          {% endif %}
-
-          {% assign iterator = item %}
-        {% endfor %}
-      {% endif %}
-
-
-      {% if next %}
-        {% include sibling-post.html post=next %}
-      {% endif %}
-      {% if prev %}
-        {% include sibling-post.html post=prev previous=true %}
-      {% endif %}
-      <div class="clear"></div>
-    </nav>
-  </section>
 </main>
