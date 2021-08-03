@@ -7,8 +7,8 @@ header:
     slug: /actualites
   - title: Fiches techniques
     slug: /fiches-techniques
-  - title: Journées d'études
-    slug: /journees-d-etudes
+  # - title: Journées d'études
+  #   slug: /journees-d-etudes
   - title: Ressources
     slug: /ressources
 
@@ -23,7 +23,7 @@ footer:
     slug: /mentions-legales
 
 partners:
-  list: 
+  list:
     - title: PJGN
     - title: Orange
     - title: Nouvelle Aquitaine

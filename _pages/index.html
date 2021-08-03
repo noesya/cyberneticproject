@@ -10,21 +10,24 @@ seo:
 <section class="row mb-5 pb-5">
     <div class="col-md-3 offset-md-1 text sticky-title">
         <h1>Actualités</h1>
-        <p>Retrouvez toutes les actualités du projet.</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos molestias animi distinctio id quos autem rerum porro odit commodi libero. Ipsam odit ea necessitatibus numquam suscipit veniam incidunt minus molestiae!
+        </p>
         <a href="/actualites">Toutes les actualités</a>
     </div>
-
-    {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
-    {% for post in posts limit:1 offset:2 %}
-        <div class="col-md-8 mb-5 pb-5">
+    <div class="col-md-8">
+        {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
+        {% for post in posts limit:1 offset:2 %}
             {% include post.html post=post big=true %}
-        </div>
-    {% endfor %}
-    {% for post in posts limit:2 offset:0 %}
-        <div class="col-md-4 {% if forloop.index == 1 %} offset-md-4 {% endif %}">
+        {% endfor %}
+        <div class="row">
+          {% for post in posts limit:2 offset:0 %}
+          <div class="col-md-6 mt-5">
             {% include post.html post=post %}
+          </div>
+          {% endfor %}
         </div>
-    {% endfor %}
+    </div>
 </section>
 
 <section class="row mb-5 py-5">
