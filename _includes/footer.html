@@ -1,8 +1,8 @@
-<footer class="footer text--small" id="footer">
+<footer class="footer" id="footer">
     <div class="container py-5">
         <div class="row">
-            <div class="col-md-2 offset-md-1">
-                <h3 class="mb-4">Partenaires</h3>
+            <div class="col-md-4 offset-md-1">
+                <p class="mb-4">Partenaires</p>
                 <ul class="mb-5">
                     {% for item in site.data.nav.partners.list %}
                         <li class="mb-3">
@@ -14,8 +14,17 @@
                         </li>
                     {% endfor %}
                 </ul>
+                <div class="row">
+                  {% for item in site.data.nav.partners.logos %}
+                  <div class="col-4 p-3">
+                      <a href="{{ item.link }}" target="_blank" rel="noopener">
+                          <img src="{{ item.url | prepend: '/assets/images/' }}" alt="{{ item.alt }}">
+                      </a>
+                  </div>
+                  {% endfor %}
+                </div>
             </div>
-            <div class="col-md-5 offset-md-1">
+            <div class="col-md-4">
                 <div>
                     <p>
                         En partenariat avec la Gendarmerie Nationale, le projet CyberNeTic vise à mener une recherche-action au coeur des sciences de l'information et de la communication pour étudier les formes d'expression de la violence au moyen des nouvelles technologies et tout particulièrement celle du cyberharcèlement. Il s'agit d'analyser les discours d'expériences (victimes, enquêteurs) et les échanges de conversations (sms, réseaux sociaux, mails, etc.), afin d'identifier les phénomènes d'engrenage, les stratégies d'influence et de manipulation enclenchées par les prédateurs.
@@ -44,24 +53,11 @@
                 </ul>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4 offset-md-1">
-                <div class="row">
-                    {% for item in site.data.nav.partners.logos %}
-                    <div class="col-4 p-3">
-                        <a href="{{ item.link }}" target="_blank" rel="noopener">
-                            <img src="{{ item.url | prepend: '/assets/images/' }}" alt="{{ item.alt }}">
-                        </a>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
         <div class="text--right">
             <a href="/" class="logo">
                 CyberNeTic
                 {% include pictos/skull-black.svg %}
             </a>
-        </div> 
+        </div>
     </div>
 </footer>
