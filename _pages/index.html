@@ -1,5 +1,5 @@
 ---
-title: Accueil
+title: CyberNeTic
 permalink: /
 seo:
   title: "CyberNeTic"
@@ -17,7 +17,7 @@ seo:
                     <p>Retrouvez toutes les actualités du projet.</p>
                     <a href="/actualites">Toutes les actualités</a>
                 </div>
-                
+
                 {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
                 {% for post in posts limit:1 offset:2 %}
                     <div class="col-md-8 mb-5 pb-5">
@@ -65,15 +65,15 @@ seo:
                         <div class="col-md-6">
                             {% include post-technic.html post=post index=forloop.index %}
                         </div>
-        
+
                         <div class="col-md-6">
                             {% include post-technic.html post=post index=2 %}
                         </div>
-        
+
                         <div class="col-md-6">
                             {% include post-technic.html post=post index=3 %}
                         </div>
-        
+
                         <div class="col-md-6">
                             {% include post-technic.html post=post index=4 %}
                         </div>
@@ -90,7 +90,7 @@ seo:
                     <p>Retrouvez toutes les ressources du projet.</p>
                     <a href="/ressources">Toutes les ressources</a>
                 </div>
-                
+
                 {% assign posts = site.ressources | posts_passed: 'post_date' | reverse %}
                 {% for post in posts limit:1 %}
                     <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
@@ -114,7 +114,7 @@ seo:
                     </div>
                 {% endfor %}
 
-            
+
             </div>
         </section>
 
