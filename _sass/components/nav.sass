@@ -26,7 +26,7 @@ header
     #menu
         li
             display: inline-block
-            font-size: px2rem(16)
+            font-size: px2rem(14)
             margin: 0 10px
             text-transform: uppercase
             vertical-align: middle
@@ -40,10 +40,9 @@ header
                 text-decoration: none
                 &::after, &::before
                     background: $back
-                    color: $text-color
-                    padding: 18px 10px
+                    color: $white
                 &.active
-                    +link
+                    border-bottom: 1px solid $white
             #switch-colors
                 cursor: pointer
                 display: none
