@@ -1,13 +1,10 @@
 header
-    font-family: $font-secondary
+    color: $white
     left: 0
     position: absolute
     right: 0
     top: 0
     z-index: 100
-    .is-darken &
-        background: $front
-        border-color: $back
     nav
         align-items: center
         display: flex
@@ -43,15 +40,10 @@ header
                 text-decoration: none
                 &::after, &::before
                     background: $back
-                    color: $orange
+                    color: $text-color
                     padding: 18px 10px
-                &:hover
-                    color: $orange
                 &.active
                     +link
-                    color: $front
-                    .is-darken &
-                        color: $front
             #switch-colors
                 cursor: pointer
                 display: none
@@ -136,7 +128,6 @@ header
         border-radius: 0
         color: $front
         display: block
-        font-family: $font-secondary
         font-size: 40px
         padding: 15px
         padding-left: 0
@@ -144,7 +135,6 @@ header
         &:focus-visible
             outline: 0
     li
-        font-family: $font-primary
         font-size: 20px
         padding: 10px 0
         small
