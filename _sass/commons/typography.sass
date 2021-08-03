@@ -23,7 +23,6 @@ h1, .h1
     margin-bottom: px2rem(40)
     +mobile
         font-size: px2rem(30)
-    
 
 h2, .h2
     font-size: px2rem(26)
@@ -74,8 +73,7 @@ a
 .text
     a
         +link
-        +text-shadow($orange)
-        color: $front
+        color: $back
         word-break: break-all
     img
         display: block
@@ -127,25 +125,6 @@ a
                     display: none
             &::before
                 display: none
-
-.door
-    align-items: center
-    display: flex
-    position: relative
-    &::after, &::before
-        background: $front
-        content: ''
-        display: block
-        height: 1px
-        width: 100%
-    .btn
-        font-size: px2rem(20)
-        margin: 30px 15px
-        padding: 14px 20px
-        position: relative
-        white-space: nowrap
-        z-index: 10
-
 
 .sticky-title
     align-self: start

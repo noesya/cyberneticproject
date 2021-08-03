@@ -5,17 +5,16 @@
     padding-top: 100px
     position: relative
     text-align: center
-    +text-shadow($front)
     q
-        color: $front
+        color: $back
         display: block
         font-family: $font-secondary
         font-size: px2rem(40)
         line-height: px2rem(52)
         position: relative
         &:after, &:before
-            background: $back
-            color: $front
+            background: white
+            color: $back
     span
         display: block
         font-size: px2rem(180)
