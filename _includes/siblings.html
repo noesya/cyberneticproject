@@ -19,26 +19,20 @@
     {% endif %}
 
     {% if next %}
-        <a href="{{ next.url }}" class="col-md-4 offset-md-1">
+        <a href="{{ next.url }}" class="col-md-5 offset-md-1">
             <p class="h5">{{ include.next }}</p>
             <h2 class="h3 mb-3">
                 {% if next.title %}{{ next.title }}{% else %}{{ site.post.title }}{% endif %}
             </h2>
-            <span class="btn btn--lite mt-3">
-                {{ include.more }}
-            </span>
         </a>
     {% endif %}
-    
+
     {% if prev %}
-        <a href="{{ prev.url }}" class="col-md-4 text-end ml-auto">
+        <a href="{{ prev.url }}" class="col-md-5 offset-md-1 ml-auto text-end">
             <p class="h5">{{ include.prev }}</p>
             <h2 class="h3 mb-3">
                 {% if prev.title %}{{ prev.title }}{% else %}{{ site.post.title }}{% endif %}
             </h2>
-            <span class="btn btn--lite mt-3">
-            {{ include.more }}
-            </span>
         </a>
     {% endif %}
 </section>
