@@ -1,0 +1,12 @@
+---
+layout: page
+---
+
+<div class="row">
+    {% assign posts = site[page.list] | posts_passed: 'post_date' | reverse %}
+    {% for post in posts %}
+        <div class="offset-md-1 col-md-11">
+            {% include post.html post=post %}
+        </div>
+    {% endfor %}
+</div>

@@ -117,6 +117,9 @@ collections:
       - name: subtitle
         label: Sous-titre
         default: "Etiologie des pratiques de cyberharcèlement"
+      - label: 'Post date'
+        name: 'post_date'
+        widget: 'date'
       - *SEO
       - *IMAGE_FIELDS
 
