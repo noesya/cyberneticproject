@@ -9,7 +9,7 @@ seo:
 
 <section class="row mb-5 pb-5">
     <div class="col-md-3 offset-md-1 text sticky-title">
-        <h1>Actualités</h1>
+        <h2>Actualités</h2>
         <p>Retrouvez toutes les actualités du projet.</p>
         <a href="/actualites">Toutes les actualités</a>
     </div>
@@ -17,7 +17,7 @@ seo:
     {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
     {% for post in posts limit:1 offset:2 %}
         <div class="col-md-8 mb-5 pb-5">
-            {% include post.html post=post big=true %}
+            {% include post.html post=post image=true big=true %}
         </div>
     {% endfor %}
     {% for post in posts limit:2 offset:0 %}
@@ -29,7 +29,7 @@ seo:
 
 <section class="row mb-5 py-5">
     <div class="col-md-7 offset-md-1 text">
-        <h1>Projet</h1>
+        <h2>Projet</h2>
         <p>
             En partenariat avec la Gendarmerie Nationale, le projet CyberNeTic vise à mener une recherche-action au coeur des sciences de l'information et de la communication pour étudier les formes d'expression de la violence au moyen des nouvelles technologies et tout particulièrement celle du cyberharcèlement. Il s'agit d'analyser les discours d'expériences (victimes, enquêteurs) et les échanges de conversations (sms, réseaux sociaux, mails, etc.), afin d'identifier les phénomènes d'engrenage, les stratégies d'influence et de manipulation enclenchées par les prédateurs.
         </p>
@@ -42,7 +42,7 @@ seo:
 
 <section class="row mb-5 py-5">
     <div class="col-md-5 offset-md-1 mb-5">
-        <h1><a href="/fiches-techniques">Fiches Techniques</a></h1>
+        <h2><a href="/fiches-techniques">Fiches Techniques</a></h2>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos molestias animi distinctio id quos autem rerum porro odit commodi libero. Ipsam odit ea necessitatibus numquam suscipit veniam incidunt minus molestiae!
         </p>
@@ -64,7 +64,7 @@ seo:
 
 <section class="row mb-5 py-5">
     <div class="col-md-5 offset-md-1 text sticky-title">
-        <h1>Ressources</h1>
+        <h2>Ressources</h2>
         <p>Retrouvez toutes les ressources du projet.</p>
         <a href="/ressources">Toutes les ressources</a>
     </div>
@@ -79,7 +79,7 @@ seo:
 
 <section class="row mb-5 py-5">
     <div class="col-md-6 offset-md-1 mb-5">
-        <h1>Partenaires</h1>
+        <h2>Partenaires</h2>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos molestias animi distinctio id quos autem.
         </p>

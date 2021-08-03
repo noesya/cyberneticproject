@@ -5,9 +5,4 @@
             {% if include.post.title %}{{ include.post.title }}{% else %}{{ site.post.title }}{% endif %}
         </h2>
     </a>
-    <div class="post-technic__text">
-        <p>
-            {{ include.post.preview | markdownify | strip_html | newline_to_br | strip_first_br | truncatewords: 25 }}
-        </p>
-    </div>
 </article>
