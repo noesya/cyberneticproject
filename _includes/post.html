@@ -7,7 +7,6 @@
         {% endif %}
         <div class="content">
             <h2 class="h3 mb-1">{% if include.post.title %}{{ include.post.title }}{% else %}{{ site.post.title }}{% endif %}</h2>
-            
             {% if include.post.post_date %}
                 <time datetime="{{include.post.post_date | date_to_xmlschema}}">{{ include.post.post_date | localize: "Publié le %-d %B %Y", "fr" }}</time>
             {% endif %}
@@ -16,7 +15,6 @@
                 {{ include.post.content | markdownify | strip_html | newline_to_br | strip_first_br | truncatewords: 25 }}
             </p>
             {% endif %}
-
             <span class="btn btn--lite mt-3" href="{{ include.post.url }}">Lire la suite</span>
         </div>
     </a>

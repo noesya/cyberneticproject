@@ -1,63 +1,39 @@
 ---
-layout: default
+layout: page
 ---
 
-<main class="page">
-  {% include page-head.html title=page.title %}
-
-  <div class="page__body">
-    <div class="container mb-5">
-      <div class="row">
-        <div class="col-md-11 offset-md-1">
-          {% include breadcrumb.html %}
-        </div>
-      </div>
-    </div>
-
-    <section class="container">
-      <div class="row">
-        <div class="offset-md-1 col-md-6 text">
-          <h2>{{ page.preview }}</h2>
-          {{ page.content | markdownify }}
-        </div>
-      </div>
-    </section>
-
-    <section class="container post__siblings">
-      <div class="row">
-        <div class="offset-md-1 col-md-6">
-          <h3>Autres actualités</h3>
-          <nav class="siblings">
-            {% if page.collection %}
-              {% assign collection = site[page.collection] | posts_passed: 'post_date' %}
-              {% assign prev = false %}
-              {% assign next = false %}
-      
-              {% for item in collection %}
-                {% if item.title == page.title %}
-                  {% unless forloop.first %}
-                    {% assign prev = iterator %}
-                  {% endunless %}
-      
-                  {% unless forloop.last %}
-                    {% assign next = collection[forloop.index] %}
-                  {% endunless %}
-                {% endif %}
-      
-                {% assign iterator = item %}
-              {% endfor %}
-            {% endif %}
-      
-      
-              {% if next %}
-                {% include sibling-post.html post=next %}
-              {% endif %}
-              {% if prev %}
-                {% include sibling-post.html post=prev previous=true %}
-              {% endif %}
-          </nav>
-        </div>
-      </div>
-    </section>
+<section class="row">
+  <div class="offset-md-1 col-md-6 text">
+    <time datetime="{{page.post_date | date_to_xmlschema}}">{{ page.post_date | localize: "Publié le %-d %B %Y", "fr" }}</time>
+    <h2>{{ page.preview }}</h2>
+    {{ page.content | markdownify }}
   </div>
-</main>
+</section>
+
+<section class="row post__siblings justify-content-between mt-5">
+  {% if page.collection %}
+    {% assign collection = site[page.collection] | posts_passed: 'post_date' %}
+    {% assign prev = false %}
+    {% assign next = false %}
+
+    {% for item in collection %}
+      {% if item.title == page.title %}
+        {% unless forloop.first %}
+          {% assign prev = iterator %}
+        {% endunless %}
+
+        {% unless forloop.last %}
+          {% assign next = collection[forloop.index] %}
+        {% endunless %}
+      {% endif %}
+
+      {% assign iterator = item %}
+    {% endfor %}
+  {% endif %}
+  {% if next %}
+    {% include sibling-post.html post=next %}
+  {% endif %}
+  {% if prev %}
+    {% include sibling-post.html post=prev previous=true %}
+  {% endif %}
+</section>
