@@ -5,7 +5,7 @@ title: "Actualités"
 <div class="row">
     {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
     {% for post in posts %}
-        <div class="offset-md-1 col-md-11">
+        <div class="offset-md-1 col-md-11 mb-5">
             {% include post.html post=post %}
         </div>
     {% endfor %}
