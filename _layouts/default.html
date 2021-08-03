@@ -41,7 +41,10 @@
   </head>
   <body>
     {% include nav.html %}
-    {{ content }}
+    <main class="page">
+      {% include page-head.html %}
+      {{ content }}
+    </main>
     {% include footer.html %}
   </body>
 

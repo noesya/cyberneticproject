@@ -1,142 +1,137 @@
 ---
 title: Accueil
-permalink: /
+permalink: / 
 seo:
   title: "CyberNeTic"
   text: This is a meta description
   description: This is a meta description
 ---
 
-<main class="page">
-    {% include page-head.html title="Expression de la violence et cyberharcèlement" %}
-    <div class="page__body">
-        <section class="container">
-            <div class="row">
-                <div class="col-md-3 offset-md-1 text sticky-title">
-                    <h1>Actualités</h1>
-                    <p>Retrouvez toutes les actualités du projet.</p>
-                    <a href="/actualites">Toutes les actualités</a>
-                </div>
-                
-                {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
-                {% for post in posts limit:1 offset:2 %}
-                    <div class="col-md-8 mb-5 pb-5">
-                        {% include post.html post=post big=true %}
-                    </div>
-                {% endfor %}
-                {% for post in posts limit:2 offset:0 %}
-                <div class="col-md-4 {% if forloop.index == 1 %} offset-md-4 {% endif %}">
-                    {% include post.html post=post %}
-                </div>
-                {% endfor %}
+
+        <div class="row">
+            <div class="col-md-3 offset-md-1 text sticky-title">
+                <h1>Actualités</h1>
+                <p>Retrouvez toutes les actualités du projet.</p>
+                <a href="/actualites">Toutes les actualités</a>
             </div>
-        </section>
-
-        <section class="container">
-            <div class="row">
-                <div class="col-md-7 offset-md-1 text">
-                    <h1>Projet</h1>
-                    <p>
-                        En partenariat avec la Gendarmerie Nationale, le projet CyberNeTic vise à mener une recherche-action au coeur des sciences de l'information et de la communication pour étudier les formes d'expression de la violence au moyen des nouvelles technologies et tout particulièrement celle du cyberharcèlement. Il s'agit d'analyser les discours d'expériences (victimes, enquêteurs) et les échanges de conversations (sms, réseaux sociaux, mails, etc.), afin d'identifier les phénomènes d'engrenage, les stratégies d'influence et de manipulation enclenchées par les prédateurs.
-                    </p>
-                    <a class="btn btn--lte" href="/projet">Lire la suite</a>
-                </div>
-                <div class="col-md-4">
-                    <img class="cover-img" src="/assets/images/test.png" alt="Cyberharcelement par téléphone">
-                </div>
-            </div>
-        </section>
-
-        <section class="container">
-            {% assign posts = site.technics %}
-            <div class="row">
-                <div class="col-md-5 offset-md-1 mb-5">
-                    <h1><a href="/fiches-techniques">Fiches Techniques</a></h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos molestias animi distinctio id quos autem rerum porro odit commodi libero. Ipsam odit ea necessitatibus numquam suscipit veniam incidunt minus molestiae!
-                    </p>
-                    <a class="btn btn--lite mt-4" href="/fiches-techniques">
-                        Toutes les fiches
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        {% for post in posts limit:3 %}
-                        <div class="col-md-6">
-                            {% include post-technic.html post=post index=forloop.index %}
-                        </div>
-        
-                        <div class="col-md-6">
-                            {% include post-technic.html post=post index=2 %}
-                        </div>
-        
-                        <div class="col-md-6">
-                            {% include post-technic.html post=post index=3 %}
-                        </div>
-        
-                        <div class="col-md-6">
-                            {% include post-technic.html post=post index=4 %}
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="container">
-            <div class="row">
-                <div class="col-md-5 offset-md-1 text sticky-title">
-                    <h1>Ressources</h1>
-                    <p>Retrouvez toutes les ressources du projet.</p>
-                    <a href="/ressources">Toutes les ressources</a>
-                </div>
-                
-                {% assign posts = site.ressources | posts_passed: 'post_date' | reverse %}
-                {% for post in posts limit:1 %}
-                    <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
-                        {% include ressource.html post=post %}
-                    </div>
-                    <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
-                        {% include ressource.html post=post %}
-                    </div>
-                    <div class="col-md-3 mb-4 offset-md-6">
-                        {% include ressource.html post=post %}
-                    </div>
-                    <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
-                        {% include ressource.html post=post %}
-                    </div>
-
-                    <div class="col-md-3 mb-4 offset-md-6">
-                        {% include ressource.html post=post %}
-                    </div>
-                    <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
-                        {% include ressource.html post=post %}
-                    </div>
-                {% endfor %}
-
             
-            </div>
-        </section>
-
-        <section class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-1 mb-5">
-                    <h1>Partenaires</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos molestias animi distinctio id quos autem.
-                    </p>
+            {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
+            {% for post in posts limit:1 offset:2 %}
+                <div class="col-md-8 mb-5 pb-5">
+                    {% include post.html post=post big=true %}
                 </div>
-                <div class="col-md-10 offset-md-1 technics-list">
-                    <div class="row">
-                        {% for partner in site.data.partners %}
-                        <div class="col-md-2 partner">
-                            <img src="/assets/images/{{ partner.url }}" alt="{{ partner.alt }}">
-                        </div>
-                        {% endfor %}
+            {% endfor %}
+            {% for post in posts limit:2 offset:0 %}
+            <div class="col-md-4 {% if forloop.index == 1 %} offset-md-4 {% endif %}">
+                {% include post.html post=post %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <div class="col-md-7 offset-md-1 text">
+                <h1>Projet</h1>
+                <p>
+                    En partenariat avec la Gendarmerie Nationale, le projet CyberNeTic vise à mener une recherche-action au coeur des sciences de l'information et de la communication pour étudier les formes d'expression de la violence au moyen des nouvelles technologies et tout particulièrement celle du cyberharcèlement. Il s'agit d'analyser les discours d'expériences (victimes, enquêteurs) et les échanges de conversations (sms, réseaux sociaux, mails, etc.), afin d'identifier les phénomènes d'engrenage, les stratégies d'influence et de manipulation enclenchées par les prédateurs.
+                </p>
+                <a class="btn btn--lte" href="/projet">Lire la suite</a>
+            </div>
+            <div class="col-md-4">
+                <img class="cover-img" src="/assets/images/test.png" alt="Cyberharcelement par téléphone">
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        {% assign posts = site.technics %}
+        <div class="row">
+            <div class="col-md-5 offset-md-1 mb-5">
+                <h1><a href="/fiches-techniques">Fiches Techniques</a></h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos molestias animi distinctio id quos autem rerum porro odit commodi libero. Ipsam odit ea necessitatibus numquam suscipit veniam incidunt minus molestiae!
+                </p>
+                <a class="btn btn--lite mt-4" href="/fiches-techniques">
+                    Toutes les fiches
+                </a>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    {% for post in posts limit:3 %}
+                    <div class="col-md-6">
+                        {% include post-technic.html post=post index=forloop.index %}
                     </div>
+    
+                    <div class="col-md-6">
+                        {% include post-technic.html post=post index=2 %}
+                    </div>
+    
+                    <div class="col-md-6">
+                        {% include post-technic.html post=post index=3 %}
+                    </div>
+    
+                    <div class="col-md-6">
+                        {% include post-technic.html post=post index=4 %}
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-</main>
+    <section class="container">
+        <div class="row">
+            <div class="col-md-5 offset-md-1 text sticky-title">
+                <h1>Ressources</h1>
+                <p>Retrouvez toutes les ressources du projet.</p>
+                <a href="/ressources">Toutes les ressources</a>
+            </div>
+            
+            {% assign posts = site.ressources | posts_passed: 'post_date' | reverse %}
+            {% for post in posts limit:1 %}
+                <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
+                    {% include ressource.html post=post %}
+                </div>
+                <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
+                    {% include ressource.html post=post %}
+                </div>
+                <div class="col-md-3 mb-4 offset-md-6">
+                    {% include ressource.html post=post %}
+                </div>
+                <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
+                    {% include ressource.html post=post %}
+                </div>
+
+                <div class="col-md-3 mb-4 offset-md-6">
+                    {% include ressource.html post=post %}
+                </div>
+                <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
+                    {% include ressource.html post=post %}
+                </div>
+            {% endfor %}
+
+        
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-1 mb-5">
+                <h1>Partenaires</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos molestias animi distinctio id quos autem.
+                </p>
+            </div>
+            <div class="col-md-10 offset-md-1 technics-list">
+                <div class="row">
+                    {% for partner in site.data.partners %}
+                    <div class="col-md-2 partner">
+                        <img src="/assets/images/{{ partner.url }}" alt="{{ partner.alt }}">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
