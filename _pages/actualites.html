@@ -1,12 +1,31 @@
 ---
 title: "Actualités"
 ---
-<section class="container">
-    <h1>Actualités</h1>
-    <div class="news">
-        {% assign posts = site.news | posts_passed: 'post_date' | reverse  %}
-        {% for post in posts %}
-            {% include post.html post=post %}
-        {% endfor %}
+
+
+<main class="page">
+    {% include page-head.html title=page.title %}
+
+    <div class="page__body">
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col-md-11 offset-md-1">
+                    {% include breadcrumb.html %}
+                </div>
+            </div>
+        </div>
+
+        <section class="container">
+            <div class="row">
+                <div class="offset-md-1 col-md-10">
+                    <div class="row">
+                        {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
+                        {% for post in posts %}
+                            {% include post.html post=post %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-</section>
+</main>

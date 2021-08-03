@@ -1,20 +1,17 @@
-<article class="mb-5 {% if include.large %}col-md-12 sticky{% else %}col-md-4{% endif %}">
-    <a href="{{ include.post.url }}" class="{% if include.large %}row{% endif %}">
-        <div class="image {% if include.large %} col-md-6{% endif %}">
+<article>
+    <a href="{{ include.post.url }}">
+        {% if include.image %}
+        <div class="image">
             <img src="{{ include.post.image.src }}" alt="{{ include.post.image.alt }}" title="{{ include.post.image.title }}">
         </div>
-        <div class="content {% if include.large %}col-md-6{% endif %}">
+        {% endif %}
+        <div class="content">
             <h2 class="h3 mb-1">{% if include.post.title %}{{ include.post.title }}{% else %}{{ site.post.title }}{% endif %}</h2>
             <time datetime="{{include.post.post_date | date_to_xmlschema}}">{{ include.post.post_date | localize: "Publié le %-d %B %Y", "fr" }}</time>
             <p>
                 {{ include.post.content | markdownify | strip_html | newline_to_br | strip_first_br | truncatewords: 25 }}
             </p>
             <span class="btn btn--lite mt-3" href="{{ include.post.url }}">Lire la suite</span>
-
-            <!-- {% if include.large %}
-                <span class="btn btn--light mt-3" href="{{ include.post.url }}">Lire la suite</span>
-            {% else %} -->
-            <!-- {% endif %} -->
         </div>
     </a>
 </article>

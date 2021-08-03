@@ -14,6 +14,11 @@ defaults:
       layout: "post"
   - scope:
       path: ""
+      type: "ressources"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
       type: "technics"
     values:
       layout: "technic"
@@ -25,6 +30,10 @@ collections:
   news:
     output: true
     permalink: /actualites/:name
+    sort_by: post_date
+  ressources:
+    output: true
+    permalink: /ressources/:name
     sort_by: post_date
   technics:
     output: true
