@@ -3,10 +3,6 @@
 
         <div class="content">
             <h2 class="h3 mb-1">{% if include.post.title %}{{ include.post.title }}{% else %}{{ site.post.title }}{% endif %}</h2>
-            <time datetime="{{include.post.post_date | date_to_xmlschema}}">{{ include.post.post_date | localize: "Publié le %-d %B %Y", "fr" }}</time>
-            <p>
-                {{ include.post.preview | markdownify | strip_html | newline_to_br | strip_first_br | truncatewords: 25 }}
-            </p>
             <span class="btn btn--lite mt-3" href="{{ include.post.url }}">Voir la ressource</span>
         </div>
     </a>
