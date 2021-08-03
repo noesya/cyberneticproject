@@ -1,0 +1,48 @@
+
+<section class="row post__siblings mt-5">
+    {% if page.collection %}
+        {% assign collection = site[page.collection] | posts_passed: 'post_date' %}
+        {% assign prev = false %}
+        {% assign next = false %}
+
+        {% for item in collection %}
+            {% if item.title == page.title %}
+                {% unless forloop.first %}
+                    {% assign prev = iterator %}
+                {% endunless %}
+                {% unless forloop.last %}
+                    {% assign next = collection[forloop.index] %}
+                {% endunless %}
+            {% endif %}
+            {% assign iterator = item %}
+        {% endfor %}
+    {% endif %}
+
+    {% if next %}
+        <a href="{{ next.url }}" class="col-md-4 offset-md-1">
+            <p class="h5">{{ include.next }}</p>
+            <h2 class="h3 mb-3">
+                {% if next.title %}{{ next.title }}{% else %}{{ site.post.title }}{% endif %}
+            </h2>
+            <div class="text">
+                <span class="link">
+                    {{ include.more }}
+                </span>
+            </div>
+        </a>
+    {% endif %}
+    
+    {% if prev %}
+        <a href="{{ prev.url }}" class="col-md-4 text-end ml-auto">
+            <p class="h5">{{ include.prev }}</p>
+            <h2 class="h3 mb-3">
+                {% if prev.title %}{{ prev.title }}{% else %}{{ site.post.title }}{% endif %}
+            </h2>
+            <div class="text">
+                <span class="link">
+                {{ include.more }}
+                </span>
+            </div>
+        </a>
+    {% endif %}
+</section>

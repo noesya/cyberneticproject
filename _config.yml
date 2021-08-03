@@ -38,4 +38,4 @@ collections:
   technics:
     output: true
     permalink: /fiches-techniques/:name
-    sort_by: name
+    sort_by: post_date
