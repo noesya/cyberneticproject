@@ -35,3 +35,27 @@
     .text
         h2
             position: relative
+
+.light-theme
+    .page__body
+        background: $white
+        color: $back
+        padding-top: 60px
+    .quote
+        q
+            color: $back
+            &:after, &:before
+                background: white
+                color: $back
+    .text
+        a
+            color: $back
+            text-shadow: none
+    .reading-progress
+        background: none
+        &__bar
+            background: $back
+        p
+            color: $back
+    footer
+        background: $light-grey
