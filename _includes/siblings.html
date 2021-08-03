@@ -24,11 +24,9 @@
             <h2 class="h3 mb-3">
                 {% if next.title %}{{ next.title }}{% else %}{{ site.post.title }}{% endif %}
             </h2>
-            <div class="text">
-                <span class="link">
-                    {{ include.more }}
-                </span>
-            </div>
+            <span class="btn btn--lite mt-3">
+                {{ include.more }}
+            </span>
         </a>
     {% endif %}
     
@@ -38,11 +36,9 @@
             <h2 class="h3 mb-3">
                 {% if prev.title %}{{ prev.title }}{% else %}{{ site.post.title }}{% endif %}
             </h2>
-            <div class="text">
-                <span class="link">
-                {{ include.more }}
-                </span>
-            </div>
+            <span class="btn btn--lite mt-3">
+            {{ include.more }}
+            </span>
         </a>
     {% endif %}
 </section>

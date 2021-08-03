@@ -6,9 +6,9 @@ layout: page
 <div class="row">
     {% assign posts = site[page.list] | posts_passed: 'post_date' | reverse %}
     {% for post in posts %}
-        {% assign modulo = forloop.index0 | modulo:3 %}
-        <div class="{% if modulo==0 %} offset-md-1 {% endif %} col-md-3">
-            {% include {{ item_template | default: "post" | append: '.html' }} post=post index=forloop.index %}
+        {% assign modulo = forloop.index0 | modulo:2 %}
+        <div class="{% if modulo==0 %} offset-md-1 {% endif %} col-md-5 mb-5">
+            {% include {{ item_template | default: "post" | append: '.html' }} post=post big=true index=forloop.index %}
         </div>
     {% endfor %}
 </div>
