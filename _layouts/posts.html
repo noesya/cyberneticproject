@@ -8,7 +8,7 @@ layout: page
     {% for post in posts %}
         {% assign modulo = forloop.index0 | modulo:2 %}
         <div class="offset-md-1 col-md-5 mb-5">
-            {% include {{ item_template | default: "post" | append: '.html' }} post=post big=true index=forloop.index %}
+            {% include {{ item_template | default: "post" | append: '.html' }} post=post image=true text=true index=forloop.index %}
         </div>
     {% endfor %}
 </div>

@@ -18,7 +18,7 @@ seo:
     <div class="col-md-8">
         {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
         {% for post in posts limit:1 offset:2 %}
-            {% include post.html post=post big=true %}
+            {% include post.html post=post image=true text=true big=true %}
         {% endfor %}
         <div class="row">
           {% for post in posts limit:2 offset:0 %}

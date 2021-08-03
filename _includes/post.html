@@ -1,13 +1,15 @@
 <article>
-    {% if include.big %}
-        <img src="{{ include.post.image.src }}" alt="{{ include.post.image.alt }}" title="{{ include.post.image.title }}" class="img-fluid mb-2">
+    {% if include.image %}
+        <div class="thumbnail{% if include.big %} thumbnail--big{% endif %} mb-2">
+            <img src="{{ include.post.image.src }}" alt="{{ include.post.image.alt }}" title="{{ include.post.image.title }}" class="img-fluid cover-img">
+        </div>
     {% endif %}
     <div class="content">
         <h3>{% if include.post.title %}{{ include.post.title }}{% else %}{{ site.post.title }}{% endif %}</h3>
         {% if include.post.post_date %}
         <time datetime="{{include.post.post_date | date_to_xmlschema}}">{{ include.post.post_date | localize: "Publié le %-d %B %Y", "fr" }}</time>
         {% endif %}
-        {% if include.big %}
+        {% if include.text %}
             <p class="mb-2">{{ include.post.content | markdownify | strip_html | newline_to_br | strip_first_br | truncatewords: 25 }}</p>
         {% endif %}
         <a class="btn btn--lite" href="{{ include.post.url }}">Lire la suite</a>
