@@ -52,23 +52,11 @@ seo:
     </div>
     <div class="col-md-6">
         <div class="row">
-            {% assign posts = site.technics %}
-            {% for post in posts limit:3 %}
-            <div class="col-md-6">
-                {% include post-technic.html post=post index=forloop.index %}
-            </div>
-
-            <div class="col-md-6">
-                {% include post-technic.html post=post index=2 %}
-            </div>
-
-            <div class="col-md-6">
-                {% include post-technic.html post=post index=3 %}
-            </div>
-
-            <div class="col-md-6">
-                {% include post-technic.html post=post index=4 %}
-            </div>
+            {% assign posts = site.technics | posts_passed: 'post_date' | reverse %}
+            {% for post in posts limit:4 %}
+                <div class="col-md-6">
+                    {% include post-technic.html post=post index=forloop.index %}
+                </div>
             {% endfor %}
         </div>
     </div>
@@ -82,23 +70,7 @@ seo:
     </div>
     
     {% assign posts = site.ressources | posts_passed: 'post_date' | reverse %}
-    {% for post in posts limit:1 %}
-        <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
-            {% include ressource.html post=post %}
-        </div>
-        <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
-            {% include ressource.html post=post %}
-        </div>
-        <div class="col-md-3 mb-4 offset-md-6">
-            {% include ressource.html post=post %}
-        </div>
-        <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
-            {% include ressource.html post=post %}
-        </div>
-
-        <div class="col-md-3 mb-4 offset-md-6">
-            {% include ressource.html post=post %}
-        </div>
+    {% for post in posts limit:4 %}
         <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
             {% include ressource.html post=post %}
         </div>
