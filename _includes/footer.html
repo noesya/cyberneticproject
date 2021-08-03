@@ -14,7 +14,7 @@
                         </li>
                     {% endfor %}
                 </ul>
-                <div class="row">
+                <div class="row mb-5">
                   {% for item in site.data.nav.partners.logos %}
                   <div class="col-4 p-3">
                       <a href="{{ item.link }}" target="_blank" rel="noopener">
@@ -24,14 +24,14 @@
                   {% endfor %}
                 </div>
             </div>
-            <div class="col-md-4 offset-md-1">
+            <div class="col-md-4 offset-md-1 mb-5">
                 <div>
                     <p>
                         En partenariat avec la Gendarmerie Nationale, le projet CyberNeTic vise à mener une recherche-action au coeur des sciences de l'information et de la communication pour étudier les formes d'expression de la violence au moyen des nouvelles technologies et tout particulièrement celle du cyberharcèlement. Il s'agit d'analyser les discours d'expériences (victimes, enquêteurs) et les échanges de conversations (sms, réseaux sociaux, mails, etc.), afin d'identifier les phénomènes d'engrenage, les stratégies d'influence et de manipulation enclenchées par les prédateurs.
                     </p>
                 </div>
             </div>
-            <div class="col-md-3 text-end">
+            <div class="col-md-3 nav">
                 <ul>
                 {% for item in site.data.nav.header %}
                     {% assign class = nil %}
@@ -53,7 +53,7 @@
                 </ul>
             </div>
         </div>
-        <div class="text-end">
+        <div>
             <a href="/" class="logo">
                 CyberNeTic
                 {% include pictos/skull-black.svg %}
