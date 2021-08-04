@@ -102,6 +102,48 @@ collections:
         label: Contenu
         widget: markdown
 
+  - name: 'study_days'
+    label: 'Journées d‘études'
+    folder: '_study_days'
+    extension: html
+    create: true
+    sortable_fields: 
+      - post_date
+    editor:
+      preview: false
+    fields: 
+      - name: title
+        label: Titre
+      - name: subtitle
+        label: Sous-titre
+        required: false
+      - label: 'Post date'
+        name: 'post_date'
+        widget: 'date'
+      - *SEO
+      - *IMAGE_FIELDS
+      - name: participants
+        label: Participants
+        required: false
+        widget: array
+      - name: downloads
+        label: Téléchargements
+        required: false
+        widget: list
+        fields: 
+          - name: name
+            label: string
+            required: false
+          - name: file
+            widget: file
+            required: false
+            media_library:
+              - allow_multiple: false
+      - name: body
+        label: Contenu
+        widget: markdown
+
+
   - name: 'technics'
     label: 'Fiche technique'
     folder: '_technics'
@@ -117,16 +159,12 @@ collections:
       - name: subtitle
         label: Sous-titre
         default: "Etiologie des pratiques de cyberharcèlement"
+        required: false
       - label: 'Post date'
         name: 'post_date'
         widget: 'date'
       - *SEO
       - *IMAGE_FIELDS
-
-      - name: preview
-        label: Chapô
-        required: false
-        widget: text
 
       - name: synonymous
         label: Synonymes
@@ -146,6 +184,11 @@ collections:
             required: false
             media_library:
               - allow_multiple: false
+
+      - name: preview
+        label: Chapô
+        required: false
+        widget: text
 
       - name: definition
         label: Définition

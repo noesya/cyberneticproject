@@ -1,0 +1,43 @@
+---
+layout: page
+---
+
+<section class="row">
+  <div class="offset-md-1 col-md-6 text">
+    {{ page.content | markdownify }}
+  </div>
+  <div class="offset-md-1 col-md-3">
+    <div>
+      {% if page.participants.size > 0 %}
+        <h3>
+          {% if page.participants.size > 1 %}
+            Participants
+          {% else %}
+            Participant
+          {% endif %}
+        </h3>
+        <p>
+          {{ page.participants | join: ", " }}
+        </p>
+      {% endif %}
+    </div>
+    <div class="mt-5">
+      {% if page.downloads.size > 0 %}
+        <h3>
+          {% if page.downloads.size > 1 %}
+            Téléchargements
+          {% else %}
+            Téléchargement
+          {% endif %}
+        </h3>
+        <ul>
+          {% for download in page.downloads %}
+            <li><a href="{{ download.file }}" download>{{ download.name }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% include siblings.html next="Fiche technique suivante" prev="Fiche technique précédente" more="Voir la fiche" %}
