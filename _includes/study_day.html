@@ -1,10 +1,10 @@
 <article class="row align-items-center">
   {% if include.image %}
-      <div class="col-md-6 mb-2 mb-md-0">
+      <div class="{% unless include.inlist %}col-md-6 mb-md-0 {% endunless %} mb-2 ">
           <img src="{{ include.post.image.src }}" alt="{{ include.post.image.alt }}" title="{{ include.post.image.title }}" class="cover-img">
       </div>
   {% endif %}
-  <div class="content col-md-6">
+  <div class="content {% unless include.inlist %}col-md-6{% endunless %}">
       <h3>{% if include.post.title %}{{ include.post.title }}{% else %}{{ site.post.title }}{% endif %}</h3>
       {% if include.post.post_date %}
       <time datetime="{{include.post.post_date | date_to_xmlschema}}">{{ include.post.post_date | localize: "Publié le %-d %B %Y", "fr" }}</time>

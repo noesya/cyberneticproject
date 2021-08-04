@@ -75,7 +75,7 @@ seo:
     {% assign posts = site.study_days | posts_passed: 'post_date' | reverse %}
     {% for post in posts limit:3 %}
         <div class="col-md-6 mb-4 {% if forloop.index > 1 %} offset-md-6 {% endif %}">
-            {% include study_day.html post=post image=true %}
+            {% include study_day.html post=post image=true  %}
         </div>
     {% endfor %}
 </section>
