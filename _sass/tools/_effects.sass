@@ -36,13 +36,13 @@ $steps: 15
             clip: rect(random(100)+px,9999px,random(200)+px,0)
 
 .glitch
-    color: $violet
+    color: $white
     display: table
     position: relative
     &:after, &:before
         background: $back
         clip: rect(0,900px,0,0)
-        color: $violet
+        color: $white
         content: attr(data-text)
         height: 100%
         overflow: hidden
@@ -69,7 +69,11 @@ $steps: 15
             animation: noise-anim-2-continuous 2s infinite linear alternate-reverse
         &:after
             animation: noise-anim-continuous 2s infinite linear alternate-reverse
-
+.glitch--white
+    color: $text-color
+    &:after, &:before
+        background: $white
+        color: $text-color
 
 @keyframes noise-bg
     0%

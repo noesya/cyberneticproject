@@ -1,7 +1,7 @@
 <article class="mb-5 post-technic">
     <a class="post-technic__title" href="{{ include.post.url }}">
         <p class="post-technic__index">0{{ include.index }}</p>
-        <h2 class="h1 m-0 pb-3">
+        <h2 class="h1 m-0 pb-3 glitch glitch--white glitch--hovered" data-text="{% if include.post.title %}{{ include.post.title }}{% else %}{{ site.post.title }}{% endif %}">
             {% if include.post.title %}{{ include.post.title }}{% else %}{{ site.post.title }}{% endif %}
         </h2>
     </a>

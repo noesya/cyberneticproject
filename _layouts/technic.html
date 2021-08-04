@@ -35,7 +35,7 @@ layout: page
         </h3>
         <ul>
           {% for download in page.downloads %}
-            <li><a href="{{ download.file }}" download>{{ download.name }}</a></li>
+            <li><a href="{{ download.file }}" class="btn btn--lite" download>{{ download.name }}</a></li>
           {% endfor %}
         </ul>
       {% endif %}
