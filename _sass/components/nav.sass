@@ -54,7 +54,6 @@ header
             justify-content: center
         .mobile_button
             display: inline-block
-            font-weight: bold
             height: 65px
             line-height: 65px
             padding: 0
@@ -78,9 +77,6 @@ header
             position: fixed
             right: 0
             top: 0
-            .is-darken &
-                color: $front
-
             &:target
                 display: flex
             ul
@@ -98,9 +94,8 @@ header
                         padding-right: 15px
 
 .search
-    background: $back
-    border-left: $border-width solid $front
-    border-top: $border-width solid $front
+    background: $light-grey
+    color: $text-color
     height: calc(100% - 75px)
     max-width: 100%
     overflow: hidden
@@ -121,13 +116,15 @@ header
             width: 100%
     input
         -webkit-appearance: none
-        background: $back
+        background: transparent
         border: 0
-        border-bottom: 1px solid $front
+        border-bottom: 1px solid $text-color
         border-radius: 0
-        color: $front
+        color: $text-color
         display: block
+        font-family: $font
         font-size: 40px
+        font-weight: 300
         padding: 15px
         padding-left: 0
         width: 100%

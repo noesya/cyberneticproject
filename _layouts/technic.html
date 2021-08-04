@@ -43,58 +43,71 @@ layout: page
   </div>
 </section>
   
-  
-<section class="row quote">
-    <div class="col-md-8">
-      <p>
-        <span>“</span>
-        <q data-text="{{ page.quote }}" class="glitch">
-          {{ page.quote }}
-        </q>
-        <span>”</span>
-      </p>
-    </div>
-</section>
+{% if page.quote %}
+  <section class="row">
+      <div class="col-md-8 quote">
+        <p>
+          <span>“</span>
+          <q data-text="{{ page.quote }}" class="glitch">
+            {{ page.quote }}
+          </q>
+          <span>”</span>
+        </p>
+      </div>
+  </section>
+{% endif %}
 
-<section class="row">
-  <div class="offset-md-1 col-md-6 pb-5 mb-5">
-    <div class="text">
-      {{ page.main.text | markdownify }}
+{% if page.main.text %}
+  <section class="row">
+    <div class="offset-md-1 col-md-6 pb-5 mb-5">
+      <div class="text">
+        {{ page.main.text | markdownify }}
+      </div>
     </div>
-  </div>
-  {% if page.main.image %}
-    {% include side-image.html image=page.main.image %}
-  {% endif %}
-</section>
-<section class="row">
-  <div class="offset-md-1 col-md-6 pb-5 mb-5">
-    <div class="text">
-      {{ page.side.text | markdownify }}
+    {% if page.main.image %}
+      {% include side-image.html image=page.main.image %}
+    {% endif %}
+  </section>
+{% endif %}
+
+{% if page.side.text %}
+  <section class="row">
+    <div class="offset-md-1 col-md-6 pb-5 mb-5">
+      <div class="text">
+        {{ page.side.text | markdownify }}
+      </div>
     </div>
-  </div>
-  {% if page.side.image %}
-    {% include side-image.html image=page.side.image %}
-  {% endif %}
-</section>
-<section class="row">
-  <div class="offset-md-1 col-md-6 pb-5 mb-5">
-    <div class="text">
-      {{ page.legals.text | markdownify }}
+    {% if page.side.image %}
+      {% include side-image.html image=page.side.image %}
+    {% endif %}
+  </section>
+{% endif %}
+
+{% if page.legals.text %}
+  <section class="row">
+    <div class="offset-md-1 col-md-6 pb-5 mb-5">
+      <div class="text">
+        {{ page.legals.text | markdownify }}
+      </div>
     </div>
-  </div>
-  {% if page.legals.image %}
-    {% include side-image.html image=page.legals.image %}
-  {% endif %}
-</section>
-<section class="row">
-  <div class="offset-md-1 col-md-6 pb-5 mb-5 indent-list">
-    <div class="text">
-      {{ page.ressources.text | markdownify }}
+    {% if page.legals.image %}
+      {% include side-image.html image=page.legals.image %}
+    {% endif %}
+  </section>
+{% endif %}
+
+{% if page.ressources.text %}
+  <section class="row">
+    <div class="offset-md-1 col-md-6 pb-5 mb-5 indent-list">
+      <div class="text">
+        {{ page.ressources.text | markdownify }}
+      </div>
     </div>
-  </div>
-  {% if page.ressources.image %}
-    {% include side-image.html image=page.ressources.image %}
-  {% endif %}
-</section>
+    {% if page.ressources.image %}
+      {% include side-image.html image=page.ressources.image %}
+    {% endif %}
+  </section>
+{% endif %}
+
 
 {% include siblings.html next="Fiche technique suivante" prev="Fiche technique précédente" more="Voir la fiche" %}
