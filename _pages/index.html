@@ -67,6 +67,21 @@ seo:
 
 <section class="row mb-5 py-5">
     <div class="col-md-5 offset-md-1 text sticky-title">
+        <h2>Journées d'études</h2>
+        <p>Retrouvez toutes les journées d'études du projet.</p>
+        <a href="/journees-d-etudes">Toutes les journées d'études</a>
+    </div>
+
+    {% assign posts = site.study_days | posts_passed: 'post_date' | reverse %}
+    {% for post in posts limit:3 %}
+        <div class="col-md-6 mb-4 {% if forloop.index > 1 %} offset-md-6 {% endif %}">
+            {% include study_day.html post=post image=true %}
+        </div>
+    {% endfor %}
+</section>
+
+<section class="row mb-5 py-5">
+    <div class="col-md-5 offset-md-1 text sticky-title">
         <h2>Ressources</h2>
         <p>Retrouvez toutes les ressources du projet.</p>
         <a href="/ressources">Toutes les ressources</a>
