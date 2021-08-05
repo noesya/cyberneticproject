@@ -49,9 +49,6 @@ header
 
 
     +media-breakpoint-down(md)
-        #menu
-            align-items: center
-            justify-content: center
         .mobile_button
             display: inline-block
             height: 65px
@@ -66,32 +63,33 @@ header
                 vertical-align: middle
             &__close
                 position: absolute
-                right: 34px
+                right: 14px
                 top: 10px
+        
+        .logo
+            svg
+                height: 50px
+                margin-right: 0
         #menu
             background: $back
             bottom: 0
             display: none
             left: 0
-            padding: 100px
+            padding-top: 100px
+            padding-left: 76px
             position: fixed
             right: 0
             top: 0
             &:target
-                display: flex
+                display: block
             ul
-                left: 0
-                right: 15px
-                top: 100px
                 li
                     display: block
                     margin-bottom: 30px
-                    text-align: center
+                    a, span
+                        display: inline-block
                 &::after
                     content: none
-                &:last-child
-                    a
-                        padding-right: 15px
 
 .search
     background: $light-grey

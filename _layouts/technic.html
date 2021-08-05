@@ -7,10 +7,10 @@ layout: page
     <p class="summary">{{ page.preview }}</p>
     {{ page.definition.text | markdownify }}
   </div>
-  <div class="offset-md-1 col-md-3">
+  <div class="offset-md-1 col-md-3 mt-5 mt-md-0">
     <div>
       {% if page.synonymous.size > 0 %}
-        <h3>
+        <h3 class="mb-3">
           {% if page.synonymous.size > 1 %}
             Synonymes
           {% else %}
@@ -26,7 +26,7 @@ layout: page
     </div>
     <div class="mt-5">
       {% if page.downloads.size > 0 %}
-        <h3>
+        <h3 class="mb-3">
           {% if page.downloads.size > 1 %}
             Téléchargements
           {% else %}
@@ -58,8 +58,8 @@ layout: page
 {% endif %}
 
 {% if page.main.text %}
-  <section class="row">
-    <div class="offset-md-1 col-md-6 pb-5 mb-5">
+  <section class="row mb-5 mb-md-0">
+    <div class="offset-md-1 col-md-6 pb-md-5 mb-md-5 ">
       <div class="text">
         {{ page.main.text | markdownify }}
       </div>
@@ -71,8 +71,8 @@ layout: page
 {% endif %}
 
 {% if page.side.text %}
-  <section class="row">
-    <div class="offset-md-1 col-md-6 pb-5 mb-5">
+  <section class="row mb-5 mb-md-0">
+    <div class="offset-md-1 col-md-6 pb-md-5 mb-md-5">
       <div class="text">
         {{ page.side.text | markdownify }}
       </div>
@@ -84,8 +84,8 @@ layout: page
 {% endif %}
 
 {% if page.legals.text %}
-  <section class="row">
-    <div class="offset-md-1 col-md-6 pb-5 mb-5">
+  <section class="row mb-5 mb-md-0">
+    <div class="offset-md-1 col-md-6 pb-md-5 mb-md-5">
       <div class="text">
         {{ page.legals.text | markdownify }}
       </div>
@@ -98,7 +98,7 @@ layout: page
 
 {% if page.ressources.text %}
   <section class="row">
-    <div class="offset-md-1 col-md-6 pb-5 mb-5 indent-list">
+    <div class="offset-md-1 col-md-6 pb-md-5 mb-md-5 indent-list">
       <div class="text">
         {{ page.ressources.text | markdownify }}
       </div>

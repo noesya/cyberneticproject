@@ -36,8 +36,11 @@ h3, .h3
     font-weight: 500
     line-height: px2rem(32)
     margin-bottom: px2rem(35)
-    +mobile
+    +media-breakpoint-down(md)
         font-size: px2rem(20)
+        line-height: px2rem(28)
+        margin-bottom: px2rem(20)
+
 
 h4, .h4
     font-size: px2rem(22)
@@ -107,7 +110,9 @@ a
     line-height: px2rem(40)
 
 .aside-img
-    margin-top: 64px
+    margin-top: 30px
+    +media-breakpoint-up(md)
+        margin-top: 64px
     &__content
         position: sticky
         top: 64px
@@ -128,7 +133,8 @@ a
                 display: none
 
 .sticky-title
-    align-self: start
-    bottom: 0
-    position: sticky
-    top: 30px
+    +media-breakpoint-up(md)
+        align-self: start
+        bottom: 0
+        position: sticky
+        top: 30px

@@ -12,6 +12,9 @@
         font-size: px2rem(40)
         line-height: px2rem(52)
         position: relative
+        +media-breakpoint-down(md)
+            font-size: px2rem(30)
+            line-height: px2rem(46)
         &:after, &:before
             background: white
             color: $back
@@ -22,7 +25,13 @@
         position: absolute
         right: 0
         text-align: center
+        +media-breakpoint-down(md)
+            font-size: px2rem(100)
         &:first-child
             top: -10px
+            +media-breakpoint-down(md)
+                top: 40px
         &:last-child
             bottom: -130px
+            +media-breakpoint-down(md)
+                bottom: -30px

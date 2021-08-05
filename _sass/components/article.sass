@@ -8,10 +8,12 @@ article
         font-size: px2rem(12)
         margin-bottom: 10px
         margin-top: 10px
-    .thumbnail
-        height: 270px
-        &--big
-            height: 350px
+    +media-breakpoint-up(md)
+        .thumbnail
+            height: 270px
+            &--big
+                height: 350px
+
 .post-technic
     position: relative
     &__index
@@ -22,7 +24,9 @@ article
     &__title
         padding: 10px 0 20px
         h2
-            font-size: px2rem(35)
+            +media-breakpoint-up(md)
+                font-size: px2rem(35)
+            font-size: px2rem(25)
             position: relative
     &__text
         background: $white

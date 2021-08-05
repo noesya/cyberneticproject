@@ -1,14 +1,17 @@
 {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
 
 {% if crumbs.size > 0 %}
-<div class="breadcrumb">
-    <a href="/">Accueil</a>
-    {% for crumb in crumbs offset: 1 %}
-        {% if forloop.last %}
-        / {{ page.title }}
-        {% else %}
-        / <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>
-        {% endif %}
-    {% endfor %}
+<div class="row mb-5">
+    <div class="col-md-11 offset-md-1 breadcrumb">
+        <a href="/">Accueil</a>
+        {% for crumb in crumbs offset: 1 %}
+            {% if forloop.last %}
+            / {{ page.title }}
+            {% else %}
+            / <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
 </div>
+
 {% endif %}
