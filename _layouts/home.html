@@ -1,0 +1,100 @@
+---
+layout: page
+---
+<section class="row mb-5 pb-5">
+    <div class="col-md-3 offset-md-1 sticky-title mb-5 mb-md-0">
+        <h2><a href="/actualites">{{ page.news_title }}</a></h2>
+        <p>{{ page.news_text }}</p>
+        <a href="/actualites" class="btn btn--lite mt-4" >Toutes les actualités</a>
+    </div>
+    <div class="col-md-8">
+        {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
+        {% for post in posts limit:1 offset:2 %}
+            {% include post.html post=post image=true text=true big=true %}
+        {% endfor %}
+        <div class="row">
+          {% for post in posts limit:2 offset:0 %}
+          <div class="col-md-6 mt-5">
+            {% include post.html post=post %}
+          </div>
+          {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="row mb-5 pb-5 py-md-5">
+    <div class="col-md-5 offset-md-1 mb-5 mb-md-0">
+        <h2><a href="/projet">{{ page.project_title }}</a></h2>
+        <p>{{ page.project_text }}</p>
+        <a class="btn btn--lite mt-4" href="/projet">Lire la suite</a>
+    </div>
+    <div class="col-md-6">
+        {% include piximage.html image=page.project_img %}
+    </div>
+</section>
+
+<section class="row mb-5 pb-5 py-md-5">
+    <div class="col-md-5 offset-md-1 mb-5 mb-md-0 sticky-title">
+        <h2><a href="/fiches-techniques">{{ page.technics_title }}</a></h2>
+        <p>{{ page.technics_text }}</p>
+        <a class="btn btn--lite mt-4" href="/fiches-techniques">
+            Toutes les fiches
+        </a>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            {% assign posts = site.technics | posts_passed: 'post_date' | reverse %}
+            {% for post in posts limit:4 %}
+                <div class="col-md-6">
+                    {% include post-technic.html post=post index=forloop.index %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="row mb-5 pb-5  py-md-5">
+    <div class="col-md-5 offset-md-1 mb-5 mb-md-0 sticky-title">
+        <h2><a href="/journees-d-etudes">{{ page.study_days_title }}</a></h2>
+        <p>{{ page.study_days_text }}</p>
+        <a href="/journees-d-etudes" class="btn btn--lite mt-4" >Toutes les journées d'études</a>
+    </div>
+
+    {% assign posts = site.study_days | posts_passed: 'post_date' | reverse %}
+    {% for post in posts limit:3 %}
+        <div class="col-md-6 mb-4 {% if forloop.index > 1 %} offset-md-6 {% endif %}">
+            {% include study_day.html post=post image=true  %}
+        </div>
+    {% endfor %}
+</section>
+
+<section class="row mb-5 pb-5 py-md-5">
+    <div class="col-md-5 offset-md-1 mb-5 mb-md-0 text sticky-title">
+        <h2><a href="/ressources">{{ page.ressources_title }}</a></h2>
+        <p>{{ page.ressources_text }}</p>
+        <a href="/ressources">Toutes les ressources</a>
+    </div>
+
+    {% assign posts = site.ressources | posts_passed: 'post_date' | reverse %}
+    {% for post in posts limit:4 %}
+        <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
+            {% include ressource.html post=post %}
+        </div>
+    {% endfor %}
+</section>
+
+<section class="row mb-5 pb-5 py-md-5">
+    <div class="col-md-6 offset-md-1 mb-5">
+        <h2>{{ page.partners_title }}</h2>
+        <p>{{ page.partners_text }}</p>
+    </div>
+    <div class="col-md-10 offset-md-1 technics-list">
+        <div class="row">
+            {% for partner in site.data.partners %}
+            <div class="col-md-2 partner">
+                <img src="/assets/images/{{ partner.url }}" alt="{{ partner.alt }}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

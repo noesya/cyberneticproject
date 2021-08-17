@@ -1,7 +1,7 @@
 <article>
-    {% if include.image %}
+    {% if include.post.image %}
         <div class="thumbnail{% if include.big %} thumbnail--big{% endif %} mb-2">
-            <img src="{{ include.post.image.src }}" alt="{{ include.post.image.alt }}" title="{{ include.post.image.title }}" class="cover-img">
+            {% include piximage.html image=include.post.image %}
         </div>
     {% endif %}
     <div class="content">

@@ -1,114 +1,33 @@
 ---
 title: Expression de la violence et cyberharcèlement
-permalink: /
 seo:
-  title: "CyberNeTic"
+  title: CyberNeTic
   text: Expression de la violence et cyberharcèlement
   description: This is a meta description
+news_title: Actualités
+news_text: "Ici vous trouverez les actualités du site Cybernetic : "
+project_title: Projet
+project_text: En partenariat avec la Gendarmerie Nationale, le projet CyberNeTic
+  vise à mener une recherche-action au coeur des sciences de l'information et de
+  la communication pour étudier les formes d'expression de la violence au moyen
+  des nouvelles technologies et tout particulièrement celle du cyberharcèlement.
+  Il s'agit d'analyser les discours d'expériences (victimes, enquêteurs) et les
+  échanges de conversations (sms, réseaux sociaux, mails, etc.), afin
+  d'identifier les phénomènes d'engrenage, les stratégies d'influence et de
+  manipulation enclenchées par les prédateurs.
+project_img:
+  src: /assets/images/uploads/projet.jpg
+  alt: Cyberharcelement par téléphone
+  title: Cyberharcelement par téléphone
+technics_title: Fiches Techniques
+technics_text: >2
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos molestias animi distinctio id quos autem rerum porro odit commodi libero. Ipsam odit ea necessitatibus numquam suscipit veniam incidunt minus molestiae!
+study_days_title: Journées d'études
+study_days_text: Retrouvez toutes les journées d'études du projet.
+ressources_title: Ressources
+partners_title: Partenaires
+partners_text: Les partenaires accompagnent le projet CyberNeTic dans la réalisation de...
+layout: home
+permalink: /
+ressources_text: Retrouvez toutes les ressources du projet.
 ---
-
-<section class="row mb-5 pb-5">
-    <div class="col-md-3 offset-md-1 text sticky-title mb-5 mb-md-0">
-        <h2>Actualités</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos molestias animi distinctio id quos autem rerum porro odit commodi libero. Ipsam odit ea necessitatibus numquam suscipit veniam incidunt minus molestiae!
-        </p>
-        <a href="/actualites">Toutes les actualités</a>
-    </div>
-    <div class="col-md-8">
-        {% assign posts = site.news | posts_passed: 'post_date' | reverse %}
-        {% for post in posts limit:1 offset:2 %}
-            {% include post.html post=post image=true text=true big=true %}
-        {% endfor %}
-        <div class="row">
-          {% for post in posts limit:2 offset:0 %}
-          <div class="col-md-6 mt-5">
-            {% include post.html post=post %}
-          </div>
-          {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="row mb-5 pb-5 py-md-5">
-    <div class="col-md-5 offset-md-1 text mb-5 mb-md-0">
-        <h2>Projet</h2>
-        <p>
-            En partenariat avec la Gendarmerie Nationale, le projet CyberNeTic vise à mener une recherche-action au coeur des sciences de l'information et de la communication pour étudier les formes d'expression de la violence au moyen des nouvelles technologies et tout particulièrement celle du cyberharcèlement. Il s'agit d'analyser les discours d'expériences (victimes, enquêteurs) et les échanges de conversations (sms, réseaux sociaux, mails, etc.), afin d'identifier les phénomènes d'engrenage, les stratégies d'influence et de manipulation enclenchées par les prédateurs.
-        </p>
-        <a class="btn btn--lte" href="/projet">Lire la suite</a>
-    </div>
-    <div class="col-md-6">
-        <img class="cover-img" src="/assets/images/projet.jpg" alt="Cyberharcelement par téléphone">
-    </div>
-</section>
-
-<section class="row mb-5 pb-5 py-md-5">
-    <div class="col-md-5 offset-md-1 mb-5 mb-md-0 sticky-title">
-        <h2><a href="/fiches-techniques">Fiches Techniques</a></h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos molestias animi distinctio id quos autem rerum porro odit commodi libero. Ipsam odit ea necessitatibus numquam suscipit veniam incidunt minus molestiae!
-        </p>
-        <a class="btn btn--lite mt-4" href="/fiches-techniques">
-            Toutes les fiches
-        </a>
-    </div>
-    <div class="col-md-6">
-        <div class="row">
-            {% assign posts = site.technics | posts_passed: 'post_date' | reverse %}
-            {% for post in posts limit:4 %}
-                <div class="col-md-6">
-                    {% include post-technic.html post=post index=forloop.index %}
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="row mb-5 pb-5  py-md-5">
-    <div class="col-md-5 offset-md-1 mb-5 mb-md-0 text sticky-title">
-        <h2>Journées d'études</h2>
-        <p>Retrouvez toutes les journées d'études du projet.</p>
-        <a href="/journees-d-etudes">Toutes les journées d'études</a>
-    </div>
-
-    {% assign posts = site.study_days | posts_passed: 'post_date' | reverse %}
-    {% for post in posts limit:3 %}
-        <div class="col-md-6 mb-4 {% if forloop.index > 1 %} offset-md-6 {% endif %}">
-            {% include study_day.html post=post image=true  %}
-        </div>
-    {% endfor %}
-</section>
-
-<section class="row mb-5 pb-5 py-md-5">
-    <div class="col-md-5 offset-md-1 mb-5 mb-md-0 text sticky-title">
-        <h2>Ressources</h2>
-        <p>Retrouvez toutes les ressources du projet.</p>
-        <a href="/ressources">Toutes les ressources</a>
-    </div>
-
-    {% assign posts = site.ressources | posts_passed: 'post_date' | reverse %}
-    {% for post in posts limit:4 %}
-        <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
-            {% include ressource.html post=post %}
-        </div>
-    {% endfor %}
-</section>
-
-<section class="row mb-5 pb-5 py-md-5">
-    <div class="col-md-6 offset-md-1 mb-5">
-        <h2>Partenaires</h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos molestias animi distinctio id quos autem.
-        </p>
-    </div>
-    <div class="col-md-10 offset-md-1 technics-list">
-        <div class="row">
-            {% for partner in site.data.partners %}
-            <div class="col-md-2 partner">
-                <img src="/assets/images/{{ partner.url }}" alt="{{ partner.alt }}">
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>

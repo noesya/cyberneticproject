@@ -11,7 +11,6 @@ slug:
   encoding: ascii
   clean_accents: true
 
-
 seo: &SEO
   name: seo
   widget: object
@@ -21,14 +20,17 @@ seo: &SEO
     - {label: "Description", name: "description", widget: "text", required: false}
     - {label: "OG Image (shared image)", name: "image", widget: "image", required: false}
 
-image: &IMAGE_FIELDS
+image_fields: &IMAGE_FIELDS
+  - {name: src, label: Image, widget: image, required: false}
+  - {name: alt, label: Alt text, widget: string, required: false}
+  - {name: title, label: Title, widget: string, required: false}
+
+
+featured_image: &FEATURED_IMAGE_FIELDS
   name: image
   label: Featured image
   widget: object
-  fields:
-    - {name: src, label: Image, widget: image, required: false}
-    - {name: alt, label: Alt text, widget: string, required: false}
-    - {name: title, label: Title, widget: string, required: false}
+  fields: *IMAGE_FIELDS
 
 markdown_light_button: &MARKDOWN_LIGHT_BUTTONS
   [heading-three, heading-four, heading-five, heading-six, bulleted-list, bold, italic, link]
@@ -39,18 +41,103 @@ text_content: &TEXT_CONTENT
   widget: markdown
   buttons: *MARKDOWN_LIGHT_BUTTONS
 
+page_default_fields: &PAGE_DEFAULT_FIELDS
+  - name: title
+    label: Title
+    required: false
+  - *SEO
+  - name: introduction
+    label: Chapô
+    widget: markdown
+    buttons: *MARKDOWN_LIGHT_BUTTONS
+    required: false
+
 collections:
   - name: 'pages'
     label: 'Pages'
-    folder: '_pages'
-    extension: html
     editor:
       preview: false
-    fields:
-      - name: title
-        label: Title
-        required: false
-      - *SEO
+    files:
+      - label: "Accueil"
+        name: "home"
+        file: "_pages/index.html"
+        fields:
+        - name: title
+          label: Title
+          required: false
+        - *SEO
+        - name: news_title
+          label: Titre "actualités"
+          required: false
+        - name: news_text
+          label: Description "actualités"
+          required: false
+          widget: text
+        - name: project_title
+          label: Titre "projet"
+          required: false
+        - name: project_text
+          label: Description "projet"
+          required: false
+          widget: text
+        - name: project_img
+          label: Image "projet"
+          widget: object
+          required: false
+          fields: *IMAGE_FIELDS
+        - name: technics_title
+          label: Titre "Fiches techniques"
+          required: false
+        - name: technics_text
+          label: Description "Fiches techniques"
+          required: false
+          widget: text
+        - name: study_days_title
+          label: Titre "Journées d'études"
+          required: false
+        - name: study_days_text
+          label: Description "Journées d'études"
+          required: false
+          widget: text
+        - name: ressources_title
+          label: Titre "Ressources"
+          required: false
+        - name: ressources_text
+          label: Description "Ressources"
+          required: false
+          widget: text
+        - name: partners_title
+          label: Titre "Partenaires"
+          required: false
+        - name: partners_text
+          label: Description "Partenaires"
+          required: false
+          widget: text
+          
+      - label: "Projet"
+        name: "project"
+        file: "_pages/projet.html"
+        fields: *PAGE_DEFAULT_FIELDS
+
+      - label: "Actualités"
+        name: "news"
+        file: "_pages/actualites.html"
+        fields: *PAGE_DEFAULT_FIELDS
+
+      - label: "Fiches Techniques"
+        name: "technics"
+        file: "_pages/fiches-techniques.html"
+        fields: *PAGE_DEFAULT_FIELDS
+
+      - label: "Journées d'études"
+        name: "study_days"
+        file: "_pages/journees-d-etudes.html"
+        fields: *PAGE_DEFAULT_FIELDS
+
+      - label: "Ressources"
+        name: "ressources"
+        file: "_pages/ressources.html"
+        fields: *PAGE_DEFAULT_FIELDS
 
   - name: 'news'
     label: 'Actualités'
@@ -68,7 +155,7 @@ collections:
         name: 'post_date'
         widget: 'date'
       - *SEO
-      - *IMAGE_FIELDS
+      - *FEATURED_IMAGE_FIELDS
       - name: preview
         label: Chapô
         required: false
@@ -93,7 +180,7 @@ collections:
         name: 'post_date'
         widget: 'date'
       - *SEO
-      - *IMAGE_FIELDS
+      - *FEATURED_IMAGE_FIELDS
       - name: preview
         label: Chapô
         required: false
@@ -121,7 +208,7 @@ collections:
         name: 'post_date'
         widget: 'date'
       - *SEO
-      - *IMAGE_FIELDS
+      - *FEATURED_IMAGE_FIELDS
       - name: participants
         label: Participants
         required: false
@@ -164,7 +251,7 @@ collections:
         name: 'post_date'
         widget: 'date'
       - *SEO
-      - *IMAGE_FIELDS
+      - *FEATURED_IMAGE_FIELDS
 
       - name: synonymous
         label: Synonymes
@@ -204,7 +291,7 @@ collections:
         widget: object
         fields:
           - *TEXT_CONTENT
-          - *IMAGE_FIELDS
+          - *FEATURED_IMAGE_FIELDS
 
       - name: quote
         label: Citation 
@@ -217,7 +304,7 @@ collections:
         widget: object
         fields:
           - *TEXT_CONTENT
-          - *IMAGE_FIELDS
+          - *FEATURED_IMAGE_FIELDS
 
       - name: legals
         label: Cadre légal
@@ -225,7 +312,7 @@ collections:
         widget: object
         fields:
           - *TEXT_CONTENT
-          - *IMAGE_FIELDS
+          - *FEATURED_IMAGE_FIELDS
 
       - name: ressources
         label: Ressources
@@ -233,4 +320,4 @@ collections:
         widget: object
         fields:
           - *TEXT_CONTENT
-          - *IMAGE_FIELDS
+          - *FEATURED_IMAGE_FIELDS

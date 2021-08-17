@@ -1,0 +1,10 @@
+presets:
+  default:
+    formats: [webp, original]
+    widths: [300, 600, 1000, 1400, 2000]
+    dimension_attributes: true
+  pixel:
+    formats: [webp, original]
+    widths: [100, 200]
+    dimension_attributes: true
+    size: 100px

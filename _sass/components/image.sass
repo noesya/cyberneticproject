@@ -1,0 +1,60 @@
+@keyframes pix-glitch
+    0%, 20%
+        display: block
+        filter: saturate(0)
+        opacity: 1
+        transform: translate(2px, -1px)
+    10%, 30%
+        display: block
+        filter: saturate(8)
+        opacity: 1
+        transform: translate(0px, -2px)
+    31%, 73%
+        opacity: 0
+    74%
+        filter: saturate(1)  brightness(1.1)
+        opacity: 1
+        transform: translate(-1px, 3px)
+    80%
+        transform: translate(0px, 1px)
+    81%
+        opacity: 0.2
+        transform: translate(1px, 0px)
+    85%
+        filter: saturate(8)
+        opacity: 1
+        transform: translate(-1px, -2px)
+    88%
+        filter: saturate(5) grayscale(1) brightness(1.1)
+        opacity: 1
+        transform: translate(0px, 0px)
+    100%
+        filter: saturate(1)
+        transform: translate(0px, 0px)
+
+.pixel-image
+    height: 100%
+    overflow: hidden
+    position: relative
+    width: 100%
+    img
+        display: block
+        height: 100%
+        image-rendering: pixelated
+        object-fit: cover
+        width: 100%
+        &.original
+            display: none
+            left: 0
+            position: absolute
+            top: 0
+            z-index: 1
+    &:hover
+        .original
+            animation: pix-glitch 0.3s steps(2)
+            display: block
+
+article:hover
+    .original
+        animation: pix-glitch 0.3s steps(2)
+        display: block

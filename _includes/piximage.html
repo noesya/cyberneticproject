@@ -1,0 +1,6 @@
+{% assign image = include.image %}
+
+<div class="pixel-image">
+    {% picture pixel {{ image.src }} --img alt="{{ image.alt }}" title="{{ image.title }}" %}
+    {% picture {{ image.src }} --img alt="{{ image.alt }}" title="{{ image.title }}" class="original" %}
+</div>
