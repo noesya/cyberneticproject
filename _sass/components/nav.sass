@@ -92,26 +92,43 @@ header
                     content: none
 
 .search
-    background: $light-grey
+    background: rgba($back, 0.5)
     color: $text-color
-    height: calc(100% - 75px)
-    max-width: 100%
+    display: none
+    height: 100%
+    left: 0
     overflow: hidden
+    padding-top: 15%
     position: fixed
-    right: -1px
-    top: 75px
+    top: 0
     transition: width 0.33s
-    width: 0
+    width: 100%
+    z-index: 20
+    &__overlay
+        cursor: pointer
+        height: 100%
+        left: 0
+        position: absolute
+        top: 0
+        width: 100%
     &__body
-        max-height: 100%
+        background: $front
+        margin: auto
+        max-width: 700px
         padding: 30px
+        position: relative
+        .close
+            cursor: pointer
+            height: 20px
+            position: absolute
+            right: 20px
+            top: 20px
+            width: 20px
     &__results
-        max-height: calc(100vh - 220px)
+        max-height: calc(100vh - 320px)
         overflow-y: auto
     .search-opened &
-        width: 50%
-        +media-breakpoint-down(md)
-            width: 100%
+        display: block
     input
         -webkit-appearance: none
         background: transparent
@@ -128,9 +145,11 @@ header
         width: 100%
         &:focus-visible
             outline: 0
+    ul
+        padding-top: 10px
     li
         font-size: 20px
-        padding: 10px 0
+        padding-bottom: 20px
         small
             display: inline-block
             font-size: 70%

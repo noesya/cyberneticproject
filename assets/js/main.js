@@ -13,6 +13,13 @@ document.getElementById('search-button').addEventListener('click', function(){
     document.getElementById('header').classList.toggle('search-opened');
 });
 
+var closeSearch = document.querySelectorAll('.js-close-search')
+for(var i = 0; i < closeSearch.length; i+=1) {
+    closeSearch[i].addEventListener('click', function(){
+        document.getElementById('header').classList.toggle('search-opened');
+    });
+}
+
 (function setReadingProgress() {
     var progressBar = document.getElementById('progress'),
         progressText = document.getElementById('progress-text');
