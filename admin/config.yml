@@ -117,7 +117,24 @@ collections:
       - label: "Projet"
         name: "project"
         file: "_pages/projet.html"
-        fields: *PAGE_DEFAULT_FIELDS
+        fields:
+          - name: title
+            label: Title
+            required: false
+          - *SEO
+          - *TEXT_CONTENT
+          - name: team
+            label: Équipe
+            widget: list
+            fields:
+              - name: title
+                label: Prénom Nom
+              - name: job
+                label: poste, emploi...
+              - *TEXT_CONTENT
+              - name: image
+                widget: object
+                fields: *IMAGE_FIELDS
 
       - label: "Actualités"
         name: "news"
