@@ -5,6 +5,6 @@ presets:
     dimension_attributes: true
   pixel:
     formats: [webp, original]
-    widths: [100, 200]
+    widths: [50]
     dimension_attributes: true
-    size: 100px
+    size: 50px
