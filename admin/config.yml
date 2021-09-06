@@ -301,7 +301,6 @@ collections:
         fields:
           - *TEXT_CONTENT
 
-
       - name: main
         label: Contenu principal
         required: false
