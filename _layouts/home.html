@@ -92,7 +92,7 @@ layout: page
         <div class="row">
             {% for partner in site.data.partners %}
             <div class="col-md-2 partner">
-                <img src="/assets/images/{{ partner.url }}" alt="{{ partner.alt }}">
+                {% picture partner /assets/images/{{ partner.url }} --img alt="{{ partner.alt }}" title="{{ partner.alt }}" %}
             </div>
             {% endfor %}
         </div>

@@ -18,7 +18,7 @@
                   {% for item in site.data.nav.partners.logos %}
                   <div class="col-4 p-3">
                       <a href="{{ item.link }}" target="_blank" rel="noopener">
-                          <img src="{{ item.url | prepend: '/assets/images/' }}" alt="{{ item.alt }}">
+                        {% picture partner {{ item.url | prepend: '/assets/images/' }} --img alt="{{ item.alt }}" title="{{ item.alt }}" %}
                       </a>
                   </div>
                   {% endfor %}

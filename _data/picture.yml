@@ -8,3 +8,8 @@ presets:
     widths: [50]
     dimension_attributes: true
     size: 50px
+  partner:
+    formats: [webp, original]
+    dimension_attributes: true
+    size: 100px
+    
