@@ -25,7 +25,6 @@ image_fields: &IMAGE_FIELDS
   - {name: alt, label: Alt text, widget: string, required: false}
   - {name: title, label: Title, widget: string, required: false}
 
-
 featured_image: &FEATURED_IMAGE_FIELDS
   name: image
   label: Featured image
@@ -51,6 +50,11 @@ page_default_fields: &PAGE_DEFAULT_FIELDS
     widget: markdown
     buttons: *MARKDOWN_LIGHT_BUTTONS
     required: false
+
+show_warning_field: &WARNING_FIELD
+  name: warning
+  label: Afficher l'avertissement
+  widget: boolean
 
 collections:
   - name: 'pages'
@@ -180,6 +184,7 @@ collections:
       - name: body
         label: Contenu
         widget: markdown
+      - *WARNING_FIELD
 
   - name: 'ressources'
     label: 'Ressources'
@@ -205,6 +210,8 @@ collections:
       - name: body
         label: Contenu
         widget: markdown
+      - *WARNING_FIELD
+
 
   - name: 'study_days'
     label: 'Journées d‘études'
@@ -246,6 +253,7 @@ collections:
       - name: body
         label: Contenu
         widget: markdown
+      - *WARNING_FIELD
 
 
   - name: 'technics'
@@ -337,3 +345,17 @@ collections:
         fields:
           - *TEXT_CONTENT
           - *FEATURED_IMAGE_FIELDS
+      - *WARNING_FIELD
+      
+
+  - name: 'options'
+    label: 'Options'
+    editor:
+      preview: false
+    files:
+      - file: '_data/options.yml'
+        name: 'general'
+        label: 'Général'
+        fields:
+          - name: warning
+            label: Message d'avertissement
