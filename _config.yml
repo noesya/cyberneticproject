@@ -43,7 +43,7 @@ collections:
   technics:
     output: true
     permalink: /fiches-techniques/:name
-    sort_by: post_date
+    sort_by: title
   study_days:
     output: true
     permalink: /journees-d-etudes/:name

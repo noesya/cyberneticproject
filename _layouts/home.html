@@ -43,7 +43,7 @@ layout: page
     </div>
     <div class="col-md-6">
         <div class="row">
-            {% assign posts = site.technics | posts_passed: 'post_date' | reverse %}
+            {% assign posts = site.technics %}
             {% for post in posts limit:4 %}
                 <div class="col-md-6">
                     {% include post-technic.html post=post index=forloop.index %}

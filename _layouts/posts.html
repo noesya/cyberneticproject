@@ -2,16 +2,21 @@
 layout: page
 ---
 {% assign item_template=page.item_template %}
-
 {% if page.introduction %}
 <div class="row mb-5">
     <div class="col-md-6 offset-md-1">
+        
         {{ page.introduction | markdownify }}
     </div>
 </div>
 {% endif %}
+
 <div class="row">
-    {% assign posts = site[page.list] | posts_passed: 'post_date' | reverse %}
+    {% if  page.slug == 'fiches-techniques' %}
+        {% assign posts = site[page.list] %}
+    {% else %}
+        {% assign posts = site[page.list] | posts_passed: 'post_date' | reverse %}
+    {% endif %}
     {% for post in posts %}
         {% assign modulo = forloop.index0 | modulo:2 %}
         <div class="offset-md-1 col-md-5 mb-5">
