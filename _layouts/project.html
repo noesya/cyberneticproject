@@ -12,15 +12,18 @@ layout: page
     <div class="col-md-11 offset-md-1">
         <h2>L'équipe</h2>
     </div>
-
+</section>
+<section>
     {% for member in page.team %}
-        <div class="col-md-3 offset-md-1">
-            {% picture {{ member.image.src }} --img alt="{{ member.image.alt }}" title="{{ member.image.title }}" %}
-        </div>
-        <div class="col-md-8 mb-5">
-            <h3 class="mb-1">{{ member.title }}</h3>
-            <p class="small">{{ member.job }}</p>
-            <p>{{ member.text }}</p>
+        <div class="row mb-5 align-items-center member">
+            <div class="col-md-3 offset-md-1">
+                {% picture {{ member.image.src }} --img alt="{{ member.image.alt }}" title="{{ member.image.title }}" class="img-fluid" %}
+            </div>
+            <div class="col-md-8">
+                <h3 class="mb-1">{{ member.title }}</h3>
+                <p class="small">{{ member.job }}</p>
+                <p>{{ member.text }}</p>
+            </div>
         </div>
     {% endfor %}
 </section>
