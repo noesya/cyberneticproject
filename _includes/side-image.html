@@ -1,8 +1,10 @@
 {% assign image = include.image %}
 
+{% if image.src != '' %}
 <div class="offset-md-1 col-md-4 p-md-0 text aside-img">
   <div class="aside-img__content">
     {% picture {{ image.src }} --img alt="{{ image.alt }}" title="{{ image.title }}" %}
     <small class="text--small">{{ image.title }}</small>
   </div>
 </div>
+{% endif %}

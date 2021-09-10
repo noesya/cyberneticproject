@@ -48,3 +48,6 @@ collections:
     output: true
     permalink: /journees-d-etudes/:name
     sort_by: post_date
+
+picture: 
+  ignore_missing_images: true
