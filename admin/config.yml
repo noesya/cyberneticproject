@@ -16,14 +16,15 @@ seo: &SEO
   widget: object
   collapsed: true
   fields: 
-    - {label: "Title", name: "title", widget: "string", required: false}
+    - {label: "Titre", name: "title", widget: "string", required: false}
     - {label: "Description", name: "description", widget: "text", required: false}
     - {label: "OG Image (shared image)", name: "image", widget: "image", required: false}
 
 image_fields: &IMAGE_FIELDS
   - {name: src, label: Image, widget: image, required: false}
   - {name: alt, label: Alt text, widget: string, required: false}
-  - {name: title, label: Title, widget: string, required: false}
+  - {name: title, label: Titre, widget: string, required: false}
+  - {name: pixelated, label: Pixelisée, widget: boolean, required: false}
 
 featured_image: &FEATURED_IMAGE_FIELDS
   name: image
@@ -55,6 +56,8 @@ show_warning_field: &WARNING_FIELD
   name: warning
   label: Afficher l'avertissement
   widget: boolean
+  required: false
+
 
 collections:
   - name: 'pages'
@@ -76,14 +79,14 @@ collections:
         - name: news_text
           label: Description "actualités"
           required: false
-          widget: text
+          widget: markdown
         - name: project_title
           label: Titre "projet"
           required: false
         - name: project_text
           label: Description "projet"
           required: false
-          widget: text
+          widget: markdown
         - name: project_img
           label: Image "projet"
           widget: object
@@ -102,21 +105,21 @@ collections:
         - name: study_days_text
           label: Description "Journées d'études"
           required: false
-          widget: text
+          widget: markdown
         - name: ressources_title
           label: Titre "Ressources"
           required: false
         - name: ressources_text
           label: Description "Ressources"
           required: false
-          widget: text
+          widget: markdown
         - name: partners_title
           label: Titre "Partenaires"
           required: false
         - name: partners_text
           label: Description "Partenaires"
           required: false
-          widget: text
+          widget: markdown
           
       - label: "Projet"
         name: "project"
@@ -346,7 +349,6 @@ collections:
           - *TEXT_CONTENT
           - *FEATURED_IMAGE_FIELDS
       - *WARNING_FIELD
-      
 
   - name: 'options'
     label: 'Options'
@@ -359,3 +361,15 @@ collections:
         fields:
           - name: warning
             label: Message d'avertissement
+          - name: footer_text
+            label: Text de pied de page
+            widget: text
+          - name: footer_partner
+            label: Liste des partenaires
+            widget: list
+            fields:
+              - name: name
+                label: Nom
+              - name: link
+                label: Lien
+                required: false

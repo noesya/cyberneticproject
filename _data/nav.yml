@@ -23,13 +23,10 @@ footer:
     slug: /mentions-legales
 
 partners:
-  list:
-    - title: PJGN
-    - title: Orange
-    - title: Nouvelle Aquitaine
-    - title: IUT Bordeaux Montaigne
-    - title: Casden
   logos:
+    - alt: Région nouvelle aquitaine
+      url: partenaires/nouvelle-aquitaine.jpeg
+      link: https://www.nouvelle-aquitaine.fr/
     - alt: NTECH
       url: partenaires/ntech.png
       link: https://www.police-nationale.net/gendarme-ntech

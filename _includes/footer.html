@@ -4,19 +4,19 @@
             <div class="col-md-3 offset-md-1">
                 <p class="mb-3">Partenaires</p>
                 <ul class="mb-5">
-                    {% for item in site.data.nav.partners.list %}
+                    {% for item in site.data.options.footer_partner %}
                         <li class="mb-3">
-                        {% if item.slug %}
-                            <a href="{{ item.slug }}">{{ item.title }}</a>
+                        {% if item.link %}
+                            <a href="{{ item.link }}">{{ item.name }}</a>
                         {% else %}
-                            <span>{{ item.title }}</span>
+                            <span>{{ item.name }}</span>
                         {% endif %}
                         </li>
                     {% endfor %}
                 </ul>
                 <div class="row mb-5">
                   {% for item in site.data.nav.partners.logos %}
-                  <div class="col-4 p-3">
+                  <div class="col-4 p-3 center-content">
                       <a href="{{ item.link }}" target="_blank" rel="noopener">
                         {% picture partner {{ item.url | prepend: '/assets/images/' }} --img alt="{{ item.alt }}" title="{{ item.alt }}" %}
                       </a>
@@ -26,9 +26,7 @@
             </div>
             <div class="col-md-4 offset-md-1 mb-5">
                 <div>
-                    <p>
-                        En partenariat avec la Gendarmerie Nationale, le projet CyberNeTic vise à mener une recherche-action au coeur des sciences de l'information et de la communication pour étudier les formes d'expression de la violence au moyen des nouvelles technologies et tout particulièrement celle du cyberharcèlement. Il s'agit d'analyser les discours d'expériences (victimes, enquêteurs) et les échanges de conversations (sms, réseaux sociaux, mails, etc.), afin d'identifier les phénomènes d'engrenage, les stratégies d'influence et de manipulation enclenchées par les prédateurs.
-                    </p>
+                    {{ site.data.options.footer_text | markdownify }}
                 </div>
             </div>
             <div class="col-md-3 nav">

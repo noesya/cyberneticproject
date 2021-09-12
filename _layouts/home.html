@@ -4,7 +4,9 @@ layout: page
 <section class="row mb-5 pb-5">
     <div class="col-md-3 offset-md-1 sticky-title mb-5 mb-md-0">
         <h2><a href="/actualites">{{ page.news_title }}</a></h2>
-        <p>{{ page.news_text }}</p>
+        <div class="text">
+            {{ page.news_text | markdownify }}
+        </div>
         <a href="/actualites" class="btn btn--lite mt-4" >Toutes les actualités</a>
     </div>
     <div class="col-md-8">
@@ -25,7 +27,9 @@ layout: page
 <section class="row mb-5 pb-5 py-md-5">
     <div class="col-md-5 offset-md-1 mb-5 mb-md-0">
         <h2><a href="/projet">{{ page.project_title }}</a></h2>
-        <p>{{ page.project_text }}</p>
+        <div class="text">
+            {{ page.project_text | markdownify }}
+        </div>
         <a class="btn btn--lite mt-4" href="/projet">Lire la suite</a>
     </div>
     <div class="col-md-6">
@@ -36,7 +40,9 @@ layout: page
 <section class="row mb-5 pb-5 py-md-5">
     <div class="col-md-5 offset-md-1 mb-5 mb-md-0 sticky-title">
         <h2><a href="/fiches-techniques">{{ page.technics_title }}</a></h2>
-        <p>{{ page.technics_text }}</p>
+        <div class="text">
+            {{ page.technics_text | markdownify }}
+        </div>
         <a class="btn btn--lite mt-4" href="/fiches-techniques">
             Toutes les fiches
         </a>
@@ -56,7 +62,9 @@ layout: page
 <section class="row mb-5 pb-5  py-md-5">
     <div class="col-md-5 offset-md-1 mb-5 mb-md-0 sticky-title">
         <h2><a href="/journees-d-etudes">{{ page.study_days_title }}</a></h2>
-        <p>{{ page.study_days_text }}</p>
+        <div class="text">
+            {{ page.study_days_text | markdownify }}
+        </div>
         <a href="/journees-d-etudes" class="btn btn--lite mt-4" >Toutes les journées d'études</a>
     </div>
 
@@ -71,7 +79,9 @@ layout: page
 <section class="row mb-5 pb-5 py-md-5">
     <div class="col-md-5 offset-md-1 mb-5 mb-md-0 text sticky-title">
         <h2><a href="/ressources">{{ page.ressources_title }}</a></h2>
-        <p>{{ page.ressources_text }}</p>
+        <div class="text">
+            {{ page.ressources_text | markdownify }}
+        </div>
         <a href="/ressources">Toutes les ressources</a>
     </div>
 
@@ -86,7 +96,9 @@ layout: page
 <section class="row mb-5 pb-5 py-md-5">
     <div class="col-md-6 offset-md-1 mb-5">
         <h2>{{ page.partners_title }}</h2>
-        <p>{{ page.partners_text }}</p>
+        <div class="text">
+            {{ page.partners_text | markdownify }}
+        </div>
     </div>
     <div class="col-md-10 offset-md-1 technics-list">
         <div class="row">

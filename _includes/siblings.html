@@ -18,21 +18,21 @@
         {% endfor %}
     {% endif %}
 
-    {% if next %}
-        <a href="{{ next.url }}" class="col-md-5 offset-md-1">
-            <p class="h5">{{ include.next }}</p>
-            <h2 class="h3 mb-3">
-                {% if next.title %}{{ next.title }}{% else %}{{ site.post.title }}{% endif %}
-            </h2>
-        </a>
-    {% endif %}
-
     {% if prev %}
-        <a href="{{ prev.url }}" class="col-md-5 offset-md-1 ms-auto text-end">
+        <a href="{{ prev.url }}" class="col-md-5  offset-md-1">
             <p class="h5">{{ include.prev }}</p>
             <h2 class="h3 mb-3">
                 {% if prev.title %}{{ prev.title }}{% else %}{{ site.post.title }}{% endif %}
             </h2>
         </a>
+    {% endif %}
+
+    {% if next %}
+    <a href="{{ next.url }}" class="col-md-5 offset-md-1 ms-auto text-end">
+        <p class="h5">{{ include.next }}</p>
+        <h2 class="h3 mb-3">
+            {% if next.title %}{{ next.title }}{% else %}{{ site.post.title }}{% endif %}
+        </h2>
+    </a>
     {% endif %}
 </section>

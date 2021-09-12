@@ -1,1 +1,23 @@
 warning: ⚠️ Cet article contient certains contenus réservés à un public averti. ⚠️
+footer_text: En partenariat avec la Gendarmerie Nationale, le projet CyberNeTic
+  vise à mener une recherche-action au cœur des sciences de l’information et de
+  la communication et de la criminologie pour étudier les formes d’expression de
+  la violence au moyen des nouvelles technologies et tout particulièrement celle
+  du cyberharcèlement. Il s’agit d’analyser les discours d’expériences
+  (victimes, enquêteurs, grands témoins, etc.) et les échanges de conversations
+  (sms, réseaux sociaux, mails, etc.), afin d’identifier les phénomènes
+  d’engrenage, les stratégies d’influence et de manipulation enclenchées par les
+  auteurs des faits.
+footer_partner:
+  - name: "Service Central de Renseignement Criminel, Gendarmerie Nationale "
+    link: https://www.gendarmerie.interieur.gouv.fr/pjgn/scrcgn
+  - name: "NTech 33, Gendarmerie Nationale "
+    link: https://www.gendarmerie.interieur.gouv.fr/
+  - name: "Université Bordeaux Montaigne "
+    link: https://www.u-bordeaux-montaigne.fr/fr/index.html
+  - name: "Région Nouvelle Aquitaine "
+    link: https://www.nouvelle-aquitaine.fr/
+  - name: Orange
+    link: https://www.orange.fr/
+  - name: Noesya
+    link: https://noesya.coop/
