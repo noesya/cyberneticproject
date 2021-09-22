@@ -87,7 +87,7 @@ layout: page
 
     {% assign posts = site.ressources | posts_passed: 'post_date' | reverse %}
     {% for post in posts limit:4 %}
-        <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-4 {% endif %}">
+        <div class="col-md-3 mb-4 {% if forloop.index == 3 %} offset-md-6 {% endif %}">
             {% include ressource.html post=post %}
         </div>
     {% endfor %}
@@ -101,9 +101,9 @@ layout: page
         </div>
     </div>
     <div class="col-md-10 offset-md-1 technics-list">
-        <div class="row">
+        <div class="row justify-content-center justify-content-md-start">
             {% for partner in site.data.partners %}
-            <div class="col-md-2 partner">
+            <div class="col-md-2 col-6 partner mb-3 mb-md-0">
                 {% picture partner /assets/images/{{ partner.url }} --img alt="{{ partner.alt }}" title="{{ partner.alt }}" %}
             </div>
             {% endfor %}
