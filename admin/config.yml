@@ -120,6 +120,50 @@ collections:
           label: Description "Partenaires"
           required: false
           widget: markdown
+
+      - label: "ES"
+        name: "es"
+        file: "_pages/es.html"
+        fields:
+          - name: title
+            label: Title
+            required: false
+          - *SEO
+          - *TEXT_CONTENT
+          - name: team
+            label: Équipe
+            widget: list
+            fields:
+              - name: title
+                label: Prénom Nom
+              - name: job
+                label: poste, emploi...
+              - *TEXT_CONTENT
+              - name: image
+                widget: object
+                fields: *IMAGE_FIELDS
+
+      - label: "EN"
+        name: "en"
+        file: "_pages/en.html"
+        fields:
+          - name: title
+            label: Title
+            required: false
+          - *SEO
+          - *TEXT_CONTENT
+          - name: team
+            label: Équipe
+            widget: list
+            fields:
+              - name: title
+                label: Prénom Nom
+              - name: job
+                label: poste, emploi...
+              - *TEXT_CONTENT
+              - name: image
+                widget: object
+                fields: *IMAGE_FIELDS
           
       - label: "Projet"
         name: "project"
