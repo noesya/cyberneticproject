@@ -24,12 +24,8 @@
                   {% endfor %}
                 </div>
             </div>
-            <div class="col-md-4 offset-md-1 mb-5">
-                <div>
-                    {{ site.data.options.footer_text | markdownify }}
-                </div>
-            </div>
-            <div class="col-md-3 nav">
+            <div class="col-md-2 nav">
+                <p class="mb-3">Structure</p>
                 <ul>
                 {% for item in site.data.nav.header %}
                     {% assign class = nil %}
@@ -50,11 +46,16 @@
                 {% endfor %}
                 </ul>
             </div>
+            <div class="col-md-5 offset-md-1 mb-5">
+                <div>
+                    {{ site.data.options.footer_text | markdownify }}
+                </div>
+            </div>
         </div>
         <div>
             <a href="/" class="logo">
                 CyberNeTic
-                {% include pictos/skull-black.svg %}
+                {% include pictos/skull-white.svg %}
             </a>
         </div>
     </div>
