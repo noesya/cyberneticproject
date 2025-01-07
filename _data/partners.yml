@@ -1,6 +1,6 @@
 - alt: Région nouvelle aquitaine
-  url: partenaires/nouvelle-aquitaine.jpg
-  link: https://www.nouvelle-aquitaine.fr/
+  url: partenaires/nouvelle-aquitaine.png
+  link: https://www.nouvelle-aquitaine.fr
 - alt: NTECH
   url: partenaires/ntech.png
   link: https://www.police-nationale.net/gendarme-ntech
@@ -12,4 +12,7 @@
   link: https://orange.fr/
 - alt: Université Bordeaux Montaigne
   url: partenaires/universite-bordeaux-montaigne.jpg
-  link: https://www.u-bordeaux-montaigne.fr/fr/index.html
+  link: https://www.u-bordeaux-montaigne.fr
+- alt: Laboratoire MICA
+  url: partenaires/mica.png
+  link: https://mica.u-bordeaux-montaigne.fr
