@@ -10,3 +10,4 @@ end
 group :jekyll_plugins do
     gem 'jekyll_picture_tag'
 end
+gem "csv", "~> 3.3"
