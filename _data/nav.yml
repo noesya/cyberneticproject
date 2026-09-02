@@ -26,7 +26,7 @@ footer:
 
 partners:
   logos:
-    - alt: Région nouvelle aquitaine
+    - alt: Région Nouvelle Aquitaine
       url: partenaires/nouvelle-aquitaine.png
       link: https://www.nouvelle-aquitaine.fr
     - alt: NTECH
@@ -35,9 +35,6 @@ partners:
     - alt: PJGN
       url: partenaires/pjgn.png
       link: https://www.gendarmerie.interieur.gouv.fr/pjgn/
-    - alt: Université Bordeaux Montaigne
-      url: partenaires/universite-bordeaux-montaigne.jpg
-      link: https://www.u-bordeaux-montaigne.fr
 
 social:
   - title: Facebook
